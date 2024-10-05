@@ -156,7 +156,121 @@
         </div>
       
       </main>
-      
+
+<section>
+
+.MODEL SMALL
+.STACK 100h
+
+.DATA
+    msg1 db 'classe 1979$'
+    msg2 db 'vivo / lavoro a Roma dal 2018$'
+    msg3 db 'insegnante (informatica alle superiori)$'
+    msg4 db 'laureato in ingegneria informatica$'
+    msg5 db 'dottore di ricerca in ricerca operativa$'
+    msg6 db 'ex assegnista di ricerca all''Universita'' della Calabria$'
+    msg7 db 'consulente informatico / SEO$'
+    msg8 db 'blogger tecnologico$'
+    msg9 db 'autore dei saggi a tema tecnologico Tecnofobia e Tecnocrazia (ed. El Doctor Sax, Valencia)$'
+
+.CODE
+.STARTUP
+    ; Stampa msg1
+    mov ah, 09h
+    lea dx, msg1
+    int 21h
+
+    ; Nuova linea
+    mov ah, 09h
+    lea dx, newline
+    int 21h
+
+    ; Stampa msg2
+    mov ah, 09h
+    lea dx, msg2
+    int 21h
+
+    ; Nuova linea
+    mov ah, 09h
+    lea dx, newline
+    int 21h
+
+    ; Stampa msg3
+    mov ah, 09h
+    lea dx, msg3
+    int 21h
+
+    ; Nuova linea
+    mov ah, 09h
+    lea dx, newline
+    int 21h
+
+    ; Stampa msg4
+    mov ah, 09h
+    lea dx, msg4
+    int 21h
+
+    ; Nuova linea
+    mov ah, 09h
+    lea dx, newline
+    int 21h
+
+    ; Stampa msg5
+    mov ah, 09h
+    lea dx, msg5
+    int 21h
+
+    ; Nuova linea
+    mov ah, 09h
+    lea dx, newline
+    int 21h
+
+    ; Stampa msg6
+    mov ah, 09h
+    lea dx, msg6
+    int 21h
+
+    ; Nuova linea
+    mov ah, 09h
+    lea dx, newline
+    int 21h
+
+    ; Stampa msg7
+    mov ah, 09h
+    lea dx, msg7
+    int 21h
+
+    ; Nuova linea
+    mov ah, 09h
+    lea dx, newline
+    int 21h
+
+    ; Stampa msg8
+    mov ah, 09h
+    lea dx, msg8
+    int 21h
+
+    ; Nuova linea
+    mov ah, 09h
+    lea dx, newline
+    int 21h
+
+    ; Stampa msg9
+    mov ah, 09h
+    lea dx, msg9
+    int 21h
+
+    ; Termina il programma
+    mov ah, 4Ch
+    int 21h
+
+.DATA
+newline db 13, 10, '$' ; Ritorno a capo (carriage return e line feed)
+
+END
+
+</section>
+	  
        
       <pre class="mx-auto pb-4 pt-4" style="width: 650px; font-size:9px;">
         <img src="887951604248072706.jpeg" class="img-fluid" /><center>
