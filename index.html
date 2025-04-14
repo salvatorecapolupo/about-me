@@ -94,8 +94,7 @@
             <div class="col-md-6">
               <h4> <i class="fa fa-globe" aria-hidden="true"></i> Blog</h4>
               <ul class="list-group list-group-flush">
-                <li class="list-group-item"><a target="_blank" href="https://lipercubo.it/author/salvatore">Lipercubo.it</a> (tra cinema e nuove tecnologie)</li>
-                <li class="list-group-item"><a target="_blank" href="https://trovalost.it/">Trovalost.it</a> <span class="display-456">(nuove tecnologie e dintorni)</span></li>
+                <li class="list-group-item"><a target="_blank" href="//capolooper.substack.com">capolooper.substack.com</a></li>
             </ul>
 
             </div>
@@ -141,17 +140,24 @@
 
           <div class="container"> 
             <div class="mx-auto pb-4 pt-4" style="width: 300px;">
-                <h5> Didattica / Demo </h5>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><a target="_blank" href="https://salvatorecapolupo.github.io/allyouneedispython">All you need is Python (3)</a></li>
-                    <li class="list-group-item"><a target="_blank" href="https://salvatorecapolupo.github.io/didattica">Materiale didattico (Informatica, Sistemi e reti, TPSIT)</a></li>
-                    <li class="list-group-item"><a target="_blank" href="https://salvatorecapolupo.github.io/problemi_di_programmazione">Problemi di programmazione</a></li>
-                    <li class="list-group-item"><a target="_blank" href="https://salvatorecapolupo.github.io/insegnareinformatica">Simulatori</a> <span class="display-789"> per Macchina di Turing, Macchina di Von Neumman, Giochi di crittografia </span> </li>
-                    <li class="list-group-item"><a target="_blank" href="https://salvatorecapolupo.github.io/prolog/game.html">Simulatore Prolog</a> (demo incompleta)</li>
-                    <li class="list-group-item">Videogame: <a target="_blank" href="https://salvatorecapolupo.github.io/insuperato">Insuperato</a> (demo incompleta)</li>
-                    <li class="list-group-item">Videogame: <a target="_blank" href="https://salvatorecapolupo.github.io/zedinvaders">ZED Invaders</a> <span class="display-789">(platform in stile retrò)</span></li>
-                    <li class="list-group-item">Videogame: <a target="_blank" href="https://salvatorecapolupo.github.io/ziuq">ZIUQ</a> (indovina la domanda a partire dalla risposta)</li>
-                </ul>
+                <h5> Didattica (per le scuole superiori) </h5>
+
+		    <div class="table-responsive">
+		      <table class="table table-bordered table-striped table-sm table-hover">
+		        <thead class="thead-dark">
+		          <tr>
+		            <th>Repository</th>
+		            <th>Descrizione</th>
+		            <th>Link</th>
+		          </tr>
+		        </thead>
+		        <tbody id="repoTable">
+		          <!-- I repository verranno aggiunti qui dinamicamente -->
+		        </tbody>
+		      </table>
+		    </div>
+		  </div>
+		    
             </div>
         </div>
       
@@ -338,7 +344,55 @@ of the mind, clusters and constellations of data. <strong>Like city lights, rece
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.sound.min.js"></script>
 
-  
+  <script>
+ <script>
+    // Eseguiamo una simulazione dei repository (simuliamo la risposta da GitHub)
+    const repositories = [
+    { name: "All You Need Is Python ", description: "", url: "https://salvatorecapolupo.github.io/allyouneedispython /" },
+    { name: "Chi sono", description: "", url: "https://salvatorecapolupo.github.io/about-me" },
+    { name: "Ccrittografia", description: "", url: "https://salvatorecapolupo.github.io/crittografia/" },
+    { name: "Didattica", description: "", url: "https://salvatorecapolupo.github.io/didattica/" },
+    { name: "divoogle ", description: "", url: "https://salvatorecapolupo.github.io/divoogle /" },
+    { name: "emu8086", description: "", url: "https://salvatorecapolupo.github.io/emu8086/" },
+    { name: "erconverter", description: "", url: "https://salvatorecapolupo.github.io/erconverter/" },
+    { name: "insegnareinformatica", description: "", url: "https://salvatorecapolupo.github.io/insegnareinformatica/" },
+    { name: "insuperato", description: "", url: "https://salvatorecapolupo.github.io/insuperato/" },
+    { name: "Materiale didattico (informatica, TPSIT, Sistemi, GPO)", description: "", url: "https://salvatorecapolupo.github.io/informatica/" },
+    { name: "network-speed-game", description: "", url: "https://salvatorecapolupo.github.io/network-speed-game/" },
+    { name: "paroleitaliane", description: "", url: "https://salvatorecapolupo.github.io/paroleitaliane/" },
+    { name: "privacy", description: "", url: "https://salvatorecapolupo.github.io/privacy/" },
+    { name: "problemi_di_programmazione", description: "", url: "https://salvatorecapolupo.github.io/problemi_di_programmazione/" },
+    { name: "prolog ", description: "", url: "https://salvatorecapolupo.github.io/prolog/" },
+    { name: "puzzlecode ", description: "", url: "https://salvatorecapolupo.github.io/puzzlecode/" },
+    { name: "rfc862", description: "", url: "https://salvatorecapolupo.github.io/rfc862/" },
+    { name: "routing1 ", description: "", url: "https://salvatorecapolupo.github.io/routing1/" },
+    { name: "scuola", description: "", url: "https://salvatorecapolupo.github.io/scuola/" },
+    { name: "surviving-ipv4", description: "", url: "https://salvatorecapolupo.github.io/surviving-ipv4/" },
+    { name: "tcp / udp", description: "", url: "https://salvatorecapolupo.github.io/tcpudp/" },
+    { name: "virgolamobile", description: "", url: "https://salvatorecapolupo.github.io/virgolamobile/" },
+    { name: "ziuq", description: "", url: "https://salvatorecapolupo.github.io/ziuq/open-ended.html" },
+    ];
+
+    function generateRepoTable(repos) {
+      const tableBody = document.getElementById('repoTable');
+      repos.forEach(repo => {
+        const row = document.createElement('tr');
+        
+        row.innerHTML = `
+          <td>${repo.name}</td>
+          <td class="repo-description">${repo.description}</td>
+          <td><a href="${repo.url}" class="repo-link" target="_blank">Visita Repository</a></td>
+        `;
+        
+        tableBody.appendChild(row);
+      });
+    }
+
+    // Carica i dati dei repository
+    generateRepoTable(repositories);
+  </script>
+	  
+  </script>
 
   <!-- Lo sketch p5.js sarà gestito qui -->
   <script>
