@@ -12,6 +12,10 @@
       font-family: 'Arial', sans-serif;
       padding-top: 40px;
     }
+    .table-responsive {
+      display: flex;
+      justify-content: center;
+    }
     .bio-section {
       text-align: center;
       margin-bottom: 40px;
@@ -64,6 +68,14 @@
       font-size: 0.9em;
       color: #999;
     }
+    .table-striped tbody tr:nth-of-type(odd) {
+      background-color: #e9ecef; /* Grigio chiaro */
+    }
+    
+    .table-striped tbody tr:nth-of-type(even) {
+      background-color: #dee2e6; /* Grigio più scuro */
+    }
+
   </style>
 </head>
 <body>
@@ -98,6 +110,11 @@
           <!-- I repository verranno aggiunti qui dinamicamente -->
         </tbody>
       </table>
+
+      <center> <p>
+      <img src="https://salvatorecapolupo.github.io/about-me/email.png" alt="Email di contatto" style="margin-top: 15px; max-width: 220px;">
+      </p> </center>
+
     </div>
 
     <footer>
