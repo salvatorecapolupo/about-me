@@ -3,51 +3,93 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Salvatore Capolupo (Roma)</title>
+  <title> Salvatore Capolupo · Roma </title>
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.6.0/css/bootstrap.min.css" rel="stylesheet">
   <style>
     body {
       background-color: #f4f4f4;
       color: #333;
       font-family: 'Arial', sans-serif;
+      padding-top: 40px;
+    }
+    .bio-section {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .bio-section img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      margin-bottom: 15px;
+    }
+    .bio-text {
+      font-size: 1.1em;
+      max-width: 700px;
+      margin: 0 auto;
+      color: #555;
     }
     h1 {
       text-align: center;
-      font-size: 3em;
+      font-size: 2.8em;
       font-weight: bold;
-      margin-top: 30px;
+      margin-bottom: 30px;
     }
     table th, table td {
       text-align: center;
+      vertical-align: middle;
     }
     .table-responsive {
-      margin-top: 30px;
+      margin-top: 20px;
     }
     .table-hover tbody tr:hover {
       background-color: #f1f1f1;
     }
     .repo-link {
       color: #007bff;
+      font-weight: bold;
     }
     .repo-link:hover {
       color: #0056b3;
+      text-decoration: none;
     }
     .repo-description {
       font-size: 0.9em;
       color: #555;
+    }
+    footer {
+      text-align: center;
+      margin-top: 60px;
+      font-size: 0.9em;
+      color: #999;
     }
   </style>
 </head>
 <body>
 
   <div class="container">
-    <h1>Indice Repository - Salvatore Capolupo</h1>
+
+    <!-- Sezione Bio -->
+    <div class="bio-section">
+      <img src="887951604248072706.jpeg" alt="Salvatore Capolupo · Roma" class="img-thumbnail">
+      <div class="bio-text">
+        <!-- Inserisci qui una breve bio -->
+        <p>
+          Docente di Informatica alle superiori, laureato in ingegneria informatica, dottore di ricerca in ricerca operativa. 
+          Appassionato di divulgazione tecnologica e software open source in PHP, Python, Java, SQL, Javascript. 
+          In questa pagina raccolgo materiale per studenti, colleghi e curiosi del mondo digitale.
+        </p>
+      </div>
+    </div>
+
+    <h1>Indice dei contenuti</h1>
     
     <div class="table-responsive">
-      <table class="table table-bordered table-striped table-sm table-hover">
+      <table class="table table-bordered table-striped table-sm table-hover mx-auto" style="max-width: 1000px;">
         <thead class="thead-dark">
           <tr>
-            <th>Repository</th>
+            <th>Contenuto</th>
             <th>Descrizione</th>
             <th>Link</th>
           </tr>
@@ -57,49 +99,54 @@
         </tbody>
       </table>
     </div>
+
+    <footer>
+      © 2025 · Salvatore Capolupo · Roma (Italia)
+    </footer>
+
   </div>
 
   <script>
     // Eseguiamo una simulazione dei repository (simuliamo la risposta da GitHub)
     const repositories = [
-    { name: "All You Need Is Python ", description: "", url: "https://salvatorecapolupo.github.io/allyouneedispython /" },
-    { name: "Crittografia", description: "", url: "https://salvatorecapolupo.github.io/crittografia/" },
-    { name: "Didattica", description: "", url: "https://salvatorecapolupo.github.io/didattica/" },
-    { name: "Dispense Scuola", description: "", url: "https://salvatorecapolupo.github.io/scuola/" },
-    { name: "emu8086", description: "", url: "https://salvatorecapolupo.github.io/emu8086/" },
-    { name: "Er Converter", description: "", url: "https://salvatorecapolupo.github.io/erconverter/" },
-    { name: "Insegnare Informatica", description: "", url: "https://salvatorecapolupo.github.io/insegnareinformatica/" },
-    { name: "IPv4", description: "", url: "https://salvatorecapolupo.github.io/surviving-ipv4/" },
-    { name: "Insuperato", description: "", url: "https://salvatorecapolupo.github.io/insuperato/" },
-    { name: "Materiale Didattico (Informatica, TPSIT, Sistemi, GPO, ...)", description: "", url: "https://salvatorecapolupo.github.io/informatica/" },
-    { name: "Network Speed Game", description: "", url: "https://salvatorecapolupo.github.io/network-speed-game/" },
-    { name: "Privacy", description: "", url: "https://salvatorecapolupo.github.io/privacy/" },
-    { name: "Problemi di programmazione", description: "", url: "https://salvatorecapolupo.github.io/problemi_di_programmazione/" },
-    { name: "Prolog ", description: "", url: "https://salvatorecapolupo.github.io/prolog/" },
-    { name: "Puzzle Code ", description: "", url: "https://salvatorecapolupo.github.io/puzzlecode/" },
-    { name: "Routing ", description: "", url: "https://salvatorecapolupo.github.io/routing1/" },
-    { name: "Standard RFC 862", description: "", url: "https://salvatorecapolupo.github.io/rfc862/" },
-    { name: "TCP vs. UDP", description: "", url: "https://salvatorecapolupo.github.io/tcpudp/" },
-    { name: "Virgola Mobile", description: "", url: "https://salvatorecapolupo.github.io/virgolamobile/" },
-    { name: "ZIUQ", description: "", url: "https://salvatorecapolupo.github.io/ziuq/open-ended.html" },
+      { name: "Curriculum Vitae", description: "Il mio CV (aggiornato al 2025)", url: "https://salvatorecapolupo.github.io/about-me/5-cv-salvatore-capolupo.pdf" },
+      { name: "Mixed Capacitated General Routing Investigations", description: "La mia tesi di dottorato su un problema di General Routing", url: "https://salvatorecapolupo.github.io/about-me/6-Mixed-Capacitated-General-Routing-Investigations.pdf" },
+      { name: "I miei libri", description: "Tecnofobia, Tecnocrazia sono due saggi a tema tecnologico", url: "https://amzn.to/42qJ0bu" },
+      { name: "All You Need Is Python", description: "", url: "https://salvatorecapolupo.github.io/allyouneedispython/" },
+      { name: "Crittografia", description: "", url: "https://salvatorecapolupo.github.io/crittografia/" },
+      { name: "Didattica (Archivio)", description: "", url: "https://salvatorecapolupo.github.io/didattica/" },
+      { name: "Dispense per la scuola Scuola", description: "", url: "https://salvatorecapolupo.github.io/scuola/" },
+      { name: "Emu 8086", description: "", url: "https://salvatorecapolupo.github.io/emu8086/" },
+      { name: "Er Converter", description: "", url: "https://salvatorecapolupo.github.io/erconverter/" },
+      { name: "Insegnare Informatica", description: "", url: "https://salvatorecapolupo.github.io/insegnareinformatica/" },
+      { name: "IPv4", description: "", url: "https://salvatorecapolupo.github.io/surviving-ipv4/" },
+      { name: "Insuperato", description: "", url: "https://salvatorecapolupo.github.io/insuperato/" },
+      { name: "Materiale Didattico", description: "", url: "https://salvatorecapolupo.github.io/informatica/" },
+      { name: "Network Speed Game", description: "", url: "https://salvatorecapolupo.github.io/network-speed-game/" },
+      { name: "Privacy", description: "", url: "https://salvatorecapolupo.github.io/privacy/" },
+      { name: "Problemi di programmazione", description: "", url: "https://salvatorecapolupo.github.io/problemi_di_programmazione/" },
+      { name: "Prolog", description: "", url: "https://salvatorecapolupo.github.io/prolog/" },
+      { name: "Puzzle Code", description: "", url: "https://salvatorecapolupo.github.io/puzzlecode/" },
+      { name: "Routing", description: "", url: "https://salvatorecapolupo.github.io/routing1/" },
+      { name: "Standard RFC 862", description: "", url: "https://salvatorecapolupo.github.io/rfc862/" },
+      { name: "TCP vs. UDP", description: "", url: "https://salvatorecapolupo.github.io/tcpudp/" },
+      { name: "Virgola Mobile", description: "", url: "https://salvatorecapolupo.github.io/virgolamobile/" },
+      { name: "ZIUQ", description: "", url: "https://salvatorecapolupo.github.io/ziuq/open-ended.html" },
     ];
 
     function generateRepoTable(repos) {
       const tableBody = document.getElementById('repoTable');
       repos.forEach(repo => {
         const row = document.createElement('tr');
-        
         row.innerHTML = `
           <td>${repo.name}</td>
           <td class="repo-description">${repo.description}</td>
           <td><a href="${repo.url}" class="repo-link" target="_blank">Visita Repository</a></td>
         `;
-        
         tableBody.appendChild(row);
       });
     }
 
-    // Carica i dati dei repository
     generateRepoTable(repositories);
   </script>
 
