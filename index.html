@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Salvatore Capolupo &#128058; Roma </title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.6.0/css/bootstrap.min.css" rel="stylesheet">
+  <!-- DataTables CSS -->
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.dataTables.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+  <style>
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/* Reset base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f4f4f4;
+  color: #111;
+  padding: 1rem;
+  line-height: 1.6;
+}
+
+h1,h2,h3,h4,h5,h6{  font-family: 'Press Start 2P', monospace; }
+
+/* Contenitore principale */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* Immagine profilo */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 2rem auto;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+/* Descrizione */
+.descrizione {
+  font-size: 1rem;
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+  word-break: break-word;
+}
+
+/* Tabella */
+.tabella-materiale {
+  overflow-x: auto;
+  display: block;
+  background: #fff;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+}
+
+.tabella-materiale table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+}
+
+.tabella-materiale th,
+.tabella-materiale td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+  font-size: 0.85rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  body {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+  }
+
+  .descrizione {
+    padding: 1rem;
+    font-size: 0.9rem;
+  }
+
+  .tabella-materiale {
+    padding: 0.5rem;
+  }
+
+  .tabella-materiale table {
+    font-size: 0.8rem;
+  }
+}
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Sezione Bio -->
+    <div class="bio-section">
+      <div class="bio-text">
+        <!-- Inserisci qui una breve bio -->
+        <p>
+          <strong> Salvatore Capolupo </strong> - 
+          Insegnante alle superiori, laureato in ingegneria informatica, 
+          dottore di ricerca in ricerca operativa (tesi sul <a href="https://books.google.it/books/about/Mixed_capacitated_general_routing_invest.html?id=rR9yEAAAQBAJ&redir_esc=y"> General Routing </a>), 
+          assegnista di ricerca presso Unical, consulente informatico, sviluppatore, autore di libri ed articoli.  
+          Appassionato di divulgazione tecnologica e software open source in PHP, Python, Java, SQL, Javascript. 
+          
+          In questa pagina raccolgo <strong>materiale per studenti, colleghi e curiosi del mondo digitale</strong>.
+        </p>
+      </div>
+    </div>
+
+      <center><h2>Contatti</h2></center>
+    
+      <center> <p>
+        Per contatti scrivere un'email a: 
+      <img src="https://salvatorecapolupo.github.io/about-me/email.png" alt="Email di contatto" style="margin-top: 15px; max-width: 220px;">
+      </p> </center>
+
+    
+    <center><h2>Materiale</h2></center>
+    
+    <div class="table-responsive">
+      <table id="repoTableWrapper" class="table table-bordered table-striped table-sm table-hover display nowrap mx-auto" style="width:100%">
+  <thead class="thead-dark">
+    <tr>
+      <th>Contenuto</th>
+      <th>Descrizione</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody id="repoTable"></tbody>
+</table>
+
+      <hr/>
+      <br/>
+     <img src="887951604248072706.jpeg" alt="Salvatore Capolupo · Roma" class="img-thumbnail rounded mx-auto d-block">
+
+
+    </div>
+
+    <footer>
+      <p> Ultimo aggiornamento: <em>3 maggio 2025</em> · Salvatore Capolupo · Roma (Italia)  </p>
+      <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://salvatorecapolupo.github.io/about-me/">https://salvatorecapolupo.github.io/about-me/</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://salvatorecapolupo.github.io/about-me/">Salvatore Capolupo</a> is licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nd.svg?ref=chooser-v1" alt=""></a></p> 
+    </footer>
+
+  </div>
+
+  <script>
+    // // Eseguiamo una simulazione dei repository (simuliamo la risposta da GitHub)
+//     const repositories = [
+//       { name: "Curriculum Vitae", description: "Il mio CV (aggiornato al 2025)", url: "https://salvatorecapolupo.github.io/about-me/5-cv-salvatore-capolupo.pdf" },
+//       { name: "Mixed Capacitated General Routing Investigations", description: "La mia tesi di dottorato su un problema di General Routing", url: "https://salvatorecapolupo.github.io/about-me/6-Mixed-Capacitated-General-Routing-Investigations.pdf" },
+//       { name: "I miei libri", description: "Tecnofobia, Tecnocrazia sono due saggi a tema tecnologico", url: "https://amzn.to/42qJ0bu" },
+//       { name: "All You Need Is Python", description: "", url: "https://github.com/salvatorecapolupo/allyouneedispython" },
+//       { name: "Crittografia", description: "Mirror di https://highschool.spsd.org/crypt/about.html", url: "https://salvatorecapolupo.github.io/crittografia/" },
+//       { name: "Didattica (TPSIT, informatica, Sistemi, ...)", description: "", url: "https://salvatorecapolupo.github.io/didattica/" },
+//       { name: "Dispense ", description: "", url: "https://github.com/salvatorecapolupo/scuola/" },
+//       { name: "Er Converter", description: "", url: "https://salvatorecapolupo.github.io/erconverter/" },
+//       { name: "Insegnare Informatica", description: "", url: "https://salvatorecapolupo.github.io/insegnareinformatica/" },
+//       { name: "IPv4", description: "", url: "https://salvatorecapolupo.github.io/surviving-ipv4/" },
+//       { name: "Insuperato", description: "", url: "https://salvatorecapolupo.github.io/insuperato/" },
+//       { name: "Materiale Didattico", description: "", url: "https://salvatorecapolupo.github.io/informatica/" },
+//       { name: "Network Speed Game", description: "", url: "https://salvatorecapolupo.github.io/network-speed-game/" },
+//       { name: "Privacy", description: "", url: "https://salvatorecapolupo.github.io/privacy/" },
+//       { name: "Problemi di programmazione", description: "", url: "https://salvatorecapolupo.github.io/problemi_di_programmazione/" },
+//       { name: "Prolog", description: "", url: "https://salvatorecapolupo.github.io/prolog/" },
+//       { name: "Puzzle Code", description: "Mirror di sito dismesso, disponibile anche qui: https://web.archive.org/web/20190706044803/https://www.puzzlecode.org/", url: "https://salvatorecapolupo.github.io/puzzlecode/public/index.html" },
+//       { name: "Routing", description: "", url: "https://salvatorecapolupo.github.io/routing1/" },
+//       { name: "Standard RFC 862", description: "", url: "https://salvatorecapolupo.github.io/rfc862/" },
+//       { name: "TCP vs. UDP", description: "", url: "https://salvatorecapolupo.github.io/tcpudp/" },
+//       { name: "Virgola Mobile", description: "", url: "https://salvatorecapolupo.github.io/virgolamobile/" },
+//       { name: "ZIUQ", description: "", url: "https://salvatorecapolupo.github.io/ziuq/open-ended.html" },
+//       { name: "Copioni teatrali", description: "", url: "https://www.gttempo.com/autorisito" },
+//       { name: "Pseudo-abstract", description: "", url:"https://salvatorecapolupo.github.io/about-me/psycho-routing.pdf"},
+//       { name: "Pseudo-abstract (prompt utilizzato)", description: "", url:"https://gist.github.com/salvatorecapolupo/3f7b84e1b994d0c8adb48bc9ca406aaf"}
+//     ];
+
+//     function generateRepoTable(repos) {
+//       const tableBody = document.getElementById('repoTable');
+//       repos.forEach(repo => {
+//         const row = document.createElement('tr');
+//         row.innerHTML = `
+//           <td>${repo.name}</td>
+//           <td class="repo-description">${repo.description}</td>
+//           <td><a href="${repo.url}" class="repo-link" target="_blank">Mostra Contenuto</a></td>
+//         `;
+//         tableBody.appendChild(row);
+//       });
+//     }
+//     generateRepoTable(repositories);
+  </script>
+  
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js"></script>
+
+<script>
+const repositories = [
+      { name: "Blog (Substack)", description: "", url: "https://capolooper.substack.com/" },
+      { name: "Chatbot Rogersiano", description: "Emulatore di chatbot rogersiano: sembra quasi che ti capisca. Sembra!", url: "https://salvatorecapolupo.github.io/chatbot/" },
+      { name: "No-as-a-Service (NaaS)", description: "Dire di 'no' è spesso la cosa più sbrigativa :-) Esempio pratico per richiamare una stringa JSON in Javascript.", url: "https://salvatorecapolupo.github.io/no/index.html" },
+      { name: "Machine Learning: KNN (K-Nearest Neighbors)", description: "Classificatore KNN per machine learning https://www.ibm.com/it-it/think/topics/knn", url: "https://salvatorecapolupo.github.io/classificatore/classificatore.html" },
+      { name: "Gioco riconoscimento classi IPv4", description: "Sai riconoscere la classe di un IP?", url: "https://salvatorecapolupo.github.io/surviving-ipv4/ipv4.html" },
+      { name: "Gioco password", description: "Usa password efficaci", url: "https://salvatorecapolupo.github.io/password/" },
+      { name: "_Curriculum Vitae", description: "Il mio CV, aggiornato a febbraio 2025", url: "https://salvatorecapolupo.github.io/about-me/5-cv-salvatore-capolupo.pdf" },
+      { name: "_Mixed Capacitated General Routing Investigations", description: "La mia tesi di dottorato su un problema di General Routing", url: "https://salvatorecapolupo.github.io/about-me/6-Mixed-Capacitated-General-Routing-Investigations.pdf" },
+      { name: "_I miei libri", description: "Tecnofobia, Tecnocrazia sono due saggi a tema tecnologico", url: "https://amzn.to/42qJ0bu" },
+      { name: "All You Need Is Python", description: "Frammenti di codice Python 3 pronti all'uso (request, IA, ecc.)", url: "https://github.com/salvatorecapolupo/allyouneedispython" },
+      { name: "Crittografia", description: "Mirror di https://highschool.spsd.org/crypt/about.html", url: "https://salvatorecapolupo.github.io/crittografia/" },
+      { name: "Didattica (TPSIT, informatica, Sistemi, ...)", description: "Dispense di informatica, sistemi, ecc.", url: "https://salvatorecapolupo.github.io/didattica/" },
+      { name: "Dispense ", description: "Ulteriori dispense di informatica, sistemi, ecc.", url: "https://github.com/salvatorecapolupo/scuola/" },
+      { name: "Er Converter", description: "Convertitore tra formati numerici binario, ottale, decimale, esadecimale, ...", url: "https://salvatorecapolupo.github.io/erconverter/" },
+      { name: "Insegnare Informatica", description: "Dispense informatica, sistemi, TPSIT, ...", url: "https://salvatorecapolupo.github.io/insegnareinformatica/" },
+      { name: "IPv4", description: "Calcolatore di piani di indirizzamento", url: "https://salvatorecapolupo.github.io/surviving-ipv4/chivapiano.html" },
+      { name: "Insuperato", description: "Videogioco in cui è necessario ordinare i tasti di una tastiera secondo la parola data", url: "https://salvatorecapolupo.github.io/insuperato/" },
+      { name: "Materiale Didattico", description: "Dispense di informatica", url: "https://salvatorecapolupo.github.io/informatica/" },
+      { name: "Network Speed Game", description: "", url: "https://salvatorecapolupo.github.io/network-speed-game/" },
+      { name: "Privacy", description: "", url: "https://salvatorecapolupo.github.io/privacy/" },
+      { name: "Problemi di programmazione", description: "", url: "https://salvatorecapolupo.github.io/problemi_di_programmazione/" },
+      { name: "Prolog", description: "", url: "https://salvatorecapolupo.github.io/prolog/" },
+      { name: "Puzzle Code", description: "Mirror di sito dismesso, disponibile anche qui: https://web.archive.org/web/20190706044803/https://www.puzzlecode.org/", url: "https://salvatorecapolupo.github.io/puzzlecode/public/index.html" },
+      { name: "Routing", description: "", url: "https://salvatorecapolupo.github.io/routing1/" },
+      { name: "Standard RFC 862", description: "", url: "https://salvatorecapolupo.github.io/rfc862/" },
+      { name: "TCP vs. UDP", description: "", url: "https://salvatorecapolupo.github.io/tcpudp/" },
+      { name: "Virgola Mobile", description: "", url: "https://salvatorecapolupo.github.io/virgolamobile/" },
+      { name: "ZIUQ", description: "", url: "https://salvatorecapolupo.github.io/ziuq/open-ended.html" },
+      { name: "~Copioni teatrali", description: "", url: "https://www.gttempo.com/autorisito" },
+      { name: "~Pseudo-abstract", description: "", url:"https://salvatorecapolupo.github.io/about-me/psycho-routing.pdf"},
+      { name: "~Pseudo-abstract (prompt utilizzato)", description: "", url:"https://gist.github.com/salvatorecapolupo/3f7b84e1b994d0c8adb48bc9ca406aaf"}
+    ];
+
+
+  function generateRepoTable(repos) {
+    const tableBody = document.getElementById('repoTable');
+    repos.forEach(repo => {
+      const row = document.createElement('tr');
+      row.innerHTML = `
+        <td>${repo.name}</td>
+        <td class="repo-description">${repo.description}</td>
+        <td><a href="${repo.url}" class="repo-link" target="_blank">Mostra</a></td>
+      `;
+      tableBody.appendChild(row);
+    });
+  }
+
+  $(document).ready(function () {
+  generateRepoTable(repositories);
+  $('#repoTableWrapper').DataTable({
+    responsive: true,
+    paging: false,
+    searching: true,
+    // info: false,
+    ordering: true,
+    columnDefs: [
+      { targets: 2, orderable: false }
+    ],
+    language: {
+      search: "Cerca:",
+      zeroRecords: "Nessun risultato trovato.",
+      infoEmpty: "Nessun risultato disponibile."
+    }
+  });
+});
+
+</script>
+
+</body>
+</html>
