@@ -11,6 +11,31 @@
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 
   <style>
+/**fix icone cc**/
+
+.cc-icons {
+  display: flex;
+  justify-content: center; /* centra orizzontalmente */
+  gap: 10px; /* spazio tra le icone */
+  margin-top: 20px;
+}
+
+.cc-icons img {
+  width: 40px; /* ridimensiona le icone */
+  height: auto;
+}
+
+/** fix foto **/
+
+    .profile-photo {
+  display: block;       /* permette di usare margin auto */
+  margin: 20px auto;    /* centra la foto orizzontalmente */
+  width: 150px;         /* imposta una larghezza più piccola */
+  height: auto;         /* mantiene proporzioni */
+  border-radius: 50%;   /* opzionale, per foto tonde */
+}
+
+    
 /* Google Font */
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
@@ -127,7 +152,7 @@ img {
       <center><h2>Contatti</h2></center>
     
       <center> <p>
-        Per contatti scrivere un'email a: 
+        Per contatti scrivere a: 
       <img src="https://salvatorecapolupo.github.io/about-me/email.png" alt="Email di contatto" style="margin-top: 15px; max-width: 220px;">
       </p> </center>
 
@@ -148,13 +173,13 @@ img {
 
       <hr/>
       <br/>
-     <img src="887951604248072706.jpeg" alt="Salvatore Capolupo · Roma" class="img-thumbnail rounded mx-auto d-block">
+     <img src="887951604248072706.jpeg" alt="Salvatore Capolupo · Roma" class="profile-photo img-thumbnail rounded mx-auto d-block">
 
 
     </div>
 
     <footer>
-      <p> Ultimo aggiornamento: <em>3 maggio 2025</em> · Salvatore Capolupo · Roma (Italia)  </p>
+      <p> Ultimo aggiornamento: <em>16 giugno 2025</em> · Salvatore Capolupo · Roma (Italia)  </p>
       <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://salvatorecapolupo.github.io/about-me/">https://salvatorecapolupo.github.io/about-me/</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://salvatorecapolupo.github.io/about-me/">Salvatore Capolupo</a> is licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nd.svg?ref=chooser-v1" alt=""></a></p> 
     </footer>
 
