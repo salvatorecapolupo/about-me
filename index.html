@@ -182,7 +182,8 @@ img {
 </table>
 
       <hr/>
-      <div class="bio-section">
+      
+      <div class="bio-section d-none" id="weekendDiv">
       <div class="bio-text">
               <center><h2>Canale Telegram </h2></center>
         <!-- Inserisci qui una breve bio -->
@@ -195,6 +196,7 @@ img {
         </p>
       </div>
     </div>
+      
       <hr/>
      <img src="887951604248072706.jpeg" alt="Salvatore Capolupo · Roma" class="profile-photo img-thumbnail rounded mx-auto d-block">
     </div>
@@ -375,6 +377,16 @@ const repositories = [
   }
 
   $(document).ready(function () {
+
+  // hack ? 
+  const now = new Date();
+  const hour = now.getHours(); // 0-23
+
+  if ( hour>=15 ) {
+    const diego_milito = document.getElementById('weekendDiv');
+    diego_milito.classList.remove('d-none'); // Mostra il div
+  }
+    
   generateRepoTable(repositories);
   $('#repoTableWrapper').DataTable({
     responsive: true,
