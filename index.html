@@ -352,17 +352,17 @@ const repositories = [
   $('#repoTableWrapper').DataTable({
     //responsive: true,
     paging: true,        // attivo la paginazione
-    pageLength: 5,       // massimo 5 righe per pagina
+    pageLength: 10,       // massimo 5 righe per pagina
     searching: true,
     // info: false,
     ordering: true,
-    columnDefs: [
-      { targets: 2, orderable: false }
-    ],
+    //columnDefs: [
+    //  { targets: 2, orderable: false }
+    //],
     language: {
-      search: "Cerca:",
-      zeroRecords: "Non trovo nulla, mi spiace.",
-      infoEmpty: "Non ci sono dati, a quanto pare..."
+      search: "Cerca (materiale didattico, giochi, ecc.)",
+      zeroRecords: "Non trovo nulla, mi dispiace. Ritenta!",
+      infoEmpty: "Non ci sono dati, a quanto pare... Oppure c'è qualche altro errore"
     }
   });
 });
