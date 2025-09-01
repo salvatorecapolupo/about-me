@@ -363,15 +363,7 @@ const repositories = [
   }
 
   $(document).ready(function () {
-
-  // hack ? 
-  const now = new Date();
-  const hour = now.getHours(); // 0-23
-
-  if ( hour>=15 ) {
-    const diego_milito = document.getElementById('weekendDiv');
-    diego_milito.classList.remove('d-none'); // Mostra il div
-  }
+  console.log("Se stai veramente leggendo questo, sei uno studente oppure un hacker :-)");   
     
   generateRepoTable(repositories);
   $('#repoTableWrapper').DataTable({
