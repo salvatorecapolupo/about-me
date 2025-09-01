@@ -283,53 +283,8 @@ img {
     </footer>
 
   </div>
-
-  <script>
-    // // Eseguiamo una simulazione dei repository (simuliamo la risposta da GitHub)
-//     const repositories = [
-//       { name: "Curriculum Vitae", description: "Il mio CV (aggiornato al 2025)", url: "https://salvatorecapolupo.github.io/about-me/5-cv-salvatore-capolupo.pdf" },
-//       { name: "Mixed Capacitated General Routing Investigations", description: "La mia tesi di dottorato su un problema di General Routing", url: "https://salvatorecapolupo.github.io/about-me/6-Mixed-Capacitated-General-Routing-Investigations.pdf" },
-//       { name: "I miei libri", description: "Tecnofobia, Tecnocrazia sono due saggi a tema tecnologico", url: "https://amzn.to/42qJ0bu" },
-//       { name: "All You Need Is Python", description: "", url: "https://github.com/salvatorecapolupo/allyouneedispython" },
-//       { name: "Crittografia", description: "Mirror di https://highschool.spsd.org/crypt/about.html", url: "https://salvatorecapolupo.github.io/crittografia/" },
-//       { name: "Didattica (TPSIT, informatica, Sistemi, ...)", description: "", url: "https://salvatorecapolupo.github.io/didattica/" },
-//       { name: "Dispense ", description: "", url: "https://github.com/salvatorecapolupo/scuola/" },
-//       { name: "Er Converter", description: "", url: "https://salvatorecapolupo.github.io/erconverter/" },
-//       { name: "Insegnare Informatica", description: "", url: "https://salvatorecapolupo.github.io/insegnareinformatica/" },
-//       { name: "IPv4", description: "", url: "https://salvatorecapolupo.github.io/surviving-ipv4/" },
-//       { name: "Insuperato", description: "", url: "https://salvatorecapolupo.github.io/insuperato/" },
-//       { name: "Materiale Didattico", description: "", url: "https://salvatorecapolupo.github.io/informatica/" },
-//       { name: "Network Speed Game", description: "", url: "https://salvatorecapolupo.github.io/network-speed-game/" },
-//       { name: "Privacy", description: "", url: "https://salvatorecapolupo.github.io/privacy/" },
-//       { name: "Problemi di programmazione", description: "", url: "https://salvatorecapolupo.github.io/problemi_di_programmazione/" },
-//       { name: "Prolog", description: "", url: "https://salvatorecapolupo.github.io/prolog/" },
-//       { name: "Puzzle Code", description: "Mirror di sito dismesso, disponibile anche qui: https://web.archive.org/web/20190706044803/https://www.puzzlecode.org/", url: "https://salvatorecapolupo.github.io/puzzlecode/public/index.html" },
-//       { name: "Routing", description: "", url: "https://salvatorecapolupo.github.io/routing1/" },
-//       { name: "Standard RFC 862", description: "", url: "https://salvatorecapolupo.github.io/rfc862/" },
-//       { name: "TCP vs. UDP", description: "", url: "https://salvatorecapolupo.github.io/tcpudp/" },
-//       { name: "Virgola Mobile", description: "", url: "https://salvatorecapolupo.github.io/virgolamobile/" },
-//       { name: "ZIUQ", description: "", url: "https://salvatorecapolupo.github.io/ziuq/open-ended.html" },
-//       { name: "Copioni teatrali", description: "", url: "https://www.gttempo.com/autorisito" },
-//       { name: "Pseudo-abstract", description: "", url:"https://salvatorecapolupo.github.io/about-me/psycho-routing.pdf"},
-//       { name: "Pseudo-abstract (prompt utilizzato)", description: "", url:"https://gist.github.com/salvatorecapolupo/3f7b84e1b994d0c8adb48bc9ca406aaf"}
-//     ];
-
-//     function generateRepoTable(repos) {
-//       const tableBody = document.getElementById('repoTable');
-//       repos.forEach(repo => {
-//         const row = document.createElement('tr');
-//         row.innerHTML = `
-//           <td>${repo.name}</td>
-//           <td class="repo-description">${repo.description}</td>
-//           <td><a href="${repo.url}" class="repo-link" target="_blank">Mostra Contenuto</a></td>
-//         `;
-//         tableBody.appendChild(row);
-//       });
-//     }
-//     generateRepoTable(repositories);
-  </script>
   
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js"></script>
 
@@ -377,7 +332,6 @@ const repositories = [
       { name: "Pseudo-abstract", description: "", url:"https://salvatorecapolupo.github.io/about-me/psycho-routing.pdf"},
       { name: "~Pseudo-abstract (prompt utilizzato)", description: "", url:"https://gist.github.com/salvatorecapolupo/3f7b84e1b994d0c8adb48bc9ca406aaf"}
     ];
-
 
   function generateRepoTable(repos) {
     const tableBody = document.getElementById('repoTable');
