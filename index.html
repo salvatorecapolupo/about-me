@@ -338,8 +338,8 @@ const repositories = [
     repos.forEach(repo => {
       const row = document.createElement('tr');
       row.innerHTML = `
-        <td>${repo.name} - ${repo.description}</td>
-        <td><a href="${repo.url}" class="repo-link" target="_blank">Mostra</a></td>
+        <td><strong>${repo.name}</strong> ${repo.description}</td>
+        <td><a href="${repo.url}" class="repo-link" target="_blank"> ${repo.url} </a></td>
       `;
       tableBody.appendChild(row);
     });
