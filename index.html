@@ -226,10 +226,9 @@ img {
     <br/>
     <quote> </quote>
         <br/>
-        <img src="./turing.png" class="img-thumbnail rounded float-righ" alt="Questa immagine non carica :-("/>
 
       <div class="card" style="width: 18rem;">
-        <img src="turing.png" class="card-img-top" alt="...">
+        <img src="./Alan_Turing_Aged_16.jpg" class="card-img-top" alt="...">
         <div class="card-body"> 
           <h5 class="card-title"></h5>
           <p class="card-text">
@@ -356,9 +355,9 @@ const repositories = [
       { name: "Machine Learning: KNN (K-Nearest Neighbors)", description: "Classificatore KNN per machine learning https://www.ibm.com/it-it/think/topics/knn", url: "https://salvatorecapolupo.github.io/classificatore/classificatore.html" },
       { name: "Gioco riconoscimento classi IPv4", description: "Sai riconoscere la classe di un IP?", url: "https://salvatorecapolupo.github.io/surviving-ipv4/ipv4.html" },
       { name: "Gioco password", description: "Usa password efficaci", url: "https://salvatorecapolupo.github.io/password/" },
-      { name: "_Curriculum Vitae", description: "Il mio CV, aggiornato a febbraio 2025", url: "https://salvatorecapolupo.github.io/about-me/5-cv-salvatore-capolupo.pdf" },
-      { name: "_Mixed Capacitated General Routing Investigations", description: "La mia tesi di dottorato su un problema di General Routing", url: "https://salvatorecapolupo.github.io/about-me/6-Mixed-Capacitated-General-Routing-Investigations.pdf" },
-      { name: "_I miei libri", description: "Tecnofobia, Tecnocrazia sono due saggi a tema tecnologico", url: "https://amzn.to/42qJ0bu" },
+      { name: "Curriculum", description: "Il mio CV, aggiornato a febbraio 2025", url: "https://salvatorecapolupo.github.io/about-me/5-cv-salvatore-capolupo.pdf" },
+      { name: "Mixed Capacitated General Routing Investigations", description: "La mia tesi di dottorato su un problema di General Routing", url: "https://salvatorecapolupo.github.io/about-me/6-Mixed-Capacitated-General-Routing-Investigations.pdf" },
+      { name: "_Libri", description: "Tecnofobia, Tecnocrazia sono due saggi a tema tecnologico", url: "https://amzn.to/42qJ0bu" },
       { name: "All You Need Is Python", description: "Frammenti di codice Python 3 pronti all'uso (request, IA, ecc.)", url: "https://github.com/salvatorecapolupo/allyouneedispython" },
       { name: "Crittografia", description: "Mirror di https://highschool.spsd.org/crypt/about.html", url: "https://salvatorecapolupo.github.io/crittografia/" },
       { name: "Didattica (TPSIT, informatica, Sistemi, ...)", description: "Dispense di informatica, sistemi, ecc.", url: "https://salvatorecapolupo.github.io/didattica/" },
@@ -376,9 +375,8 @@ const repositories = [
       { name: "Standard RFC 862", description: "", url: "https://salvatorecapolupo.github.io/rfc862/" },
       { name: "TCP vs. UDP", description: "", url: "https://salvatorecapolupo.github.io/tcpudp/" },
       { name: "Virgola Mobile", description: "", url: "https://salvatorecapolupo.github.io/virgolamobile/" },
-      { name: "ZIUQ", description: "", url: "https://salvatorecapolupo.github.io/ziuq/open-ended.html" },
-      { name: "~Copioni teatrali", description: "", url: "https://www.gttempo.com/autorisito" },
-      { name: "~Pseudo-abstract", description: "", url:"https://salvatorecapolupo.github.io/about-me/psycho-routing.pdf"},
+      { name: "~ZIUQ", description: "", url: "https://salvatorecapolupo.github.io/ziuq/open-ended.html" },
+      { name: "Pseudo-abstract", description: "", url:"https://salvatorecapolupo.github.io/about-me/psycho-routing.pdf"},
       { name: "~Pseudo-abstract (prompt utilizzato)", description: "", url:"https://gist.github.com/salvatorecapolupo/3f7b84e1b994d0c8adb48bc9ca406aaf"}
     ];
 
@@ -388,8 +386,7 @@ const repositories = [
     repos.forEach(repo => {
       const row = document.createElement('tr');
       row.innerHTML = `
-        <td>${repo.name}</td>
-        <td class="repo-description">${repo.description}</td>
+        <td>${repo.name} - ${repo.description}</td>
         <td><a href="${repo.url}" class="repo-link" target="_blank">Mostra</a></td>
       `;
       tableBody.appendChild(row);
@@ -397,7 +394,7 @@ const repositories = [
   }
 
   $(document).ready(function () {
-  console.log("Se stai veramente leggendo questo, sei uno studente oppure un hacker :-)");   
+  console.log("Se stai VERAMENTE leggendo questo, sei uno studente. Oppure un potenziale hacker :-)");   
     
   generateRepoTable(repositories);
   $('#repoTableWrapper').DataTable({
