@@ -350,15 +350,11 @@ const repositories = [
     
   generateRepoTable(repositories);
   $('#repoTableWrapper').DataTable({
-    //responsive: true,
+    responsive: true,
     paging: true,        // attivo la paginazione
-    pageLength: 10,       // massimo 5 righe per pagina
+    pageLength: 10,       // massimo 10 righe per pagina
     searching: true,
-    // info: false,
     ordering: true,
-    //columnDefs: [
-    //  { targets: 2, orderable: false }
-    //],
     language: {
       search: "Cerca (materiale didattico, giochi, ecc.)",
       zeroRecords: "Non trovo nulla, mi dispiace. Ritenta!",
