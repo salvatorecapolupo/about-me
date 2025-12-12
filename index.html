@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Salvatore Capolupo &#128058; </title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- DataTables CSS -->
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.dataTables.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+  <style>
+/**fix icone cc**/
+
+.cc-icons {
+  display: flex;
+  justify-content: center; /* centra orizzontalmente */
+  gap: 10px; /* spazio tra le icone */
+  margin-top: 20px;
+}
+
+.cc-icons img {
+  width: 40px; /* ridimensiona le icone */
+  height: auto;
+}
+
+/** fix foto **/
+
+    .profile-photo {
+  display: block;       /* permette di usare margin auto */
+  margin: 20px auto;    /* centra la foto orizzontalmente */
+  width: 150px;         /* imposta una larghezza più piccola */
+  height: auto;         /* mantiene proporzioni */
+  border-radius: 50%;   /* opzionale, per foto tonde */
+}
+
+    
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/* Reset base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f4f4f4;
+  color: #111;
+  padding: 1rem;
+  line-height: 1.6;
+}
+
+h1,h2,h3,h4,h5,h6{  font-family: 'Press Start 2P', monospace; }
+
+/* Contenitore principale */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* Immagine profilo */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 2rem auto;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+/* Descrizione */
+.descrizione {
+  font-size: 1rem;
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+  word-break: break-word;
+}
+
+/* Tabella */
+.tabella-materiale {
+  overflow-x: auto;
+  display: block;
+  background: #fff;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+}
+
+.tabella-materiale table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+}
+
+.tabella-materiale th,
+.tabella-materiale td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+  font-size: 0.85rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  body {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+  }
+
+  .descrizione {
+    padding: 1rem;
+    font-size: 0.9rem;
+  }
+
+  .tabella-materiale {
+    padding: 0.5rem;
+  }
+
+  .tabella-materiale table {
+    font-size: 0.8rem;
+  }
+}
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Sezione Bio -->
+    <div class="bio-section">
+      <div class="bio-text">
+        <!-- Inserisci qui una breve bio -->
+        <p>
+          <strong> Salvatore Capolupo </strong> 
+          <img src="887951604248072706.jpeg" alt="Salvatore Capolupo · Roma" class="profile-photo img-thumbnail rounded mx-auto d-block">
+
+          Insegnante alle superiori, laureato in ingegneria informatica, 
+          dottore di ricerca in ricerca operativa (tesi sul <a href="https://books.google.it/books/about/Mixed_capacitated_general_routing_invest.html?id=rR9yEAAAQBAJ&redir_esc=y"> General Routing </a>), 
+          assegnista di ricerca presso Unical, consulente informatico, sviluppatore, autore di libri ed articoli.  
+        </p>
+        <p>
+          Appassionato di divulgazione tecnologica e software open source nei linguaggi: PHP, Python, Java, SQL, Javascript. 
+          </p>
+        <p>
+          In questa pagina ho inserito <strong>materiale gratuito per studenti, colleghi e curiosi del mondo digitale</strong>.
+        </p>
+      </div>
+    </div>
+    
+      <center> <p>
+        Per contatti scrivere a (l'indirizzo deve essere copiato manualmente): 
+      <img src="https://salvatorecapolupo.github.io/about-me/email.png" alt="Email di contatto" style="margin-top: 15px; max-width: 220px;">
+      </p> </center>
+
+    <center><h2>Materiale didattico</h2></center>
+
+    <p> Adatto per scuole secondarie di secondo grado (liceo, istituti tecnici, istituti commerciali) </p>
+    <p> Materie: 
+        <span> Informatica </span>, 
+        <span> Gestione Progetto</span>, 
+        <span> Scienze e tecnologie informatiche</span>, 
+        <span> Sistemi e reti</span>, 
+        <span> TPSIT (Teoria del Paranormale, Speculazioni Insonsabili e Teiere Tecnologiche Progettazione di Sistemi Informatici e di Telecomunicazioni. :-) </span> 
+    </p>
+
+    
+    <div class="table-responsive">
+      <table id="repoTableWrapper" class="table table-bordered table-striped table-sm table-hover display nowrap mx-auto" style="width:100%">
+  <thead class="thead-dark">
+    <tr>
+      <th>Descrizione</th>
+      <th>Link</th>
+    </tr>
+  </thead>
+  <tbody id="repoTable"></tbody>
+</table>
+
+      <hr/>
+    
+      
+    </div>
+
+<h2> Archivio </h2>
+ 
+    <p> Materiale precedente - Clicca sul link per accedere alla risorsa. </p> 
+
+<ul class="list-group">
+  <li class="list-group-item"> <span class="badge badge-pill badge-info"> (dispensa) </span> <a href="Dispensa_aritmetica_modulo_N.pdf" target="_blank"> Dispensa: capire bene l'aritmetica modulo N (Capolupo) </a> </li>
+  <li class="list-group-item"> <span class="badge badge-pill badge-info"> (dispensa) </span> <a target="_blank" href="C++ Array e Matrici.pdf"> Dispensa C++: array e matrici, problemi svolti (Capolupo) </a></li>
+  <li class="list-group-item"> <span class="badge badge-pill badge-info"> (dispensa) </span> <a target="_blank" href="C++ informatica Fizz Buzz.pdf"> Dispensa C++: from zero to hero, problema Fizz-Buzz (Capolupo) </a></li>
+  <li class="list-group-item"> <span class="badge badge-pill badge-info"> (dispensa) </span> <a target="_blank" href="ragionando-assembly.pdf"> Ragionando su Assembly (Capolupo) </a></li>
+  <li class="list-group-item"><span class="badge badge-pill badge-info"> (dispensa) </span><a target="_blank" href="https://www.andreaminini.com/ai/sistemi-esperti/"> IA: dispensa sui sistemi esperti </a>  </li>
+  <li class="list-group-item"> <span class="badge badge-pill badge-info"> (dispensa) </span> <a target="_blank" href="sistemi-operativi-capolupo.pdf"> Dispensa Sistemi operativi (Capolupo) </a></li>
+  <li class="list-group-item"> <span class="badge badge-pill badge-info"> (esempi interattivi) </span> <a target="_blank" href="https://www.w3schools.com/sql/sql_select.asp"> SQL: esercizi interattivi / progressivi </a></li>
+  <li class="list-group-item"><span class="badge badge-pill badge-info"> (esempi interattivi) </span><a target="_blank" href="https://montyhall.io/"> Simulatore interattivo del problema di Monty Hall </a> </li>
+  <li class="list-group-item"><span class="badge badge-pill badge-info"> (video) </span>: <a target="_blank" href="https://www.youtube.com/watch?v=-PuqKbu9K3U"> Ricerca Lineare, ma col flamenco </a> </li>
+  <li class="list-group-item"> <span class="badge badge-pill badge-info"> (video) </span> <a target="_blank" href="https://www.youtube.com/watch?v=Iv3vgjM8Pv4">Bubble sort, ma con la danza</a> </li>
+  <li class="list-group-item"><span class="badge badge-pill badge-info"> (video) </span>: <a target="_blank" href="https://www.youtube.com/watch?v=Xw2D9aJRBY4"> Heap sort, ma con la danza</a> </li>
+  <li class="list-group-item"><span class="badge badge-pill badge-info"> (video) </span>: <a target="_blank" href="https://www.youtube.com/watch?v=3San3uKKHgg"> Quick sort, ma con la danza</a> </li>
+  <li class="list-group-item"><span class="badge badge-pill badge-info"> (video) </span>: <a target="_blank" href="https://www.youtube.com/watch?v=kPRA0W1kECg"> Che suono emettono gli algoritmi di ordinamento? </a> </li>
+  <li class="list-group-item"><span class="badge badge-pill badge-info"> (open source)</span> <a href="https://www.gns3.com/">gns3</a></li>
+</ul>
+
+      <hr/> 
+
+
+    <h2> Emulatori </h2>
+    <p> Anche questi da usare direttamente nel browser. Non richiedono installazione. </p>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item"><a href="https://yjdoc2.github.io/8086-emulator-web/" target="_blank">Emulatore Assembly 8086 (yjdoc2.github.io)</a></li>
+        <li class="list-group-item"><a href="https://kobzol.github.io/davis/" target="_blank">Emulatore Assembly 8086 (kobzol.github.io)</a> </li>
+        <li class="list-group-item"><a href="https://schweigi.github.io/assembler-simulator/index.html" target="_blank">Emulatore Assembly (schweigi.github.io)</a> </li>
+        <li class="list-group-item"><a href="https://vonsim.guglio.net/" target="_blank">Macchina di Von Neumann programmabile (vonsim.guglio.net)</a> programmabile</li>
+        <li class="list-group-item"><a href="https://turingmachine.io/" target="_blank">Macchina di Turing (turingmachine.io)</a> programmabile</li>
+        <li class="list-group-item"><a href="https://salvatorecapolupo.github.io/puzzlecode/public/index.html" target="_blank">PuzzleCode</a> - <em>gamification</em> per programmazione procedurale</li>
+    </ul>
+
+    <br/>
+
+  <div class="container py-5">
+    <h1 class="text-center mb-4"></h1>
+    <div class="row">
+      <!-- Colonna 1 -->
+      <div class="col-12 col-md-4 mb-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title"></h5>
+            <p class="card-text">
+
+<div class="card" style="">
+        <img src="./Alan_Turing_Aged_16.jpg" class="card-img-top" alt="...">
+        <div class="card-body"> 
+          <h5 class="card-title"></h5>
+          <p class="card-text">
+        <code>
+        A volte 
+          sono proprio 
+          le persone 
+          a cui nessuno dà credito 
+          a fare le cose 
+          che nessuno 
+          si aspetterebbe_
+        "(A. Turing)</code>
+          </p>
+        </div>
+      </div>
+            
+              
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- Colonna 2 -->
+      <div class="col-12 col-md-4 mb-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title"></h5>
+            <p class="card-text">
+
+              <div class="card" style="">
+        <img src="Rousseau.jpg" class="card-img-top" alt="...">
+        <div class="card-body"> 
+          <h5 class="card-title"></h5>
+          <p class="card-text">
+            <em>
+            "Quando Emilio imparerà il suo mestiere, io voglio apprenderlo con lui; 
+                perché sono convinto che <strong> non apprenderà mai bene 
+                  altro che ciò che impareremo insieme</strong>." (J. J. Rousseau) 
+            </em> 
+          </p>
+        </div>
+      </div>
+              
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- Colonna 3 -->
+      <div class="col-12 col-md-4 mb-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title"></h5>
+            <p class="card-text">
+              
+        <iframe src="https://giphy.com/embed/l0HlBrqIs8euKI1fq" width="auto" height="180" style="" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p>
+          <a href="https://giphy.com/gifs/southparkgifs-l0HlBrqIs8euKI1fq">via GIPHY</a></p> 
+
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    
+    <quote> </quote>
+        <br/>
+
+      
+    
+        <br/>
+
+      
+
+    
+    <br/><br/>
+
+      <p> 
+    </p>
+
+    
+    <footer>
+      <p> Ultimo aggiornamento: <em>27 novembre 2025</em> · Salvatore Capolupo  </p>
+      <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/">
+        <a property="dct:title" rel="cc:attributionURL" href="https://salvatorecapolupo.github.io/about-me/">https://salvatorecapolupo.github.io/about-me/</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://salvatorecapolupo.github.io/about-me/">Salvatore Capolupo</a> is licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International</a>
+
+      <div style="display: flex; align-items: center; gap: 6px;">
+  <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt="CC" style="height:22px;">
+  <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt="BY" style="height:22px;">
+  <img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" alt="NC" style="height:22px;">
+  <img src="https://mirrors.creativecommons.org/presskit/icons/nd.svg?ref=chooser-v1" alt="ND" style="height:22px;">
+</div>
+      </p> 
+    </footer>
+
+  </div>
+  
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js"></script>
+
+<script>
+  
+const repositories = [
+      { name: "Didattimizzazione", description: "Guida pratica alla didattimizzazione (progetto SEO per posizionarsi su keyword mirata)", url: "https://salvatorecapolupo.github.io/Didattimizzazione/" },
+      { name: "~Libri", description: "Tecnofobia, Tecnocrazia sono due saggi a tema tecnologico", url: "https://amzn.to/42qJ0bu" },
+      { name: "~Pseudo-abstract (prompt utilizzato)", description: "", url:"https://gist.github.com/salvatorecapolupo/3f7b84e1b994d0c8adb48bc9ca406aaf"},
+      { name: "~ZIUQ", description: "", url: "https://salvatorecapolupo.github.io/ziuq/open-ended.html" },
+      { name: "All You Need Is Python", description: "Frammenti di codice Python 3 pronti all'uso (request, IA, ecc.)", url: "https://github.com/salvatorecapolupo/allyouneedispython" },
+      { name: "Articoli su Substack.com", description: "", url: "https://capolooper.substack.com/" },
+      { name: "Birthday Paradox Simulator (Simulatore del paradosso del compleanno)", description: "Versione alpha, LLM generated", url: "https://salvatorecapolupo.github.io/birthdayparadox/" },
+      { name: "Chatbot Rogersiano", description: "Emulatore di chatbot rogersiano: sembra quasi che ti capisca. Sembra!", url: "https://salvatorecapolupo.github.io/chatbot/" },
+      { name: "Codewall - Completa il codice (alpha)", description: "", url: "https://salvatorecapolupo.github.io/codewall/" },
+      { name: "Simulatore di albero n-ario (alpha) / JSON", description: "", url: "https://salvatorecapolupo.github.io/thetree/" },
+      { name: "Convertitore decimale/binario/esadecimale (alpha version)", description: "", url: "https://salvatorecapolupo.github.io/convertiamo/" },
+      { name: "Come funziona la crittografia", description: "Mirror di https://highschool.spsd.org/crypt/about.html", url: "https://salvatorecapolupo.github.io/crittografia/" },
+      { name: "Il mio CV (Curriculum Vitae)", description: "Il mio CV, aggiornato a febbraio 2025", url: "https://salvatorecapolupo.github.io/about-me/5-cv-salvatore-capolupo.pdf" },
+      { name: "Un gioco - Prototipo videogioco testuale (alpha version)", description: "", url: "https://salvatorecapolupo.github.io/ungioco/" },
+      { name: "Documenti Ministeriali per scuola / informatica", description: "", url: "https://salvatorecapolupo.github.io/documenti-scuola-informatica /" },
+      { name: "Er Converter", description: "Convertitore tra formati numerici binario, ottale, decimale, esadecimale, ...", url: "https://salvatorecapolupo.github.io/erconverter/" },
+      { name: "Esercizi vari - terminale Linux", description: "", url: "https://github.com/salvatorecapolupo/about-me/blob/main/_Capolupo_esercizi_linux_4E.pdf" },
+      { name: "Generatore di password xkcd", description: "", url: "https://salvatorecapolupo.github.io/generatore-di-password/" },
+      { name: "Generatore Lineare Congruenziale", description: "Emulatore di un generatore Lineare Congruenziale per numeri casuali, con grafico dei numeri sovrapponibili.", url: "https://salvatorecapolupo.github.io/lcg/" },
+      { name: "Gioco delle password", description: "Usa password efficaci", url: "https://salvatorecapolupo.github.io/password/" },
+      { name: "Gioco riconoscimento classi IPv4", description: "Sai riconoscere la classe di un IP?", url: "https://salvatorecapolupo.github.io/surviving-ipv4/ipv4.html" },
+      { name: "Insuperato", description: "Videogioco prototipo in cui è necessario ordinare i tasti di una tastiera secondo la parola data", url: "https://salvatorecapolupo.github.io/insuperato/" },
+      { name: "IPv4 - Subnetting", description: "Calcolatore di piani di indirizzamento", url: "https://salvatorecapolupo.github.io/surviving-ipv4/chivapiano.html" },
+      { name: "Machine Learning: algoritmo KNN (K-Nearest Neighbors)", description: "Classificatore KNN per machine learning https://www.ibm.com/it-it/think/topics/knn", url: "https://salvatorecapolupo.github.io/classificatore/classificatore.html" },
+      { name: "Mappa geografica IPv4 (alpha)", description: "", url: "https://salvatorecapolupo.github.io/IPv4world/" },
+      { name: "Esercizi svolti: le basi di C++", description: "5 esercizi + gamification finale per il potenziamento", url: "https://github.com/salvatorecapolupo/informatica" },
+      { name: "Mixed Capacitated General Routing Investigations", description: "La mia tesi di dottorato su un problema di General Routing", url: "https://salvatorecapolupo.github.io/about-me/6-Mixed-Capacitated-General-Routing-Investigations.pdf" },
+      { name: "Network Speed Game", description: "", url: "https://salvatorecapolupo.github.io/network-speed-game/" },
+      { name: "No-as-a-Service (NaaS)", description: "Dire di 'no' è spesso la cosa più sbrigativa :-) Esempio pratico per richiamare una stringa JSON in Javascript.", url: "https://salvatorecapolupo.github.io/no/index.html" },
+      { name: "Numeri in sequenza che fanno 100 come somma/differenza (alpha) / JSON", description: "", url: "https://salvatorecapolupo.github.io/100/" },
+      { name: "Privacy", description: "", url: "https://salvatorecapolupo.github.io/privacy/" },
+      { name: "Problema delle otto regine", description: "", url: "https://salvatorecapolupo.github.io/ottoregine/" },
+      { name: "Problemi di programmazione", description: "", url: "https://salvatorecapolupo.github.io/problemi_di_programmazione/" },
+      { name: "Prolog", description: "", url: "https://salvatorecapolupo.github.io/prolog/" },
+      { name: "~Pseudo-abstract", description: "", url:"https://salvatorecapolupo.github.io/about-me/psycho-routing.pdf"},
+      { name: "Puzzle Code", description: "Mirror di sito dismesso, disponibile anche qui: https://web.archive.org/web/20190706044803/https://www.puzzlecode.org/", url: "https://salvatorecapolupo.github.io/puzzlecode/public/index.html" },
+      { name: "RESTful API - Introduzione", description: "", url: "https://github.com/salvatorecapolupo/about-me/blob/main/_RESTful%20APi%20-%20TPSIT%20-%20Introduzione%20-%20Capolupo.pdf" },
+      { name: "RESTful API - Metodi GET PUT DELETE POST in HTML", description: "", url: "https://github.com/salvatorecapolupo/about-me/blob/main/_RESTful%20API%20-%20TPSIT%20-%20Lezione%202%20-%20CAPOLUPO.pdf" },
+      { name: "Routing", description: "", url: "https://salvatorecapolupo.github.io/routing1/" },
+      { name: "Simulatore algoritmo RSA (crittografia)", description: "", url: "https://salvatorecapolupo.github.io/rsa/" },
+      { name: "Simulatore di catena di Markov", description: "", url: "https://salvatorecapolupo.github.io/markoviano/" },
+      { name: "Simulatore online di funzioni hash e funzioni crittografiche (RSA)", description: "", url: "https://salvatorecapolupo.github.io/cryptography-basics/" },
+      { name: "Simulatore problema di Monty Hall (alpha)", description: "", url: "https://salvatorecapolupo.github.io/montyhall/" },
+      { name: "SQL Game (alpha)", description: "", url: "https://salvatorecapolupo.github.io/sql-game/" },
+      { name: "SQL Mistery (alpha)", description: "", url: "https://salvatorecapolupo.github.io/sql-mistery/" },
+      { name: "Standard RFC 862", description: "", url: "https://salvatorecapolupo.github.io/rfc862/" },
+      { name: "TCP vs. UDP", description: "", url: "https://salvatorecapolupo.github.io/tcpudp/" },
+      { name: "Terminale Linux (comandi base)", description: "", url: "https://salvatorecapolupo.github.io/about-me/_vademecum terminale Linux - Capolupo.pdf" },
+      { name: "Terminale Windows (comandi base-base-base)", description: "", url: "https://github.com/salvatorecapolupo/about-me/blob/main/_terminale_windows_capolupo.pdf" },
+      { name: "Problema delle Torri di Hanoi", description: "Emulatore del gioco delle torri di Hanoi, con n=3,4,5,6", url: "https://salvatorecapolupo.github.io/hanoi/" },
+      { name: "Conversione in Virgola Mobile IEE 754", description: "", url: "https://salvatorecapolupo.github.io/virgolamobile/" }
+  ];
+
+  function generateRepoTable(repos) {
+    const tableBody = document.getElementById('repoTable');
+    repos.forEach(repo => {
+      const row = document.createElement('tr');
+      row.innerHTML = `
+        <td><strong>${repo.name}</strong> ${repo.description}</td>
+        <td><a href="${repo.url}" class="repo-link" target="_blank"> ${repo.url} </a></td>
+      `;
+      tableBody.appendChild(row);
+    });
+  }
+
+  $(document).ready(function () {
+  console.log("Se stai VERAMENTE leggendo questo, sei uno studente. Oppure un potenziale hacker :-)");   
+    
+  generateRepoTable(repositories);
+  $('#repoTableWrapper').DataTable({
+    responsive: true,
+    paging: true,        // attivo la paginazione
+    pageLength: 10,       // massimo 10 righe per pagina
+    searching: true,
+    ordering: true,
+    language: {
+      search: "Cerca (materiale didattico, giochi, ecc.)",
+      zeroRecords: "Non trovo nulla, mi dispiace. Ritenta!",
+      infoEmpty: "Non ci sono dati, a quanto pare... Oppure c'è qualche altro errore"
+    }
+  });
+});
+
+</script>
+
+</body>
+</html>

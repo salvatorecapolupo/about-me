@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cifrario di Vigenère — Universale</title>
+<style>
+:root {
+  --bg: #f5f7fb;
+  --card: #ffffff;
+  --border: #dcdfe6;
+  --muted: #6b7280;
+  --blue: #1e40af;
+  --red: #b91c1c;
+  --accent: #0d6efd;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", "Courier New", monospace;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: #111;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 24px auto;
+  padding: 16px;
+}
+
+h1 {
+  font-size: 1.3rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.card {
+  background: var(--card);
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 6px;
+}
+
+textarea, input, select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.row {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.col {
+  flex: 1;
+  min-width: 300px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.15s;
+}
+.btn:hover { background: #f0f2f7; }
+.btn.primary { background: var(--accent); color: #fff; border-color: var(--accent); }
+.btn.danger { background: var(--red); color: #fff; border-color: var(--red); }
+
+.area-blue textarea { border-color: var(--blue); color: var(--blue); font-family: var(--mono); }
+.area-red textarea { border-color: var(--red); color: var(--red); font-family: var(--mono); }
+
+.swap-area { text-align: center; margin: 8px 0; }
+.swap-btn { font-size: 1.2rem; background: var(--accent); color: #fff; border-radius: 50%; border: none; width: 38px; height: 38px; cursor: pointer; }
+.swap-btn:hover { background: #0a53be; }
+
+#steps {
+  max-height: 250px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  border: 1px dashed var(--border);
+  border-radius: 8px;
+  background: #fafafa;
+  padding: 10px;
+  font-family: var(--mono);
+  font-size: 0.9rem;
+}
+
+.small { color: var(--muted); font-size: 0.85rem; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Cifrario di Vigenère — Universale</h1>
+
+  <div class="card">
+    <div class="row">
+      <div class="col area-blue">
+        <label for="plainText">🔹 Testo in chiaro</label>
+        <textarea id="plainText" rows="6" placeholder="Scrivi o incolla qui il testo in chiaro..."></textarea>
+      </div>
+      <div class="col area-red">
+        <label for="cipherText">🔴 Testo cifrato</label>
+        <textarea id="cipherText" rows="6" placeholder="Risultato cifrato o testo da decifrare..."></textarea>
+      </div>
+    </div>
+
+    <div class="swap-area">
+      <button id="swapBtn" class="swap-btn" title="Inverti contenuti">↔</button>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <label for="keyInput">Chiave</label>
+        <input id="keyInput" placeholder="Inserisci la chiave (es. SEGRETO)">
+      </div>
+      <div class="col">
+        <label for="alphabetSelect">Alfabeto</label>
+        <select id="alphabetSelect">
+          <option value="italian" selected>Italiano (A-Z)</option>
+          <option value="english">Inglese (A-Z)</option>
+          <option value="custom">Personalizzato</option>
+        </select>
+        <input id="customAlphabet" placeholder="(opzionale) Inserisci un alfabeto personalizzato" style="margin-top:6px">
+      </div>
+    </div>
+
+    <div style="margin-top:16px; display:flex; flex-wrap:wrap; gap:8px;">
+      <button id="btnEnc" class="btn primary">Cifra →</button>
+      <button id="btnDec" class="btn danger">← Decifra</button>
+      <button id="btnClear" class="btn">Pulisci</button>
+    </div>
+
+    <div id="stepsCard" style="margin-top:16px; display:none;">
+      <label>Passaggi dettagliati (formule modulo)</label>
+      <div id="steps"></div>
+    </div>
+  </div>
+
+  <div class="small" style="text-align:center;">
+    Ogni passo mostra la formula usata: <b>C = (P + K) mod n</b> per cifrare e <b>P = (C - K + n) mod n</b> per decifrare.
+  </div>
+</div>
+
+<script>
+// ===== ALPHABET BUILDER =====
+function buildAlphabet(mode, customRaw, fromText) {
+  if (mode === 'italian' || mode === 'english') return Array.from('ABCDEFGHIJKLMNOPQRSTUVWXYZ');
+  if (customRaw && customRaw.trim()) {
+    const chars = Array.from(customRaw.toUpperCase());
+    return [...new Set(chars)];
+  }
+  const pool = (fromText || '').toUpperCase();
+  return [...new Set(Array.from(pool))].filter(c => c.trim() !== '');
+}
+
+function mapIndex(alphabet) {
+  const m = new Map();
+  alphabet.forEach((c, i) => m.set(c, i));
+  return m;
+}
+
+// ===== CORE VIGENERE =====
+function processVigenere(text, key, alphabet, mode) {
+  const alphaMap = mapIndex(alphabet);
+  const n = alphabet.length;
+  const keyChars = Array.from(key.toUpperCase()).filter(ch => alphaMap.has(ch));
+  if (keyChars.length === 0)
+    return { result: text, steps: ['Chiave non valida o non compatibile con alfabeto.'] };
+
+  let res = '', steps = [], keyPos = 0;
+  steps.push(`Alfabeto: ${alphabet.join(' ')} (n=${n})`);
+  steps.push(`Formula: C = (P + K) mod n,  P = (C - K + n) mod n`);
+  steps.push('---');
+
+  for (let i = 0; i < text.length; i++) {
+    const ch = text[i];
+    const up = ch.toUpperCase();
+    if (!alphaMap.has(up)) {
+      res += ch;
+      steps.push(`${i}: '${ch}' non è nell'alfabeto → invariato`);
+      continue;
+    }
+    const idxText = alphaMap.get(up);
+    const kch = keyChars[keyPos % keyChars.length];
+    const idxKey = alphaMap.get(kch);
+    let idxOut;
+
+    if (mode === 'encrypt') {
+      idxOut = (idxText + idxKey) % n;
+      steps.push(`${i}: C = (P + K) mod n = (${idxText}+${idxKey}) mod ${n} = ${idxOut}`);
+    } else {
+      idxOut = (idxText - idxKey + n) % n;
+      steps.push(`${i}: P = (C - K + n) mod n = (${idxText}-${idxKey}+${n}) mod ${n} = ${idxOut}`);
+    }
+
+    const outChar = alphabet[idxOut];
+    res += (ch === ch.toLowerCase()) ? outChar.toLowerCase() : outChar;
+    keyPos++;
+  }
+  return { result: res, steps };
+}
+
+// ===== UI LOGIC =====
+const plainText = document.getElementById('plainText');
+const cipherText = document.getElementById('cipherText');
+const keyInput = document.getElementById('keyInput');
+const alphabetSelect = document.getElementById('alphabetSelect');
+const customAlphabet = document.getElementById('customAlphabet');
+const btnEnc = document.getElementById('btnEnc');
+const btnDec = document.getElementById('btnDec');
+const btnClear = document.getElementById('btnClear');
+const swapBtn = document.getElementById('swapBtn');
+const stepsCard = document.getElementById('stepsCard');
+const stepsDiv = document.getElementById('steps');
+
+function execute(mode) {
+  const text = (mode === 'encrypt') ? plainText.value : cipherText.value;
+  const key = keyInput.value.trim();
+  const alphMode = alphabetSelect.value;
+  const customRaw = customAlphabet.value;
+  const alphabet = buildAlphabet(alphMode, customRaw, text + key);
+
+  const { result, steps } = processVigenere(text, key, alphabet, mode);
+  if (mode === 'encrypt') cipherText.value = result;
+  else plainText.value = result;
+
+  stepsDiv.textContent = steps.join('\n');
+  stepsCard.style.display = 'block';
+}
+
+btnEnc.onclick = () => execute('encrypt');
+btnDec.onclick = () => execute('decrypt');
+
+swapBtn.onclick = () => {
+  const tmp = plainText.value;
+  plainText.value = cipherText.value;
+  cipherText.value = tmp;
+};
+
+btnClear.onclick = () => {
+  plainText.value = '';
+  cipherText.value = '';
+  keyInput.value = '';
+  stepsDiv.textContent = '';
+  stepsCard.style.display = 'none';
+  customAlphabet.value = '';
+};
+</script>
+</body>
+</html>
