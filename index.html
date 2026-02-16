@@ -363,58 +363,428 @@ img {
 <script>
   
 const repositories = [
-  { name: "Bubble Sort Sonorization", description: "Che suono emette l'algoritmo Bubble sort?", url: "https://salvatorecapolupo.github.io/bubble-sort-visualization/" },
-  { name: "Quick Sort Sonorization", description: "Che suono emette l'algoritmo Quick sort?", url: "https://salvatorecapolupo.github.io/quick-sort-visualization/" },
-  { name: "Stupid Sort Sonorization", description: "Che suono emette l'algoritmo Stupid sort?", url: "https://salvatorecapolupo.github.io/bogo-sort-visualization/" },
-  { name: "Javascript Masterclass", description: "50 esempi pratici di Javascript dalle basi al CRUD (Create, Read, Update, Delete).", url: "https://github.com/salvatorecapolupo/js_masterclass/tree/main" },
-      { name: "Didattimizzazione", description: "Guida pratica alla didattimizzazione (progetto SEO per posizionarsi su keyword mirata)", url: "https://salvatorecapolupo.github.io/Didattimizzazione/" },
-      { name: "~Libri", description: "Tecnofobia, Tecnocrazia sono due saggi a tema tecnologico", url: "https://amzn.to/42qJ0bu" },
-      { name: "~Pseudo-abstract (prompt utilizzato)", description: "", url:"https://gist.github.com/salvatorecapolupo/3f7b84e1b994d0c8adb48bc9ca406aaf"},
-      { name: "~ZIUQ", description: "", url: "https://salvatorecapolupo.github.io/ziuq/open-ended.html" },
-      { name: "All You Need Is Python", description: "Frammenti di codice Python 3 pronti all'uso (request, IA, ecc.)", url: "https://github.com/salvatorecapolupo/allyouneedispython" },
-      { name: "Articoli su wordpress.com", description: "Blog personale sulle nuove tecnologie e sulla IA.", url: "https://capolooper.wordpress.com/" },
-      { name: "Birthday Paradox Simulator (Simulatore del paradosso del compleanno)", description: "Versione alpha, LLM generated", url: "https://salvatorecapolupo.github.io/birthdayparadox/" },
-      { name: "Chatbot Rogersiano", description: "Emulatore di chatbot rogersiano: sembra quasi che ti capisca. Sembra!", url: "https://salvatorecapolupo.github.io/chatbot/" },
-      { name: "Codewall - Completa il codice (alpha)", description: "", url: "https://salvatorecapolupo.github.io/codewall/" },
-      { name: "Simulatore di albero n-ario (alpha) / JSON", description: "", url: "https://salvatorecapolupo.github.io/thetree/" },
-      { name: "Convertitore decimale/binario/esadecimale (alpha version)", description: "", url: "https://salvatorecapolupo.github.io/convertiamo/" },
-      { name: "Come funziona la crittografia", description: "Mirror di https://highschool.spsd.org/crypt/about.html", url: "https://salvatorecapolupo.github.io/crittografia/" },
-      { name: "Il mio CV (Curriculum Vitae)", description: "Il mio CV, aggiornato a febbraio 2025", url: "https://github.com/salvatorecapolupo/about-me/blob/main/5-cv-salvatore-capolupo.pdf" },
-      { name: "Un gioco - Prototipo videogioco testuale (alpha version)", description: "", url: "https://salvatorecapolupo.github.io/ungioco/" },
-      { name: "Documenti Ministeriali per scuola / informatica", description: "", url: "https://github.com/salvatorecapolupo/documenti-scuola-informatica" },
-      { name: "Er Converter", description: "Convertitore tra formati numerici binario, ottale, decimale, esadecimale, ...", url: "https://salvatorecapolupo.github.io/erconverter/" },
-      { name: "Esercizi vari - terminale Linux", description: "", url: "https://github.com/salvatorecapolupo/about-me/blob/main/_Capolupo_esercizi_linux_4E.pdf" },
-      { name: "Generatore di password xkcd", description: "", url: "https://salvatorecapolupo.github.io/generatore-di-password/" },
-      { name: "Generatore Lineare Congruenziale", description: "Emulatore di un generatore Lineare Congruenziale per numeri casuali, con grafico dei numeri sovrapponibili.", url: "https://salvatorecapolupo.github.io/lcg/" },
-      { name: "Gioco delle password", description: "Usa password efficaci", url: "https://salvatorecapolupo.github.io/password/" },
-      { name: "Gioco riconoscimento classi IPv4", description: "Sai riconoscere la classe di un IP?", url: "https://salvatorecapolupo.github.io/surviving-ipv4/ipv4.html" },
-      { name: "IPv4 - Subnetting", description: "Calcolatore di piani di indirizzamento", url: "https://salvatorecapolupo.github.io/surviving-ipv4/chivapiano.html" },
-      { name: "Machine Learning: algoritmo KNN (K-Nearest Neighbors)", description: "Classificatore KNN per machine learning https://www.ibm.com/it-it/think/topics/knn", url: "https://salvatorecapolupo.github.io/classificatore/classificatore.html" },
-      { name: "Mappa geografica IPv4 (alpha)", description: "", url: "https://salvatorecapolupo.github.io/IPv4world/" },
-      { name: "Esercizi svolti: le basi di C++", description: "5 esercizi + gamification finale per il potenziamento", url: "https://github.com/salvatorecapolupo/informatica" },
-      { name: "Mixed Capacitated General Routing Investigations", description: "La mia tesi di dottorato su un problema di General Routing", url: "https://github.com/salvatorecapolupo/about-me/blob/main/6-Mixed-Capacitated-General-Routing-Investigations.pdf" },
-      { name: "Network Speed Game", description: "", url: "https://salvatorecapolupo.github.io/network-speed-game/" },
-      { name: "No-as-a-Service (NaaS)", description: "Dire di 'no' è spesso la cosa più sbrigativa :-) Esempio pratico per richiamare una stringa JSON in Javascript.", url: "https://salvatorecapolupo.github.io/no/index.html" },
-      { name: "Numeri in sequenza che fanno 100 come somma/differenza (alpha) / JSON", description: "", url: "https://salvatorecapolupo.github.io/100/" },
-      { name: "Privacy", description: "", url: "https://salvatorecapolupo.github.io/privacy/" },
-      { name: "Problema delle otto regine", description: "", url: "https://salvatorecapolupo.github.io/ottoregine/" },
-      { name: "Prolog", description: "", url: "https://salvatorecapolupo.github.io/prolog/" },
-      { name: "Puzzle Code", description: "Mirror di sito dismesso, disponibile anche qui: https://web.archive.org/web/20190706044803/https://www.puzzlecode.org/", url: "https://salvatorecapolupo.github.io/puzzlecode/public/index.html" },
-      { name: "RESTful API - Introduzione", description: "", url: "https://github.com/salvatorecapolupo/about-me/blob/main/_RESTful%20APi%20-%20TPSIT%20-%20Introduzione%20-%20Capolupo.pdf" },
-      { name: "RESTful API - Metodi GET PUT DELETE POST in HTML", description: "", url: "https://github.com/salvatorecapolupo/about-me/blob/main/_RESTful%20API%20-%20TPSIT%20-%20Lezione%202%20-%20CAPOLUPO.pdf" },
-      { name: "Simulatore algoritmo RSA (crittografia)", description: "", url: "https://salvatorecapolupo.github.io/rsa/" },
-      { name: "Simulatore di catena di Markov", description: "", url: "https://salvatorecapolupo.github.io/markoviano/" },
-      { name: "Simulatore online di funzioni hash e funzioni crittografiche (RSA)", description: "", url: "https://salvatorecapolupo.github.io/cryptography-basics/" },
-      { name: "Simulatore problema di Monty Hall (alpha)", description: "", url: "https://salvatorecapolupo.github.io/montyhall/" },
-      { name: "SQL Game (alpha)", description: "", url: "https://salvatorecapolupo.github.io/sql-game/" },
-      { name: "SQL Mistery (alpha)", description: "", url: "https://salvatorecapolupo.github.io/sql-mistery/" },
-      { name: "Standard RFC 862", description: "", url: "https://salvatorecapolupo.github.io/rfc862/" },
-      { name: "TCP vs. UDP", description: "", url: "https://salvatorecapolupo.github.io/tcpudp/" },
-      { name: "Terminale Linux (comandi base)", description: "", url: "https://salvatorecapolupo.github.io/about-me/_vademecum terminale Linux - Capolupo.pdf" },
-      { name: "Terminale Windows (comandi base-base-base)", description: "", url: "https://github.com/salvatorecapolupo/about-me/blob/main/_terminale_windows_capolupo.pdf" },
-      { name: "Problema delle Torri di Hanoi", description: "Emulatore del gioco delle torri di Hanoi, con n=3,4,5,6", url: "https://salvatorecapolupo.github.io/hanoi/" },
-      { name: "Conversione in Virgola Mobile IEE 754", description: "", url: "https://salvatorecapolupo.github.io/virgolamobile/" }
-  ];
+  {
+    "name": "100",
+    "description": "",
+    "url": "https://github.com/salvatorecapolupo/100"
+  },
+  {
+    "name": "About Me",
+    "description": "lorem ipsum",
+    "url": "https://github.com/salvatorecapolupo/about-me"
+  },
+  {
+    "name": "Allyouneedispython",
+    "description": "",
+    "url": "https://github.com/salvatorecapolupo/allyouneedispython"
+  },
+  {
+    "name": "Birthdayparadox",
+    "description": "Il paradosso del compleanno è un risultato controintuitivo della probabilità:     in un gruppo di appena 23 persone, c'è oltre il 50% di probabilità che almeno due persone condividano lo stesso giorno di compleanno.",
+    "url": "https://github.com/salvatorecapolupo/birthdayparadox"
+  },
+  {
+    "name": "Bittorrent",
+    "description": "Come funziona il protocollo bittorrent (per sistemi e TPSIT)",
+    "url": "https://github.com/salvatorecapolupo/bittorrent"
+  },
+  {
+    "name": "Bogo Sort Visualization",
+    "description": "",
+    "url": "https://github.com/salvatorecapolupo/bogo-sort-visualization"
+  },
+  {
+    "name": "Bubble Sort Visualization",
+    "description": "",
+    "url": "https://github.com/salvatorecapolupo/bubble-sort-visualization"
+  },
+  {
+    "name": "Chatbot",
+    "description": "",
+    "url": "https://github.com/salvatorecapolupo/chatbot"
+  },
+  {
+    "name": "Classificatore",
+    "description": "",
+    "url": "https://github.com/salvatorecapolupo/classificatore"
+  },
+  {
+    "name": "Codewall",
+    "description": "Mostra un pezzo di codice con parti mancanti, e dovrai completarlo. ",
+    "url": "https://github.com/salvatorecapolupo/codewall"
+  },
+  {
+    "name": "Colorguess",
+    "description": "",
+    "url": "https://github.com/salvatorecapolupo/colorguess"
+  },
+  {
+    "name": "Completalo",
+    "description": "",
+    "url": "https://github.com/salvatorecapolupo/completalo"
+  },
+  {
+    "name": "Convertiamo",
+    "description": "Convertitore hex decimale binario ",
+    "url": "https://github.com/salvatorecapolupo/convertiamo"
+  },
+  {
+    "name": "Crafty",
+    "description": "JavaScript Game Engine",
+    "url": "http://craftyjs.com"
+  },
+  {
+    "name": "Crittografia",
+    "description": "Mirror from http://highschool.spsd.org/crypt/index.html - All rights reserved. Repository only. for educational purposes. ",
+    "url": "https://github.com/salvatorecapolupo/crittografia"
+  },
+  {
+    "name": "Cryptography",
+    "description": "",
+    "url": "https://github.com/salvatorecapolupo/cryptography"
+  },
+  {
+    "name": "Cryptography Basics",
+    "description": "Risolutore automatico con spiegazione dei passaggi dell'algoritmo RSA. Funzione hash spiegata con simulatore. ",
+    "url": "https://github.com/salvatorecapolupo/cryptography-basics"
+  },
+  {
+    "name": "Didattica",
+    "description": "Informatica a scuola - Didattica",
+    "url": "https://salvatorecapolupo.github.io/didattica/"
+  },
+  {
+    "name": "Didattimizzazione",
+    "description": "Un test di pagina ottimizzata per la SEO secondo le linee guida di Google",
+    "url": "https://github.com/salvatorecapolupo/Didattimizzazione"
+  },
+  {
+    "name": "Divoogle",
+    "description": "Ah.",
+    "url": "https://github.com/salvatorecapolupo/divoogle"
+  },
+  {
+    "name": "Documenti Scuola Informatica",
+    "description": "Linee guida, documenti ufficiali e quant'altro, raccolto in un singolo repository.",
+    "url": "https://github.com/salvatorecapolupo/documenti-scuola-informatica"
+  },
+  {
+    "name": "Emu8086",
+    "description": "Emulator 8086",
+    "url": "https://windprophet.github.io/emu8086"
+  },
+  {
+    "name": "Epoca",
+    "description": "EPOCA - Plugin per WordPress di autopubblicazione vecchi post",
+    "url": "https://github.com/salvatorecapolupo/EPOCA"
+  },
+  {
+    "name": "Erconverter",
+    "description": "Convertitore binario / decimale / esadecimale (corso di sistemi e reti)",
+    "url": "https://github.com/salvatorecapolupo/erconverter"
+  },
+  {
+    "name": "Frattali",
+    "description": "",
+    "url": "https://github.com/salvatorecapolupo/frattali"
+  },
+  {
+    "name": "Generatore Di Password",
+    "description": "Password solide, one-shot e generate con algoritmo sicuro. Non memorizzate sul server.",
+    "url": "https://github.com/salvatorecapolupo/generatore-di-password"
+  },
+  {
+    "name": "Gladiatorijson",
+    "description": "",
+    "url": "https://github.com/salvatorecapolupo/gladiatorijson"
+  },
+  {
+    "name": "Glitch",
+    "description": "Informazioni su GLITCH, lo spettacolo crossmediale di Salvatore Capolupo. ",
+    "url": "https://github.com/salvatorecapolupo/glitch"
+  },
+  {
+    "name": "Hal9000",
+    "description": "Un omaggio a 2001 Odissea nello spazio di Stanley Kubrick.",
+    "url": "https://github.com/salvatorecapolupo/HAL9000"
+  },
+  {
+    "name": "Hanoi",
+    "description": "Gioco interattivo delle torri di Hanoi",
+    "url": "https://github.com/salvatorecapolupo/hanoi"
+  },
+  {
+    "name": "Ilmioprogetto",
+    "description": "La descrizione del progetto... bla bla bla",
+    "url": "https://github.com/salvatorecapolupo/ilmioprogetto"
+  },
+  {
+    "name": "Inevitabile",
+    "description": "shgdhasjdhgasda",
+    "url": "https://github.com/salvatorecapolupo/inevitabile"
+  },
+  {
+    "name": "Informatica",
+    "description": "Supporto didattico per TPSIT, sistemi e reti, informatica",
+    "url": "https://github.com/salvatorecapolupo/informatica"
+  },
+  {
+    "name": "Insegnareinformatica",
+    "description": "",
+    "url": "https://github.com/salvatorecapolupo/insegnareinformatica"
+  },
+  {
+    "name": "Ipv4World",
+    "description": "Mappa approssimata di tutti gli indirizzi IP (o quasi) geolocalizzati geograficamente e ricercabili. ",
+    "url": "https://github.com/salvatorecapolupo/IPv4world"
+  },
+  {
+    "name": "Json",
+    "description": "",
+    "url": "https://github.com/salvatorecapolupo/json"
+  },
+  {
+    "name": "Jsrunner",
+    "description": "",
+    "url": "https://github.com/salvatorecapolupo/jsrunner"
+  },
+  {
+    "name": "Js_Bubble_Sort",
+    "description": "",
+    "url": "https://github.com/salvatorecapolupo/js_bubble_sort"
+  },
+  {
+    "name": "Js_Game",
+    "description": "",
+    "url": "https://github.com/salvatorecapolupo/js_game"
+  },
+  {
+    "name": "Js_Masterclass",
+    "description": "50 esempi di codice Javascript per micro-learning ",
+    "url": "https://github.com/salvatorecapolupo/js_masterclass"
+  },
+  {
+    "name": "Labirinto",
+    "description": "",
+    "url": "https://github.com/salvatorecapolupo/labirinto"
+  },
+  {
+    "name": "Lcg",
+    "description": "",
+    "url": "https://github.com/salvatorecapolupo/lcg"
+  },
+  {
+    "name": "Markov",
+    "description": "",
+    "url": "https://github.com/salvatorecapolupo/markov"
+  },
+  {
+    "name": "Markoviano",
+    "description": "",
+    "url": "https://github.com/salvatorecapolupo/markoviano"
+  },
+  {
+    "name": "Masterjs",
+    "description": "",
+    "url": "https://github.com/salvatorecapolupo/masterjs"
+  },
+  {
+    "name": "Mathjax",
+    "description": "",
+    "url": "https://github.com/salvatorecapolupo/mathjax"
+  },
+  {
+    "name": "Mathjs",
+    "description": "",
+    "url": "https://github.com/salvatorecapolupo/mathjs"
+  },
+  {
+    "name": "Montyhall",
+    "description": "Simulatore del gioco di Monty Hall. È meglio cambiare scelta o rimanere sulla stessa?",
+    "url": "https://github.com/salvatorecapolupo/montyhall"
+  },
+  {
+    "name": "Network Speed Game",
+    "description": "The Network Speed Game - Calcolo della velocità di trasmissione di un file di dimensione casuale su un mezzo trasmissivo a scelta (rete unicast)",
+    "url": "https://github.com/salvatorecapolupo/network-speed-game"
+  },
+  {
+    "name": "No",
+    "description": "No-as-a-service (esempio pratico di uso delle stringhe JSON in lettura)",
+    "url": "https://github.com/salvatorecapolupo/no"
+  },
+  {
+    "name": "Ottoregine",
+    "description": "",
+    "url": "https://github.com/salvatorecapolupo/ottoregine"
+  },
+  {
+    "name": "Paroleitaliane",
+    "description": "Liste di parole italiane",
+    "url": "https://github.com/salvatorecapolupo/paroleitaliane"
+  },
+  {
+    "name": "Password",
+    "description": "Password Gamification",
+    "url": "https://github.com/salvatorecapolupo/password"
+  },
+  {
+    "name": "Potenziamento Tpsit",
+    "description": "",
+    "url": "https://github.com/salvatorecapolupo/potenziamento-tpsit"
+  },
+  {
+    "name": "Privacy",
+    "description": "",
+    "url": "https://github.com/salvatorecapolupo/privacy"
+  },
+  {
+    "name": "Problemi_Di_Programmazione",
+    "description": "",
+    "url": "https://github.com/salvatorecapolupo/problemi_di_programmazione"
+  },
+  {
+    "name": "Prolog",
+    "description": "",
+    "url": "https://github.com/salvatorecapolupo/prolog"
+  },
+  {
+    "name": "Puzzlecode",
+    "description": "Un gioco di programmazione per programmatori in erba.",
+    "url": "https://web.archive.org/web/20190615000000*/https://puzzlecode.org"
+  },
+  {
+    "name": "Quick Sort Visualization",
+    "description": "",
+    "url": "https://github.com/salvatorecapolupo/quick-sort-visualization"
+  },
+  {
+    "name": "Rete",
+    "description": "",
+    "url": "https://github.com/salvatorecapolupo/rete"
+  },
+  {
+    "name": "Rfc862",
+    "description": "",
+    "url": "https://github.com/salvatorecapolupo/rfc862"
+  },
+  {
+    "name": "Routing1",
+    "description": "Simulatore online di algoritmo di cammini minimi",
+    "url": "https://github.com/salvatorecapolupo/routing1"
+  },
+  {
+    "name": "Rsa",
+    "description": "Risolutore automatico con spiegazione dei passaggi dell'algoritmo RSA",
+    "url": "https://github.com/salvatorecapolupo/rsa"
+  },
+  {
+    "name": "Salvatorecapolupo",
+    "description": "Config files for my GitHub profile.",
+    "url": "https://github.com/salvatorecapolupo"
+  },
+  {
+    "name": "Scuola",
+    "description": "",
+    "url": "https://github.com/salvatorecapolupo/scuola"
+  },
+  {
+    "name": "Seolinkfinder",
+    "description": "External links finder from a given URL (exaustive search, no duplicate detection, slow); useful for assuring nofollow where necessary. Used for https://www.seoroma.com and other websites I worked on.",
+    "url": "https://github.com/salvatorecapolupo/SEOLinkFinder"
+  },
+  {
+    "name": "Serie Numeriche",
+    "description": "",
+    "url": "https://github.com/salvatorecapolupo/serie-numeriche"
+  },
+  {
+    "name": "Simplequotejs",
+    "description": "Print a random quote for your website, changes at every refresh. Pure JS here!",
+    "url": "https://github.com/salvatorecapolupo/SimpleQuoteJS"
+  },
+  {
+    "name": "So",
+    "description": "",
+    "url": "https://github.com/salvatorecapolupo/so"
+  },
+  {
+    "name": "Sql Game",
+    "description": "Una strategia di gamification per apprendere le basi di SQL. ",
+    "url": "https://github.com/salvatorecapolupo/sql-game"
+  },
+  {
+    "name": "Sql Mistery",
+    "description": "Un prototipo. ",
+    "url": "https://github.com/salvatorecapolupo/sql-mistery"
+  },
+  {
+    "name": "Sum Check Protocol - Aplha",
+    "description": "Questo protocollo viene spesso utilizzato per verificare somme o integrità di dati tra un prover e un verifier. Qui faremo una versione molto semplificata: il client proverà di conoscere dei numeri che sommano a un certo valore senza rivelarli direttamente.",
+    "url": "https://github.com/salvatorecapolupo/sum-check-protocol"
+  },
+  {
+    "name": "Sopravvivere a IPv4 (subnet mask) - alpha",
+    "description": "",
+    "url": "https://github.com/salvatorecapolupo/surviving-ipv4"
+  },
+  {
+    "name": "Tapioco",
+    "description": "",
+    "url": "https://github.com/salvatorecapolupo/tapioco"
+  },
+  {
+    "name": "TCP/UDP",
+    "description": "",
+    "url": "https://github.com/salvatorecapolupo/tcpudp"
+  },
+  {
+    "name": "Test",
+    "description": "",
+    "url": "https://github.com/salvatorecapolupo/test"
+  },
+  {
+    "name": "Theexperiment001",
+    "description": "",
+    "url": "https://github.com/salvatorecapolupo/theexperiment001"
+  },
+  {
+    "name": "TheTree (alpha)",
+    "description": "",
+    "url": "https://github.com/salvatorecapolupo/thetree"
+  },
+  {
+    "name": "unGioco (alpha)",
+    "description": "Avventura grafica in versione alpha - HTML / JS based",
+    "url": "https://github.com/salvatorecapolupo/ungioco"
+  },
+  {
+    "name": "Virgolamobile (alpha)",
+    "description": "",
+    "url": "https://github.com/salvatorecapolupo/virgolamobile"
+  },
+  {
+    "name": "VLSM (alpha)",
+    "description": "",
+    "url": "https://github.com/salvatorecapolupo/vlsm"
+  },
+  {
+    "name": "Whois Tool",
+    "description": "",
+    "url": "https://github.com/salvatorecapolupo/whois"
+  },
+  {
+    "name": "Zedinvaders",
+    "description": "ZED Invaders 1.0 beta - questa versione NON è giocabile ed è qui solo a scopo documentaristico. Potete giocare gratis alla versione 2.0 su gamejolt",
+    "url": "http://gamejolt.com/games/zed-invaders-2-0/49980"
+  },
+  {
+    "name": "Ziuq",
+    "description": "",
+    "url": "https://github.com/salvatorecapolupo/ziuq"
+  }
+];
+
 
   function generateRepoTable(repos) {
     const tableBody = document.getElementById('repoTable');
