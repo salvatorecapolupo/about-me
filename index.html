@@ -152,7 +152,7 @@ programmazione, reti, database, ingegneria del software e gamification. Argoment
 <h2 class="retro mb-4 text-center"> Dispense in PDF (in aggiornamento) </h2>
 
 <div id="my-list">
-<input class="search form-control" placeholder="Cerca..." />
+<input type="text" id="search-dispense" class="search form-control" placeholder="Cerca..." />
   
 <ul class="list-group shadow-sm" id="lista-dispense">
 <li class="list-group-item name"><a href="PDF/C++_Array_e_Matrici.pdf" target="_blank">C++ Array e Matrici</a></li>
@@ -782,26 +782,27 @@ height="200"></iframe>
 
 </script>
 
-  <script>
-document.addEventListener("DOMContentLoaded", () => {
+ <script>
+const input = document.getElementById("search-dispense");
+const list = document.getElementById("lista-dispense");
 
-  const input = document.querySelector("input[type='search'], input[type='text']");
-  const items = document.querySelectorAll("#lista-dispense li");
+if (input && list) {
 
-  if (!input) return;
+  const items = list.getElementsByTagName("li");
 
-  input.addEventListener("input", () => {
+  input.addEventListener("input", function () {
 
-    const value = input.value.toLowerCase();
+    const value = this.value.toLowerCase();
 
-    items.forEach(li => {
-      const text = li.textContent.toLowerCase();
-      li.style.display = text.includes(value) ? "" : "none";
-    });
+    for (let i = 0; i < items.length; i++) {
+      const text = items[i].textContent.toLowerCase();
+      items[i].style.display =
+        text.includes(value) ? "" : "none";
+    }
 
   });
 
-});
+}
 </script>
 
   <script type="application/ld+json">
