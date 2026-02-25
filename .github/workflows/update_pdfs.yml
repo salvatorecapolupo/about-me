@@ -35,7 +35,7 @@ jobs:
               nome = os.path.splitext(pdf)[0]
               nome = nome.replace("_", " ").replace("-", " ")
               items.append(
-                  f'<li class="list-group-item"><a href="PDF/{pdf}" target="_blank">{nome}</a></li>'
+                  f'<li class="list-group-item name"><a href="PDF/{pdf}" target="_blank">{nome}</a></li>'
               )
 
           lista_html = "\n".join(items)
