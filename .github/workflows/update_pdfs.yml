@@ -1,0 +1,63 @@
+name: Aggiorna lista dispense
+
+on:
+  push:
+    paths:
+      - 'PDF/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Genera lista HTML
+        run: |
+          python << 'EOF'
+          import os
+          import re
+
+          folder = "PDF"
+          index_file = "index.html"
+
+          pdfs = sorted(
+              f for f in os.listdir(folder)
+              if f.lower().endswith(".pdf")
+          )
+
+          items = []
+          for pdf in pdfs:
+              nome = os.path.splitext(pdf)[0]
+              nome = nome.replace("_", " ").replace("-", " ")
+              items.append(
+                  f'<li class="list-group-item"><a href="PDF/{pdf}" target="_blank">{nome}</a></li>'
+              )
+
+          lista_html = "\n".join(items)
+
+          with open(index_file, "r", encoding="utf-8") as f:
+              html = f.read()
+
+          pattern = r'(<ul[^>]*id="lista-dispense"[^>]*>)(.*?)(</ul>)'
+          replacement = r'\1\n' + lista_html + r'\n\3'
+
+          new_html = re.sub(pattern, replacement, html, flags=re.DOTALL)
+
+          with open(index_file, "w", encoding="utf-8") as f:
+              f.write(new_html)
+
+          print("Lista aggiornata con", len(pdfs), "PDF")
+          EOF
+
+      - name: Commit modifiche
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add index.html
+          git commit -m "Aggiorna lista dispense PDF" || exit 0
+          git push
