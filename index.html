@@ -154,7 +154,7 @@ programmazione, reti, database, ingegneria del software e gamification. Argoment
 <div id="my-list">
 <input class="search form-control" placeholder="Cerca..." />
   
-<ul class="list-group list shadow-sm " id="lista-dispense">
+<ul class="list-group shadow-sm" id="lista-dispense">
 <li class="list-group-item name"><a href="PDF/C++_Array_e_Matrici.pdf" target="_blank">C++ Array e Matrici</a></li>
 <li class="list-group-item name"><a href="PDF/C++_informatica_Fizz_Buzz.pdf" target="_blank">C++ informatica Fizz Buzz</a></li>
 <li class="list-group-item name"><a href="PDF/Dispensa_aritmetica_modulo_N.pdf" target="_blank">Dispensa aritmetica modulo N</a></li>
@@ -765,12 +765,6 @@ height="200"></iframe>
 
   $(document).ready(function () {
   console.log("Se stai VERAMENTE leggendo questo, sei uno studente di informatica. O un potenziale hacker :-)");   
-
-  var options = {
-  valueNames: ['list-group-item name']
-  };
-
- var userList = new List('my-list', options);
     
   generateRepoTable(repositories);
   $('#repoTableWrapper').DataTable({
@@ -787,6 +781,28 @@ height="200"></iframe>
   });
 });
 
+</script>
+
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const input = document.querySelector("input[type='search'], input[type='text']");
+  const items = document.querySelectorAll("#lista-dispense li");
+
+  if (!input) return;
+
+  input.addEventListener("input", () => {
+
+    const value = input.value.toLowerCase();
+
+    items.forEach(li => {
+      const text = li.textContent.toLowerCase();
+      li.style.display = text.includes(value) ? "" : "none";
+    });
+
+  });
+
+});
 </script>
 
   <script type="application/ld+json">
