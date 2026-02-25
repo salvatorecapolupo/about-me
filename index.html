@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title> Salvatore Capolupo — Dispense e materiale didattico </title>
+
+<!-- Bootstrap 5 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- DataTables -->
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
+
+<!-- Font -->
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+  --primary:#0d6efd;
+  --bg:#f8f9fa;
+}
+
+body{
+  font-family: Inter, system-ui, sans-serif;
+  background: var(--bg);
+}
+
+/* Navbar */
+.navbar{
+  backdrop-filter: blur(10px);
+}
+
+/* Hero */
+.hero{
+  padding:60px 0;
+}
+
+.profile-photo{
+  width:160px;
+  border-radius:50%;
+  box-shadow:0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* Retro title */
+.retro{
+  font-family:'Press Start 2P', monospace;
+}
+
+/* Cards */
+.card-modern{
+  border:none;
+  border-radius:16px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.08);
+  transition:.3s;
+}
+
+.card-modern:hover{
+  transform:translateY(-4px);
+}
+
+/* Section spacing */
+section{
+  padding:60px 0;
+}
+
+/* Footer */
+footer{
+  background:#111;
+  color:#ddd;
+  padding:40px 0;
+}
+
+footer a{
+  color:#aaa;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top">
+<div class="container">
+
+<a class="navbar-brand fw-bold" href="#"> 
+  Salvatore Capolupo &#x1F4BE; &#x1F402; &#x1F451; &#x1F43A;
+</a>
+
+<button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+<span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="collapse navbar-collapse" id="menu">
+<ul class="navbar-nav ms-auto">
+
+<li class="nav-item"><a class="nav-link" href="#dispense">Dispense</a></li>
+<li class="nav-item"><a class="nav-link" href="#materiale">Materiale Didattico</a></li>
+<li class="nav-item"><a class="nav-link" href="#emulatori">Emulatori</a></li>
+<!--<li class="nav-item"><a class="nav-link" href="#archivio">Archivio</a></li>-->
+
+</ul>
+
+</div>
+</div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+<div class="container text-center">
+
+<img src="6140966.png" class="profile-photo mb-4">
+
+<h1 class="retro mb-3">Salvatore Capolupo</h1>
+
+<p class="lead">
+Insegnante di informatica · Sviluppatore · Divulgatore (<a href="5-cv-salvatore-capolupo.pdf" target="_blank"> il mio CV </a>)
+</p>
+
+<p class="col-lg-8 mx-auto">
+Questo sito è una raccolta di materiale gratuito per studenti, colleghi e appassionati di informatica:
+programmazione, reti, database, ingegneria del software e gamification. Argomenti trattati: <br/>
+
+<ul class="list-group">
+  <li class="list-group-item list-group-item-action">Programmazione procedurale, programmazione funzionale, programmazione orientata agli oggetti (Java, Python, C++, ...)</li>
+  <li class="list-group-item list-group-item-action">Progettazione sistemi, piani di indirizzamento</li>
+  <li class="list-group-item list-group-item-action">Ingegneria del software</li>
+  <li class="list-group-item list-group-item-action">Gamification come metodologia didattica</li>
+  <li class="list-group-item list-group-item-action">Database, SQL, No SQL, JSON</li>
+  <li class="list-group-item list-group-item-action">... altro :-) </li>
+</ul>
+
+</p>
+
+<p class="col-lg-8 mx-auto">
+  Per contattarmi, segnalare eventuali errori o richieste di ogni genere potete scrivere a: 
+  <img src="https://salvatorecapolupo.github.io/about-me/email.png" alt="Email di contatto" style="margin-top: 15px; max-width: 220px;">
+</p>
+
+<br/>
+<small><a href="https://salvatorecapolupo.github.io/about-me/">Salvatore Capolupo — Dispense e materiale didattico</a> © 2026 by <a href="https://salvatorecapolupo.github.io/about-me/">Salvatore Capolupo</a> is licensed under <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a><img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"></small>
+
+</div>
+</section>
+
+<!-- DISPENSE -->
+<section id="dispense">
+<div class="container">
+
+<h2 class="retro mb-4 text-center"> Dispense in PDF (in aggiornamento) </h2>
+<ul class="list-group shadow-sm" id="lista-dispense">
+
+</ul>
+
+</div>
+</section>
+
+<!-- MATERIAL TABLE -->
+<section id="materiale">
+<div class="container">
+
+<h2 class="retro mb-4 text-center">Materiale Didattico</h2>
+
+
+<p class="">
+  <a class="btn btn-bg btn-primary" href="https://gist.github.com/salvatorecapolupo/">Gist - snippet di codice, appunti, guide rapide</a>
+</p>
+
+<div class="card card-modern p-3">
+
+<section id="materiale">
+  <div class="container">
+    
+    <div class="card card-modern p-3">
+      <div class="table-responsive">
+        <table id="repoTableWrapper" class="table table-bordered table-striped table-sm table-hover display w-100">
+          <thead class="thead-dark">
+            <tr>
+              <th>Descrizione</th>
+              <th>Link</th>
+            </tr>
+          </thead>
+          <tbody id="repoTable"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+</div>
+
+</div>
+</section>
+
+<!-- EMULATORI -->
+<section id="emulatori">
+<div class="container">
+
+<h2 class="retro text-center mb-4">Emulatori Online</h2>
+
+<div class="row g-4">
+
+<div class="col-md-4">
+<div class="card card-modern p-4 h-100">
+<h5>Assembly 8086</h5>
+<a href="https://yjdoc2.github.io/8086-emulator-web/" target="_blank">
+Apri emulatore
+</a>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card card-modern p-4 h-100">
+<h5>Macchina di Turing</h5>
+<a href="https://turingmachine.io/" target="_blank">
+Apri simulatore
+</a>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card card-modern p-4 h-100">
+<h5>Von Neumann</h5>
+<a href="https://vonsim.guglio.net/" target="_blank">
+Apri simulatore
+</a>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- QUOTES -->
+<section>
+<div class="container">
+
+<div class="row g-4">
+
+<div class="col-md-4">
+<div class="card card-modern p-3 text-center">
+<img src="Alan_Turing_Aged_16.jpg" class="img-fluid rounded">
+<p class="mt-3">
+"<em>A volte 
+          sono proprio 
+          le persone 
+          a cui nessuno dà credito 
+          a fare le cose 
+          che nessuno 
+          si aspetterebbe</em>.
+        " (A. Turing)
+</p>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card card-modern p-3 text-center">
+<img src="Rousseau.jpg" class="img-fluid rounded">
+<p class="mt-3">
+            "<em>Quando Emilio imparerà il suo mestiere, io voglio apprenderlo con lui; 
+                perché sono convinto che non apprenderà mai bene 
+                  altro che ciò che impareremo insieme</em>." (J. J. Rousseau) 
+</p>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card card-modern p-3 text-center">
+<iframe src="https://giphy.com/embed/l0HlBrqIs8euKI1fq"
+height="200"></iframe>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+<div class="container text-center">
+
+<p>
+  Ultimo aggiornamento: <strong>25 febbraio 2026</strong> -  <a href='http://www.freevisitorcounters.com'>freevisitorcounterss Homepage</a> <script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=5ef628922808c4b0fa7be821546dfb134f735d8d'></script>
+  <script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/1503606/t/0"></script>
+</p>
+
+</div>
+</footer>
+
+<!-- JS -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+
+  const repositories = [
+  {
+    "name": "100",
+    "description": "",
+    "url": "https://salvatorecapolupo.github.io/100/"
+  },
+  {
+    "name": "Allyouneedispython",
+    "description": "",
+    "url": "https://github.com/salvatorecapolupo/allyouneedispython"
+  },
+  {
+    "name": "Birthdayparadox",
+    "description": "Il paradosso del compleanno è un risultato controintuitivo della probabilità:     in un gruppo di appena 23 persone, c'è oltre il 50% di probabilità che almeno due persone condividano lo stesso giorno di compleanno.",
+    "url": "https://salvatorecapolupo.github.io/birthdayparadox/"
+  },
+  {
+    "name": "Bittorrent",
+    "description": "Come funziona il protocollo bittorrent (per sistemi e TPSIT)",
+    "url": "https://salvatorecapolupo.github.io/bittorrent/"
+  },
+  {
+    "name": "Bogo Sort Visualization",
+    "description": "",
+    "url": "https://salvatorecapolupo.github.io/bogo-sort-visualization/"
+  },
+  {
+    "name": "Bubble Sort Visualization",
+    "description": "",
+    "url": "https://salvatorecapolupo.github.io/bubble-sort-visualization/"
+  },
+  {
+    "name": "Chatbot",
+    "description": "",
+    "url": "https://salvatorecapolupo.github.io/chatbot/"
+  },
+  {
+    "name": "Classificatore",
+    "description": "",
+    "url": "https://salvatorecapolupo.github.io/classificatore/"
+  },
+  {
+    "name": "Codewall",
+    "description": "Mostra un pezzo di codice con parti mancanti, e dovrai completarlo. ",
+    "url": "https://salvatorecapolupo.github.io/codewall/"
+  },
+  {
+    "name": "Colorguess",
+    "description": "",
+    "url": "https://salvatorecapolupo.github.io/colorguess/"
+  },
+  {
+    "name": "Completalo",
+    "description": "",
+    "url": "https://salvatorecapolupo.github.io/completalo/"
+  },
+  {
+    "name": "Convertiamo",
+    "description": "Convertitore hex decimale binario ",
+    "url": "https://salvatorecapolupo.github.io/convertiamo/"
+  },
+  {
+    "name": "Crafty",
+    "description": "JavaScript Game Engine",
+    "url": "https://github.com/salvatorecapolupo/Crafty"
+  },
+  {
+    "name": "Crittografia",
+    "description": "Mirror from http://highschool.spsd.org/crypt/index.html - All rights reserved. Repository only. for educational purposes. ",
+    "url": "https://salvatorecapolupo.github.io/crittografia/"
+  },
+  {
+    "name": "Cryptography",
+    "description": "",
+    "url": "https://salvatorecapolupo.github.io/cryptography/"
+  },
+  {
+    "name": "Cryptography Basics",
+    "description": "Risolutore automatico con spiegazione dei passaggi dell'algoritmo RSA. Funzione hash spiegata con simulatore. ",
+    "url": "https://salvatorecapolupo.github.io/cryptography-basics/"
+  },
+  {
+    "name": "Didattica",
+    "description": "Informatica a scuola - Didattica",
+    "url": "https://salvatorecapolupo.github.io/didattica/"
+  },
+  {
+    "name": "Didattimizzazione",
+    "description": "Un test di pagina ottimizzata per la SEO secondo le linee guida di Google",
+    "url": "https://salvatorecapolupo.github.io/Didattimizzazione/"
+  },
+  {
+    "name": "Divoogle",
+    "description": "Ah.",
+    "url": "https://salvatorecapolupo.github.io/divoogle/"
+  },
+  {
+    "name": "Documenti Scuola Informatica",
+    "description": "Linee guida, documenti ufficiali e quant'altro, raccolto in un singolo repository.",
+    "url": "https://github.com/salvatorecapolupo/documenti-scuola-informatica"
+  },
+  {
+    "name": "Emu8086",
+    "description": "Emulator 8086",
+    "url": "https://github.com/salvatorecapolupo/emu8086"
+  },
+  {
+    "name": "Epoca",
+    "description": "EPOCA - Plugin per WordPress di autopubblicazione vecchi post",
+    "url": "https://github.com/salvatorecapolupo/EPOCA"
+  },
+  {
+    "name": "Erconverter",
+    "description": "Convertitore binario / decimale / esadecimale (corso di sistemi e reti)",
+    "url": "https://salvatorecapolupo.github.io/erconverter/"
+  },
+  {
+    "name": "Frattali",
+    "description": "",
+    "url": "https://salvatorecapolupo.github.io/frattali/"
+  },
+  {
+    "name": "Generatore Di Password",
+    "description": "Password solide, one-shot e generate con algoritmo sicuro. Non memorizzate sul server.",
+    "url": "https://salvatorecapolupo.github.io/generatore-di-password/"
+  },
+  {
+    "name": "Gladiatorijson",
+    "description": "",
+    "url": "https://salvatorecapolupo.github.io/gladiatorijson/"
+  },
+  {
+    "name": "Hal9000",
+    "description": "Un omaggio a 2001 Odissea nello spazio di Stanley Kubrick.",
+    "url": "https://salvatorecapolupo.github.io/HAL9000/"
+  },
+  {
+    "name": "Hanoi",
+    "description": "Gioco interattivo delle torri di Hanoi",
+    "url": "https://salvatorecapolupo.github.io/hanoi/"
+  },
+  {
+    "name": "Ilmioprogetto",
+    "description": "La descrizione del progetto... bla bla bla",
+    "url": "https://salvatorecapolupo.github.io/ilmioprogetto/"
+  },
+  {
+    "name": "Inevitabile",
+    "description": "shgdhasjdhgasda",
+    "url": "https://salvatorecapolupo.github.io/inevitabile/"
+  },
+  {
+    "name": "Informatica",
+    "description": "Supporto didattico per TPSIT, sistemi e reti, informatica",
+    "url": "https://salvatorecapolupo.github.io/informatica/"
+  },
+  {
+    "name": "Insegnareinformatica",
+    "description": "",
+    "url": "https://salvatorecapolupo.github.io/insegnareinformatica/"
+  },
+  {
+    "name": "IPv4 World",
+    "description": "Mappa approssimata di tutti gli indirizzi IP (o quasi) geolocalizzati geograficamente e ricercabili. ",
+    "url": "https://salvatorecapolupo.github.io/IPv4world/"
+  },
+  {
+    "name": "Javascript JSON",
+    "description": "",
+    "url": "https://salvatorecapolupo.github.io/json/"
+  },
+  {
+    "name": "Javascript Runner",
+    "description": "",
+    "url": "https://salvatorecapolupo.github.io/jsrunner/"
+  },
+  {
+    "name": "Javascript Bubble Sort",
+    "description": "",
+    "url": "https://salvatorecapolupo.github.io/js_bubble_sort/"
+  },
+  {
+    "name": "Javascript Game",
+    "description": "",
+    "url": "https://salvatorecapolupo.github.io/js_game/"
+  },
+  {
+    "name": "Javascript Masterclass",
+    "description": "50 esempi di codice JS per micro-learning ",
+    "url": "https://github.com/salvatorecapolupo/js_masterclass"
+  },
+  {
+    "name": "Labirinto",
+    "description": "",
+    "url": "https://salvatorecapolupo.github.io/labirinto/"
+  },
+  {
+    "name": "Algoritmo LCG",
+    "description": "Generatore di numeri casuali",
+    "url": "https://salvatorecapolupo.github.io/lcg/"
+  },
+  {
+    "name": "Catene di Markov (alpha)",
+    "description": "",
+    "url": "https://salvatorecapolupo.github.io/markov/"
+  },
+  {
+    "name": "Simulatore Markoviano (alpha)",
+    "description": "",
+    "url": "https://salvatorecapolupo.github.io/markoviano/"
+  },
+  {
+    "name": "Javascript - Masterjs",
+    "description": "Laboratorio avanzato Javascript. ",
+    "url": "https://salvatorecapolupo.github.io/masterjs/"
+  },
+  {
+    "name": "Math Jax",
+    "description": "Formule matematiche in LaTeX in HTML.",
+    "url": "https://salvatorecapolupo.github.io/mathjax/"
+  },
+  {
+    "name": "Math JS (alpha)",
+    "description": "calcolo simbolico (demo)",
+    "url": "https://salvatorecapolupo.github.io/mathjs/"
+  },
+  {
+    "name": "Monty Hall",
+    "description": "Simulatore del gioco di Monty Hall. È meglio cambiare scelta o rimanere sulla stessa?",
+    "url": "https://salvatorecapolupo.github.io/montyhall/"
+  },
+  {
+    "name": "Network Speed Game",
+    "description": "The Network Speed Game - Calcolo della velocità di trasmissione di un file di dimensione casuale su un mezzo trasmissivo a scelta (rete unicast)",
+    "url": "https://salvatorecapolupo.github.io/network-speed-game/"
+  },
+  {
+    "name": "NO",
+    "description": "No-as-a-service (esempio pratico di uso delle stringhe JSON in lettura)",
+    "url": "https://salvatorecapolupo.github.io/no/"
+  },
+  {
+    "name": "Problema delle 8 Regine",
+    "description": "",
+    "url": "https://salvatorecapolupo.github.io/ottoregine/"
+  },
+  {
+    "name": "Parole Italiane",
+    "description": "Liste di parole italiane",
+    "url": "https://github.com/salvatorecapolupo/paroleitaliane"
+  },
+  {
+    "name": "Password",
+    "description": "Password Gamification",
+    "url": "https://salvatorecapolupo.github.io/password/"
+  },
+  {
+    "name": "Potenziamento TPSIT",
+    "description": "",
+    "url": "https://salvatorecapolupo.github.io/potenziamento-tpsit/"
+  },
+  {
+    "name": "Privacy Checker",
+    "description": "Verifica la privacy del tuo dispositivo",
+    "url": "https://salvatorecapolupo.github.io/privacy/"
+  },
+  {
+    "name": "Problemi Di Programmazione",
+    "description": "Archivio",
+    "url": "https://github.com/salvatorecapolupo/problemi_di_programmazione"
+  },
+  {
+    "name": "Prolog (beta)",
+    "description": "",
+    "url": "https://salvatorecapolupo.github.io/prolog/"
+  },
+  {
+    "name": "Puzzle Code",
+    "description": "Un gioco di programmazione per programmatori in erba.",
+    "url": "https://salvatorecapolupo.github.io/puzzlecode/"
+  },
+  {
+    "name": "Quick Sort Visualization",
+    "description": "",
+    "url": "https://salvatorecapolupo.github.io/quick-sort-visualization/"
+  },
+  {
+    "name": "Rete",
+    "description": "",
+    "url": "https://salvatorecapolupo.github.io/rete/"
+  },
+  {
+    "name": "RFC 862",
+    "description": "",
+    "url": "https://salvatorecapolupo.github.io/rfc862/"
+  },
+  {
+    "name": "Routing (cammini minimi)",
+    "description": "Simulatore online di algoritmo di cammini minimi",
+    "url": "https://github.com/salvatorecapolupo/routing1"
+  },
+  {
+    "name": "Crittografia RSA",
+    "description": "Risolutore automatico con spiegazione dei passaggi dell'algoritmo RSA",
+    "url": "https://salvatorecapolupo.github.io/rsa/"
+  },
+  {
+    "name": "Scuola",
+    "description": "Archivio",
+    "url": "https://github.com/salvatorecapolupo/scuola"
+  },
+  {
+    "name": "SEO Link Finder (beta)",
+    "description": "External links finder from a given URL (exaustive search, no duplicate detection, slow); useful for assuring nofollow where necessary. Used for https://www.seoroma.com and other websites I worked on.",
+    "url": "https://github.com/salvatorecapolupo/SEOLinkFinder"
+  },
+  {
+    "name": "Serie Numeriche",
+    "description": "",
+    "url": "https://salvatorecapolupo.github.io/serie-numeriche/"
+  },
+  {
+    "name": "Simple Quote JS",
+    "description": "Print a random quote for your website, changes at every refresh. Pure JS here!",
+    "url": "https://github.com/salvatorecapolupo/SimpleQuoteJS"
+  },
+  {
+    "name": "So",
+    "description": "",
+    "url": "https://salvatorecapolupo.github.io/so/"
+  },
+  {
+    "name": "SQL Game",
+    "description": "Una strategia di gamification per apprendere le basi di SQL. ",
+    "url": "https://salvatorecapolupo.github.io/sql-game/"
+  },
+  {
+    "name": "SQL Mistery",
+    "description": "Un prototipo. ",
+    "url": "https://salvatorecapolupo.github.io/sql-mistery/"
+  },
+  {
+    "name": "Sum Check Protocol",
+    "description": "Questo protocollo viene spesso utilizzato per verificare somme o integrità di dati tra un prover e un verifier. Qui faremo una versione molto semplificata: il client proverà di conoscere dei numeri che sommano a un certo valore senza rivelarli direttamente.",
+    "url": "https://salvatorecapolupo.github.io/sum-check-protocol/"
+  },
+  {
+    "name": "Surviving Ipv4",
+    "description": "",
+    "url": "https://salvatorecapolupo.github.io/surviving-ipv4/"
+  },
+  {
+    "name": "Tapioco",
+    "description": "",
+    "url": "https://github.com/salvatorecapolupo/tapioco"
+  },
+  {
+    "name": "TCP UDP",
+    "description": "",
+    "url": "https://salvatorecapolupo.github.io/tcpudp/"
+  },
+  {
+    "name": "Test",
+    "description": "",
+    "url": "https://github.com/salvatorecapolupo/test"
+  },
+  {
+    "name": "Theexperiment001",
+    "description": "",
+    "url": "https://github.com/salvatorecapolupo/theexperiment001"
+  },
+  {
+    "name": "Thetree",
+    "description": "",
+    "url": "https://salvatorecapolupo.github.io/thetree/"
+  },
+  {
+    "name": "Ungioco",
+    "description": "Avventura grafica in versione alpha - HTML / JS based",
+    "url": "https://salvatorecapolupo.github.io/ungioco/"
+  },
+  {
+    "name": "Virgola Mobile 32 bit - IEE754",
+    "description": "",
+    "url": "https://salvatorecapolupo.github.io/virgolamobile/"
+  },
+  {
+    "name": "VLSM",
+    "description": "",
+    "url": "https://salvatorecapolupo.github.io/vlsm/"
+  },
+  {
+    "name": "WHOIS",
+    "description": "",
+    "url": "https://salvatorecapolupo.github.io/whois/"
+  },
+  {
+    "name": "Zed Invaders",
+    "description": "ZED Invaders 1.0 beta - questa versione NON è giocabile ed è qui solo a scopo documentaristico. Potete giocare gratis alla versione 2.0 su gamejolt",
+    "url": "https://salvatorecapolupo.github.io/zedinvaders/"
+  },
+  {
+    "name": "ZIUQ",
+    "description": "",
+    "url": "https://salvatorecapolupo.github.io/ziuq/"
+  }
+];
+
+  function generateRepoTable(repos) {
+    const tableBody = document.getElementById('repoTable');
+    repos.forEach(repo => {
+      const row = document.createElement('tr');
+      row.innerHTML = `
+        <td><strong>${repo.name}</strong> ${repo.description}</td>
+        <td><a href="${repo.url}" class="repo-link" target="_blank"> ${repo.url} </a></td>
+      `;
+      tableBody.appendChild(row);
+    });
+  }
+
+  $(document).ready(function () {
+  console.log("Se stai VERAMENTE leggendo questo, sei uno studente. Oppure un potenziale hacker :-)");   
+    
+  generateRepoTable(repositories);
+  $('#repoTableWrapper').DataTable({
+    responsive: true,
+    paging: true,        // attivo la paginazione
+    pageLength: 10,       // massimo 10 righe per pagina
+    searching: true,
+    ordering: true,
+    language: {
+      search: "Cerca",
+      zeroRecords: "Non trovo nulla, mi dispiace. Riprova!",
+      infoEmpty: "Non ci sono dati, a quanto pare... Oppure c'è qualche altro errore"
+    }
+  });
+});
+
+</script>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Salvatore Capolupo",
+  "url": "https://salvatorecapolupo.github.io/about-me/",
+  "sameAs": [
+    "https://github.com/salvatorecapolupo",
+    "https://capolooper.wordpress.com/"
+  ],
+  "knowsAbout": ["Informatica", "Sviluppo Software", "Didattica"]
+}
+</script>
+
+</body>
+</html>
+
+<!--
+
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀... dimmi :-)⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⡠⢤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡴⠟⠃⠀⠀⠙⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠋⠀⠀⠀⠀⠀⠀⠘⣆⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠾⢛⠒⠀⠀⠀⠀⠀⠀⠀⢸⡆⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣶⣄⡈⠓⢄⠠⡀⠀⠀⠀⣄⣷⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣿⣷⠀⠈⠱⡄⠑⣌⠆⠀⠀⡜⢻⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⡿⠳⡆⠐⢿⣆⠈⢿⠀⠀⡇⠘⡆⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢿⣿⣷⡇⠀⠀⠈⢆⠈⠆⢸⠀⠀⢣⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣿⣿⣿⣧⠀⠀⠈⢂⠀⡇⠀⠀⢨⠓⣄⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⣿⣿⣿⣦⣤⠖⡏⡸⠀⣀⡴⠋⠀⠈⠢⡀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣾⠁⣹⣿⣿⣿⣷⣾⠽⠖⠊⢹⣀⠄⠀⠀⠀⠈⢣⡀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡟⣇⣰⢫⢻⢉⠉⠀⣿⡆⠀⠀⡸⡏⠀⠀⠀⠀⠀⠀⢇
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢨⡇⡇⠈⢸⢸⢸⠀⠀⡇⡇⠀⠀⠁⠻⡄⡠⠂⠀⠀⠀⠘
+⢤⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠛⠓⡇⠀⠸⡆⢸⠀⢠⣿⠀⠀⠀⠀⣰⣿⣵⡆⠀⠀⠀⠀
+⠈⢻⣷⣦⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⡿⣦⣀⡇⠀⢧⡇⠀⠀⢺⡟⠀⠀⠀⢰⠉⣰⠟⠊⣠⠂⠀⡸
+⠀⠀⢻⣿⣿⣷⣦⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⢧⡙⠺⠿⡇⠀⠘⠇⠀⠀⢸⣧⠀⠀⢠⠃⣾⣌⠉⠩⠭⠍⣉⡇
+⠀⠀⠀⠻⣿⣿⣿⣿⣿⣦⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣞⣋⠀⠈⠀⡳⣧⠀⠀⠀⠀⠀⢸⡏⠀⠀⡞⢰⠉⠉⠉⠉⠉⠓⢻⠃
+⠀⠀⠀⠀⠹⣿⣿⣿⣿⣿⣿⣷⡄⠀⠀⢀⣀⠠⠤⣤⣤⠤⠞⠓⢠⠈⡆⠀⢣⣸⣾⠆⠀⠀⠀⠀⠀⢀⣀⡼⠁⡿⠈⣉⣉⣒⡒⠢⡼⠀
+⠀⠀⠀⠀⠀⠘⣿⣿⣿⣿⣿⣿⣿⣎⣽⣶⣤⡶⢋⣤⠃⣠⡦⢀⡼⢦⣾⡤⠚⣟⣁⣀⣀⣀⣀⠀⣀⣈⣀⣠⣾⣅⠀⠑⠂⠤⠌⣩⡇⠀
+⠀⠀⠀⠀⠀⠀⠘⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡁⣺⢁⣞⣉⡴⠟⡀⠀⠀⠀⠁⠸⡅⠀⠈⢷⠈⠏⠙⠀⢹⡛⠀⢉⠀⠀⠀⣀⣀⣼⡇⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠈⠻⣿⣿⣿⣿⣿⣿⣿⣿⣽⣿⡟⢡⠖⣡⡴⠂⣀⣀⣀⣰⣁⣀⣀⣸⠀⠀⠀⠀⠈⠁⠀⠀⠈⠀⣠⠜⠋⣠⠁⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢿⣿⣿⣿⡟⢿⣿⣿⣷⡟⢋⣥⣖⣉⠀⠈⢁⡀⠤⠚⠿⣷⡦⢀⣠⣀⠢⣄⣀⡠⠔⠋⠁⠀⣼⠃⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠻⣿⣿⡄⠈⠻⣿⣿⢿⣛⣩⠤⠒⠉⠁⠀⠀⠀⠀⠀⠉⠒⢤⡀⠉⠁⠀⠀⠀⠀⠀⢀⡿⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⢿⣤⣤⠴⠟⠋⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠑⠤⠀⠀⠀⠀⠀⢩⠇⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+
+-->
