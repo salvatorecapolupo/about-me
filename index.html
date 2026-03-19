@@ -3,358 +3,496 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Salvatore Capolupo — Dispense e materiale didattico</title>
 
-<title> Salvatore Capolupo — Dispense e materiale didattico </title>
-
-<!-- Bootstrap 5 -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
-<!-- DataTables -->
 <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
-
-<!-- Font -->
-<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=JetBrains+Mono:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-
-:root{
-  --primary:#0d6efd;
-  --bg:#f8f9fa;
+:root {
+  --green: #00ff41;
+  --dim:   #00bb30;
+  --bg:    #0a0a0a;
+  --card:  #111;
+  --border:#1a2e1a;
+  --text:  #c8ffd4;
+  --muted: #557755;
 }
 
-body{
-  font-family: Inter, system-ui, sans-serif;
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  font-family: 'JetBrains Mono', monospace;
   background: var(--bg);
+  color: var(--text);
+  font-size: .9rem;
 }
 
-/* Navbar */
-.navbar{
-  backdrop-filter: blur(10px);
+/* scanline overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,.08) 2px, rgba(0,0,0,.08) 4px);
+  pointer-events: none;
+  z-index: 9999;
 }
 
-/* Hero */
-.hero{
-  padding:60px 0;
+/* ---------- NAVBAR ---------- */
+.navbar {
+  background: rgba(0,0,0,.95) !important;
+  border-bottom: 1px solid var(--border);
+}
+.navbar-brand {
+  font-family: 'Press Start 2P', monospace;
+  font-size: .65rem;
+  color: var(--green) !important;
+  letter-spacing: .05em;
+}
+.nav-link {
+  color: var(--dim) !important;
+  font-size: .75rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  transition: color .2s;
+}
+.nav-link:hover { color: var(--green) !important; }
+
+/* ---------- HERO ---------- */
+.hero {
+  padding: 80px 0 60px;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+}
+.profile-photo {
+  width: 130px;
+  border-radius: 50%;
+  border: 2px solid var(--green);
+  box-shadow: 0 0 24px rgba(0,255,65,.25);
+  margin-bottom: 1.5rem;
+}
+h1.retro {
+  font-family: 'Press Start 2P', monospace;
+  font-size: clamp(.9rem, 2.5vw, 1.4rem);
+  color: var(--green);
+  margin-bottom: 1rem;
+}
+.lead { color: var(--text); font-size: .85rem; }
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  justify-content: center;
+  margin: 1.5rem auto;
+  max-width: 680px;
+}
+.tag {
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: .25rem .65rem;
+  font-size: .7rem;
+  color: var(--muted);
 }
 
-.profile-photo{
-  width:160px;
-  border-radius:50%;
-  box-shadow:0 10px 25px rgba(0,0,0,0.15);
+/* ---------- SECTIONS ---------- */
+section { padding: 60px 0; border-bottom: 1px solid var(--border); }
+section:last-of-type { border-bottom: none; }
+
+h2.retro {
+  font-family: 'Press Start 2P', monospace;
+  font-size: clamp(.6rem, 1.8vw, .95rem);
+  color: var(--green);
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+h2.retro::before { content: '> '; color: var(--dim); }
+
+/* ---------- DISPENSE ---------- */
+.pdf-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+.filter-btn {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .7rem;
+  padding: .3rem .7rem;
+  border-radius: 3px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: .07em;
+  transition: all .2s;
+}
+.filter-btn:hover, .filter-btn.active {
+  border-color: var(--green);
+  color: var(--green);
+  box-shadow: 0 0 8px rgba(0,255,65,.15);
 }
 
-/* Retro title */
-.retro{
-  font-family:'Press Start 2P', monospace;
+.search-box {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--text);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .8rem;
+  padding: .5rem 1rem;
+  width: 100%;
+  max-width: 420px;
+  display: block;
+  margin: 0 auto 1.5rem;
+  outline: none;
+  transition: border-color .2s;
+}
+.search-box::placeholder { color: var(--muted); }
+.search-box:focus { border-color: var(--dim); }
+
+.pdf-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-width: 680px;
+  margin-inline: auto;
+}
+.pdf-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .6rem .9rem;
+  border-bottom: 1px solid var(--border);
+  transition: background .15s;
+}
+.pdf-list li:hover { background: rgba(0,255,65,.04); }
+.pdf-list li a {
+  color: var(--text);
+  text-decoration: none;
+  font-size: .8rem;
+}
+.pdf-list li a:hover { color: var(--green); }
+.pdf-list li.hidden { display: none; }
+
+.cat-badge {
+  font-size: .6rem;
+  padding: .15rem .4rem;
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  border: 1px solid;
+  flex-shrink: 0;
+  margin-left: .5rem;
+}
+.cat-reti    { color:#4fc3f7; border-color:#1a3a4a; }
+.cat-prog    { color:#a5d6a7; border-color:#1a3a1a; }
+.cat-sistemi { color:#ffcc80; border-color:#3a2a10; }
+.cat-ia      { color:#ce93d8; border-color:#2a1a3a; }
+
+/* ---------- MATERIALE ---------- */
+#repoTableWrapper th,
+#repoTableWrapper td {
+  background: var(--card) !important;
+  color: var(--text) !important;
+  border-color: var(--border) !important;
+  font-size: .78rem;
+}
+#repoTableWrapper thead th { color: var(--green) !important; }
+.dataTables_wrapper .dataTables_filter input,
+.dataTables_wrapper .dataTables_length select {
+  background: var(--card);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-family: 'JetBrains Mono', monospace;
+}
+.dataTables_wrapper .dataTables_info,
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+  color: var(--muted) !important;
+  font-size: .75rem;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+  color: var(--green) !important;
+  border-color: var(--border) !important;
+  background: transparent !important;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+  color: var(--green) !important;
+  background: rgba(0,255,65,.05) !important;
+  border-color: var(--border) !important;
+}
+a.repo-link { color: var(--dim); font-size: .72rem; word-break: break-all; }
+a.repo-link:hover { color: var(--green); }
+
+/* ---------- EMULATORI ---------- */
+.emu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+  max-width: 900px;
+  margin-inline: auto;
+}
+.emu-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1.2rem 1.4rem;
+  transition: border-color .2s, box-shadow .2s;
+}
+.emu-card:hover {
+  border-color: var(--dim);
+  box-shadow: 0 0 14px rgba(0,255,65,.08);
+}
+.emu-card h5 {
+  font-size: .75rem;
+  color: var(--green);
+  margin-bottom: .6rem;
+}
+.emu-card a {
+  color: var(--dim);
+  font-size: .75rem;
+  text-decoration: none;
+}
+.emu-card a:hover { color: var(--green); }
+.emu-card a::before { content: '→ '; }
+
+/* ---------- ALTRO ---------- */
+.link-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+.link-btn {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--dim);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .78rem;
+  padding: .7rem 1.4rem;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all .2s;
+  letter-spacing: .05em;
+}
+.link-btn:hover {
+  border-color: var(--green);
+  color: var(--green);
+  box-shadow: 0 0 10px rgba(0,255,65,.12);
 }
 
-/* Cards */
-.card-modern{
-  border:none;
-  border-radius:16px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.08);
-  transition:.3s;
+/* ---------- CITAZIONI ---------- */
+.quotes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: 1.5rem;
+  max-width: 900px;
+  margin-inline: auto;
 }
-
-.card-modern:hover{
-  transform:translateY(-4px);
+.quote-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1.4rem;
+  text-align: center;
 }
+.quote-card img { width: 100%; border-radius: 4px; margin-bottom: 1rem; }
+.quote-card p { font-size: .75rem; color: var(--muted); line-height: 1.7; }
+.quote-card p em { color: var(--text); }
 
-/* Section spacing */
-section{
-  padding:60px 0;
+/* ---------- FOOTER ---------- */
+footer {
+  background: #050505;
+  border-top: 1px solid var(--border);
+  padding: 2rem 0;
+  text-align: center;
+  color: var(--muted);
+  font-size: .7rem;
 }
-
-/* Footer */
-footer{
-  background:#111;
-  color:#ddd;
-  padding:40px 0;
+footer a { color: var(--muted); }
+footer a:hover { color: var(--green); }
+footer .cc-icons img {
+  max-width: 1em; max-height: 1em; margin-left: .2em; filter: invert(.4);
 }
-
-footer a{
-  color:#aaa;
-}
-
 </style>
 </head>
-
 <body>
 
 <!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top">
+<nav class="navbar navbar-expand-lg sticky-top">
 <div class="container">
-
-<a class="navbar-brand fw-bold" href="#"> 
-  Salvatore Capolupo &#x1F4BE; &#x1F402; &#x1F451; &#x1F43A;
-</a>
-
-<button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
-<span class="navbar-toggler-icon"></span>
-</button>
-
-<div class="collapse navbar-collapse" id="menu">
-<ul class="navbar-nav ms-auto">
-
-<li class="nav-item"><a class="nav-link" href="#dispense">Dispense</a></li>
-<li class="nav-item"><a class="nav-link" href="#materiale">Materiale Didattico</a></li>
-<li class="nav-item"><a class="nav-link" href="#emulatori">Emulatori</a></li>
-<li class="nav-item"><a class="nav-link" href="#altro">Altro Materiale</a></li>
-
-</ul>
-
-</div>
+  <a class="navbar-brand" href="#">Salvatore Capolupo 💾 🐂 👑 🐺</a>
+  <button class="navbar-toggler" style="border-color:var(--border)" data-bs-toggle="collapse" data-bs-target="#menu">
+    <span class="navbar-toggler-icon" style="filter:invert(1)"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="menu">
+    <ul class="navbar-nav ms-auto gap-2">
+      <li class="nav-item"><a class="nav-link" href="#dispense">PDF</a></li>
+      <li class="nav-item"><a class="nav-link" href="#materiale">Lab</a></li>
+      <li class="nav-item"><a class="nav-link" href="#emulatori">Emulatori</a></li>
+      <li class="nav-item"><a class="nav-link" href="#altro">Link</a></li>
+    </ul>
+  </div>
 </div>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
-<div class="container text-center">
+<div class="container">
+  <img src="6140966.png" class="profile-photo" alt="Salvatore Capolupo">
+  <h1 class="retro">Salvatore Capolupo</h1>
+  <p class="lead">Insegnante di informatica · Sviluppatore · Divulgatore &mdash; <a href="5-cv-salvatore-capolupo.pdf" target="_blank" style="color:var(--green)">CV</a></p>
 
-<img src="6140966.png" class="profile-photo mb-4">
+  <div class="tag-list">
+    <span class="tag">Programmazione OOP / FP / Procedurale</span>
+    <span class="tag">Java · Python · C++</span>
+    <span class="tag">Reti · Piani di indirizzamento</span>
+    <span class="tag">Ingegneria del software</span>
+    <span class="tag">Database · SQL · NoSQL · JSON</span>
+    <span class="tag">Gamification didattica</span>
+  </div>
 
-<h1 class="retro mb-3">Salvatore Capolupo</h1>
+  <p style="font-size:.75rem;color:var(--muted)">
+    Materiale gratuito per studenti, colleghi e appassionati.<br>
+    Errori o richieste:
+    <img src="https://salvatorecapolupo.github.io/about-me/email.png" alt="email" style="max-width:180px;vertical-align:middle;margin-left:.5rem;opacity:.85">
+  </p>
 
-<p class="lead">
-Insegnante di informatica · Sviluppatore · Divulgatore (<a href="5-cv-salvatore-capolupo.pdf" target="_blank"> il mio CV </a>)
-</p>
-
-<p class="col-lg-8 mx-auto">
-Questo sito è una raccolta di materiale gratuito per studenti, colleghi e appassionati di informatica:
-programmazione, reti, database, ingegneria del software e gamification. Argomenti trattati: <br/>
-
-<ul class="list-group">
-  <li class="list-group-item list-group-item-action">Programmazione procedurale, programmazione funzionale, programmazione orientata agli oggetti (Java, Python, C++, ...)</li>
-  <li class="list-group-item list-group-item-action">Progettazione sistemi, piani di indirizzamento</li>
-  <li class="list-group-item list-group-item-action">Ingegneria del software</li>
-  <li class="list-group-item list-group-item-action">Gamification come metodologia didattica</li>
-  <li class="list-group-item list-group-item-action">Database, SQL, No SQL, JSON</li>
-  <li class="list-group-item list-group-item-action">... altro :-) </li>
-</ul>
-
-</p>
-
-<p class="col-lg-8 mx-auto">
-  Per contattarmi, segnalare eventuali errori o richieste di ogni genere potete scrivere a: 
-  <img src="https://salvatorecapolupo.github.io/about-me/email.png" alt="Email di contatto" style="margin-top: 15px; max-width: 220px;">
-</p>
-
-<br/>
-<small><a href="https://salvatorecapolupo.github.io/about-me/">Salvatore Capolupo — Dispense e materiale didattico</a> © 2026 by <a href="https://salvatorecapolupo.github.io/about-me/">Salvatore Capolupo</a> is licensed under <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a><img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"></small>
-
+  <small style="color:var(--muted);font-size:.65rem">
+    <a href="https://salvatorecapolupo.github.io/about-me/" style="color:inherit">salvatorecapolupo.github.io/about-me</a>
+    © 2026 — <a href="https://creativecommons.org/licenses/by-nc/4.0/" style="color:inherit">CC BY-NC 4.0</a>
+    <span class="cc-icons">
+      <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="CC">
+      <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="BY">
+      <img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" alt="NC">
+    </span>
+  </small>
 </div>
 </section>
 
 <!-- DISPENSE -->
 <section id="dispense">
 <div class="container">
+  <h2 class="retro">Dispense in PDF</h2>
 
-<h2 class="retro mb-4 text-center"> Dispense in PDF (in aggiornamento) </h2>
+  <div class="pdf-filters">
+    <button class="filter-btn active" data-cat="all">Tutte</button>
+    <button class="filter-btn" data-cat="reti">Reti</button>
+    <button class="filter-btn" data-cat="prog">Programmazione</button>
+    <button class="filter-btn" data-cat="sistemi">Sistemi</button>
+    <button class="filter-btn" data-cat="ia">IA / Extra</button>
+  </div>
 
-<div id="my-list">
-<input type="text" id="search-dispense" class="search form-control" placeholder="Cerca..." />
-  
-<ul class="list-group shadow-sm" id="lista-dispense">
-<li class="list-group-item name"><a href="PDF/C++_Array_e_Matrici.pdf" target="_blank">C++ Array e Matrici</a></li>
-<li class="list-group-item name"><a href="PDF/C++_informatica_Fizz_Buzz.pdf" target="_blank">C++ informatica Fizz Buzz</a></li>
-<li class="list-group-item name"><a href="PDF/Dispensa_aritmetica_modulo_N.pdf" target="_blank">Dispensa aritmetica modulo N</a></li>
-<li class="list-group-item name"><a href="PDF/Dispensa_topologie_di_rete.pdf" target="_blank">Dispensa topologie di rete</a></li>
-<li class="list-group-item name"><a href="PDF/IA_like_a_pro-capolupo.pdf" target="_blank">IA like a pro capolupo</a></li>
-<li class="list-group-item name"><a href="PDF/RADIUS.pdf" target="_blank">RADIUS</a></li>
-<li class="list-group-item name"><a href="PDF/RESTful_API.pdf" target="_blank">RESTful API</a></li>
-<li class="list-group-item name"><a href="PDF/autenticazione_MFA.pdf" target="_blank">autenticazione MFA</a></li>
-<li class="list-group-item name"><a href="PDF/business_continuity.pdf" target="_blank">business continuity</a></li>
-<li class="list-group-item name"><a href="PDF/firma_digitale_o_elettronica.pdf" target="_blank">firma digitale o elettronica</a></li>
-<li class="list-group-item name"><a href="PDF/guida_JS-1.pdf" target="_blank">guida JS 1</a></li>
-<li class="list-group-item name"><a href="PDF/huggingface-capolupo.pdf" target="_blank">huggingface capolupo</a></li>
-<li class="list-group-item name"><a href="PDF/ragionando-assembly-capolupo.pdf" target="_blank">ragionando assembly capolupo</a></li>
-<li class="list-group-item name"><a href="PDF/reti mobile.pdf" target="_blank">reti mobile</a></li>
-<li class="list-group-item name"><a href="PDF/sistemi-operativi-capolupo.pdf" target="_blank">sistemi operativi capolupo</a></li>
-<li class="list-group-item name"><a href="PDF/ssh.pdf" target="_blank">ssh</a></li>
-<li class="list-group-item name"><a href="PDF/terminale_windows_capolupo.pdf" target="_blank">terminale windows capolupo</a></li>
-<li class="list-group-item name"><a href="PDF/thread_java_petri.pdf" target="_blank">thread java petri</a></li>
-</ul>
+  <input type="text" id="search-dispense" class="search-box" placeholder="// cerca dispensa...">
 
-</div>
-  
+  <ul class="pdf-list" id="lista-dispense">
+    <!-- RETI -->
+    <li data-cat="reti"><a href="PDF/Dispensa_topologie_di_rete.pdf" target="_blank">Topologie di rete</a><span class="cat-badge cat-reti">Reti</span></li>
+    <li data-cat="reti"><a href="PDF/RADIUS.pdf" target="_blank">RADIUS</a><span class="cat-badge cat-reti">Reti</span></li>
+    <li data-cat="reti"><a href="PDF/RESTful_API.pdf" target="_blank">RESTful API</a><span class="cat-badge cat-reti">Reti</span></li>
+    <li data-cat="reti"><a href="PDF/autenticazione_MFA.pdf" target="_blank">Autenticazione MFA</a><span class="cat-badge cat-reti">Reti</span></li>
+    <li data-cat="reti"><a href="PDF/business_continuity.pdf" target="_blank">Business Continuity</a><span class="cat-badge cat-reti">Reti</span></li>
+    <li data-cat="reti"><a href="PDF/firma_digitale_o_elettronica.pdf" target="_blank">Firma digitale / elettronica</a><span class="cat-badge cat-reti">Reti</span></li>
+    <li data-cat="reti"><a href="PDF/ssh.pdf" target="_blank">SSH</a><span class="cat-badge cat-reti">Reti</span></li>
+    <li data-cat="reti"><a href="PDF/reti mobile.pdf" target="_blank">Reti mobile</a><span class="cat-badge cat-reti">Reti</span></li>
+    <!-- PROGRAMMAZIONE -->
+    <li data-cat="prog"><a href="PDF/C++_Array_e_Matrici.pdf" target="_blank">C++ — Array e Matrici</a><span class="cat-badge cat-prog">Prog</span></li>
+    <li data-cat="prog"><a href="PDF/C++_informatica_Fizz_Buzz.pdf" target="_blank">C++ — Fizz Buzz</a><span class="cat-badge cat-prog">Prog</span></li>
+    <li data-cat="prog"><a href="PDF/ragionando-assembly-capolupo.pdf" target="_blank">Ragionando in Assembly</a><span class="cat-badge cat-prog">Prog</span></li>
+    <li data-cat="prog"><a href="PDF/thread_java_petri.pdf" target="_blank">Thread Java — Reti di Petri</a><span class="cat-badge cat-prog">Prog</span></li>
+    <li data-cat="prog"><a href="PDF/guida_JS-1.pdf" target="_blank">Guida JavaScript vol.1</a><span class="cat-badge cat-prog">Prog</span></li>
+    <!-- SISTEMI -->
+    <li data-cat="sistemi"><a href="PDF/sistemi-operativi-capolupo.pdf" target="_blank">Sistemi Operativi</a><span class="cat-badge cat-sistemi">Sistemi</span></li>
+    <li data-cat="sistemi"><a href="PDF/terminale_windows_capolupo.pdf" target="_blank">Terminale Windows</a><span class="cat-badge cat-sistemi">Sistemi</span></li>
+    <li data-cat="sistemi"><a href="PDF/Dispensa_aritmetica_modulo_N.pdf" target="_blank">Aritmetica modulo N</a><span class="cat-badge cat-sistemi">Sistemi</span></li>
+    <!-- IA / EXTRA -->
+    <li data-cat="ia"><a href="PDF/IA_like_a_pro-capolupo.pdf" target="_blank">IA like a pro</a><span class="cat-badge cat-ia">IA</span></li>
+    <li data-cat="ia"><a href="PDF/huggingface-capolupo.pdf" target="_blank">Hugging Face</a><span class="cat-badge cat-ia">IA</span></li>
+  </ul>
 </div>
 </section>
 
-<!-- MATERIAL TABLE -->
+<!-- MATERIALE DIDATTICO -->
 <section id="materiale">
 <div class="container">
-
-<h2 class="retro mb-4 text-center">Materiale Didattico</h2>
-
-<div class="card card-modern p-3">
-
-<section id="materiale">
-  <div class="container">
-    
-    <div class="card card-modern p-3">
-      <div class="table-responsive">
-        <table id="repoTableWrapper" class="table table-bordered table-striped table-sm table-hover display w-100">
-          <thead class="thead-dark">
-            <tr>
-              <th>Descrizione</th>
-              <th>Link</th>
-            </tr>
-          </thead>
-          <tbody id="repoTable"></tbody>
-        </table>
-      </div>
-    </div>
+  <h2 class="retro">Lab &amp; Materiale</h2>
+  <div class="table-responsive">
+    <table id="repoTableWrapper" class="table table-sm display w-100">
+      <thead>
+        <tr><th>Nome</th><th>Descrizione</th><th>Link</th></tr>
+      </thead>
+      <tbody id="repoTable"></tbody>
+    </table>
   </div>
-</section>
-
-
-</div>
-
 </div>
 </section>
 
 <!-- EMULATORI -->
 <section id="emulatori">
 <div class="container">
-
-<h2 class="retro text-center mb-4">Emulatori Online</h2>
-
-<div class="row g-4">
-
-<div class="col-md-4">
-<div class="card card-modern p-4 h-100">
-<h5>Emulatore Assembly 8086</h5>
-<a href="https://yjdoc2.github.io/8086-emulator-web/" target="_blank">
-Apri emulatore
-</a>
-</div>
-</div>
-
-<div class="col-md-4">
-<div class="card card-modern p-4 h-100">
-<h5>Macchina di Turing interattiva</h5>
-<a href="https://turingmachine.io/" target="_blank">
-Apri simulatore
-</a>
-</div>
-</div>
-
-<div class="col-md-4">
-<div class="card card-modern p-4 h-100">
-<h5>Von Neumann</h5>
-<a href="https://vonsim.guglio.net/" target="_blank">
-Apri simulatore
-</a>
-</div>
-</div>
-
-<div class="col-md-4">
-<div class="card card-modern p-4 h-100">
-<h5>Emulatore Assembly (schweigi.github.io)</h5>
-<a href="https://schweigi.github.io/assembler-simulator/index.html" target="_blank">
-Apri emulatore
-</a>
-</div>
-</div>
-
-<div class="col-md-4">
-<div class="card card-modern p-4 h-100">
-<h5>Puzzle Code</h5>
-<a href="https://salvatorecapolupo.github.io/puzzlecode/public/index.html" target="_blank">
-Apri simulatore
-</a>
-</div>
-</div>
-
-<div class="col-md-4">
-<div class="card card-modern p-4 h-100">
-<h5>Emulatore Assembly 8086 (kobzol.github.io)</h5>
-<a href="https://kobzol.github.io/davis/" target="_blank">
-Apri simulatore
-</a>
-</div>
-</div>
-
-</div>
+  <h2 class="retro">Emulatori Online</h2>
+  <div class="emu-grid">
+    <div class="emu-card"><h5>Assembly 8086</h5><a href="https://yjdoc2.github.io/8086-emulator-web/" target="_blank">yjdoc2.github.io</a></div>
+    <div class="emu-card"><h5>Macchina di Turing</h5><a href="https://turingmachine.io/" target="_blank">turingmachine.io</a></div>
+    <div class="emu-card"><h5>Von Neumann (VonSim)</h5><a href="https://vonsim.guglio.net/" target="_blank">vonsim.guglio.net</a></div>
+    <div class="emu-card"><h5>Assembly (schweigi)</h5><a href="https://schweigi.github.io/assembler-simulator/index.html" target="_blank">schweigi.github.io</a></div>
+    <div class="emu-card"><h5>Puzzle Code</h5><a href="https://salvatorecapolupo.github.io/puzzlecode/public/index.html" target="_blank">puzzlecode →</a></div>
+    <div class="emu-card"><h5>Assembly 8086 (kobzol)</h5><a href="https://kobzol.github.io/davis/" target="_blank">kobzol.github.io</a></div>
+  </div>
 </div>
 </section>
 
-  <section id="altro" class="container">
-
-  <h2 class="retro text-center mb-4">Altro Materiale</h2>
-    
-  <div class="container text-center">
-  <div class="row">
-    <div class="col">
-      <a class="btn btn-success btn-lg" rel="nofollow" href="https://amzn.to/4aWZcpg"> I miei libri (Amazon.it) </a>
-    </div>
-    <div class="col">
-      <a class="btn btn-primary btn-lg" href="https://lipercubo.info/author/salvatore/"> Articoli che ho scritto </a>
-    </div>
-    <div class="col">
-      <a class="btn btn-info btn-lg" href="https://gist.github.com/salvatorecapolupo/"> Il mio gist (snippet, guide, ecc.) </a>
-    </div>
+<!-- ALTRO -->
+<section id="altro">
+<div class="container" style="text-align:center">
+  <h2 class="retro">Link</h2>
+  <div class="link-grid">
+    <a class="link-btn" href="https://amzn.to/4aWZcpg" rel="nofollow" target="_blank">📚 I miei libri</a>
+    <a class="link-btn" href="https://lipercubo.info/author/salvatore/" target="_blank">✍ Articoli</a>
+    <a class="link-btn" href="https://gist.github.com/salvatorecapolupo/" target="_blank">⌨ Gist / Snippet</a>
   </div>
 </div>
+</section>
 
-
-    
-  </section>
-
-<!-- QUOTES -->
+<!-- CITAZIONI -->
 <section>
 <div class="container">
-
-<div class="row g-4">
-
-<div class="col-md-4">
-<div class="card card-modern p-3 text-center">
-<img src="Alan_Turing_Aged_16.jpg" class="img-fluid rounded">
-<p class="mt-3">
-"<em>A volte 
-          sono proprio 
-          le persone 
-          a cui nessuno dà credito 
-          a fare le cose 
-          che nessuno 
-          si aspetterebbe</em>.
-        " (A. Turing)
-</p>
-</div>
-</div>
-
-<div class="col-md-4">
-<div class="card card-modern p-3 text-center">
-<img src="Rousseau.jpg" class="img-fluid rounded">
-<p class="mt-3">
-            "<em>Quando Emilio imparerà il suo mestiere, io voglio apprenderlo con lui; 
-                perché sono convinto che non apprenderà mai bene 
-                  altro che ciò che impareremo insieme</em>." (J. J. Rousseau) 
-</p>
-</div>
-</div>
-
-<div class="col-md-4">
-<div class="card card-modern p-3 text-center">
-<iframe src="https://giphy.com/embed/l0HlBrqIs8euKI1fq"
-height="200"></iframe>
-</div>
-</div>
-
-</div>
+  <div class="quotes-grid">
+    <div class="quote-card">
+      <img src="Alan_Turing_Aged_16.jpg" alt="Alan Turing">
+      <p><em>«A volte sono proprio le persone a cui nessuno dà credito a fare le cose che nessuno si aspetterebbe.»</em><br><span style="color:var(--muted)">— A. Turing</span></p>
+    </div>
+    <div class="quote-card">
+      <img src="Rousseau.jpg" alt="Rousseau">
+      <p><em>«Quando Emilio imparerà il suo mestiere, io voglio apprenderlo con lui; perché sono convinto che non apprenderà mai bene altro che ciò che impareremo insieme.»</em><br><span style="color:var(--muted)">— J. J. Rousseau</span></p>
+    </div>
+    <div class="quote-card" style="display:flex;align-items:center;justify-content:center">
+      <iframe src="https://giphy.com/embed/l0HlBrqIs8euKI1fq" height="180" style="border:none" allowfullscreen></iframe>
+    </div>
+  </div>
 </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-<div class="container text-center">
-
-<p>
-  Questo sito non ha scopo di lucro - <a href="https://salvatorecapolupo.github.io/about-me/">https://salvatorecapolupo.github.io/about-me/</a> © 2026 by <a href="https://capolooper.wordpress.com/">Salvatore Capolupo</a> is licensed under <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a><img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;">
-  Ultimo aggiornamento: <strong>10 marzo 2026</strong> - <a href='http://www.freevisitorcounters.com'>freevisitorcounterss Homepage</a> <script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=5ef628922808c4b0fa7be821546dfb134f735d8d'></script>
+<div class="container">
+  <p>
+    Sito senza scopo di lucro &mdash;
+    <a href="https://salvatorecapolupo.github.io/about-me/">salvatorecapolupo.github.io/about-me</a>
+    © 2026 <a href="https://capolooper.wordpress.com/">Salvatore Capolupo</a> &mdash;
+    <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>
+    <span class="cc-icons">
+      <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="CC">
+      <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="BY">
+      <img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" alt="NC">
+    </span>
+    <br>Ultimo aggiornamento: <strong style="color:var(--text)">19 marzo 2026</strong>
+  </p>
+  <script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=5ef628922808c4b0fa7be821546dfb134f735d8d'></script>
   <script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/1503606/t/0"></script>
-</p>
-
 </div>
 </footer>
 
@@ -363,480 +501,127 @@ height="200"></iframe>
 <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  
-<script>
 
-  const repositories = [
-  {
-    "name": "100",
-    "description": "",
-    "url": "https://salvatorecapolupo.github.io/100/"
-  },
-  {
-    "name": "Allyouneedispython",
-    "description": "",
-    "url": "https://github.com/salvatorecapolupo/allyouneedispython"
-  },
-  {
-    "name": "Birthdayparadox",
-    "description": "Il paradosso del compleanno è un risultato controintuitivo della probabilità:     in un gruppo di appena 23 persone, c'è oltre il 50% di probabilità che almeno due persone condividano lo stesso giorno di compleanno.",
-    "url": "https://salvatorecapolupo.github.io/birthdayparadox/"
-  },
-  {
-    "name": "Bittorrent",
-    "description": "Come funziona il protocollo bittorrent (per sistemi e TPSIT)",
-    "url": "https://salvatorecapolupo.github.io/bittorrent/"
-  },
-  {
-    "name": "Bogo Sort Visualization",
-    "description": "",
-    "url": "https://salvatorecapolupo.github.io/bogo-sort-visualization/"
-  },
-  {
-    "name": "Bubble Sort Visualization",
-    "description": "",
-    "url": "https://salvatorecapolupo.github.io/bubble-sort-visualization/"
-  },
-  {
-    "name": "Chatbot",
-    "description": "",
-    "url": "https://salvatorecapolupo.github.io/chatbot/"
-  },
-  {
-    "name": "Classificatore",
-    "description": "",
-    "url": "https://salvatorecapolupo.github.io/classificatore/"
-  },
-  {
-    "name": "Codewall",
-    "description": "Mostra un pezzo di codice con parti mancanti, e dovrai completarlo. ",
-    "url": "https://salvatorecapolupo.github.io/codewall/"
-  },
-  {
-    "name": "Colorguess",
-    "description": "",
-    "url": "https://salvatorecapolupo.github.io/colorguess/"
-  },
-  {
-    "name": "Completalo",
-    "description": "",
-    "url": "https://salvatorecapolupo.github.io/completalo/"
-  },
-  {
-    "name": "Convertiamo",
-    "description": "Convertitore hex decimale binario ",
-    "url": "https://salvatorecapolupo.github.io/convertiamo/"
-  },
-  {
-    "name": "Crafty",
-    "description": "JavaScript Game Engine",
-    "url": "https://github.com/salvatorecapolupo/Crafty"
-  },
-  {
-    "name": "Crittografia",
-    "description": "Mirror from http://highschool.spsd.org/crypt/index.html - All rights reserved. Repository only. for educational purposes. ",
-    "url": "https://salvatorecapolupo.github.io/crittografia/"
-  },
-  {
-    "name": "Cryptography",
-    "description": "",
-    "url": "https://salvatorecapolupo.github.io/cryptography/"
-  },
-  {
-    "name": "Cryptography Basics",
-    "description": "Risolutore automatico con spiegazione dei passaggi dell'algoritmo RSA. Funzione hash spiegata con simulatore. ",
-    "url": "https://salvatorecapolupo.github.io/cryptography-basics/"
-  },
-  {
-    "name": "Didattica",
-    "description": "Informatica a scuola - Didattica",
-    "url": "https://salvatorecapolupo.github.io/didattica/"
-  },
-  {
-    "name": "Didattimizzazione",
-    "description": "Un test di pagina ottimizzata per la SEO secondo le linee guida di Google",
-    "url": "https://salvatorecapolupo.github.io/Didattimizzazione/"
-  },
-  {
-    "name": "Divoogle",
-    "description": "Ah.",
-    "url": "https://salvatorecapolupo.github.io/divoogle/"
-  },
-  {
-    "name": "Documenti Scuola Informatica",
-    "description": "Linee guida, documenti ufficiali e quant'altro, raccolto in un singolo repository.",
-    "url": "https://github.com/salvatorecapolupo/documenti-scuola-informatica"
-  },
-  {
-    "name": "Emu8086",
-    "description": "Emulator 8086",
-    "url": "https://github.com/salvatorecapolupo/emu8086"
-  },
-  {
-    "name": "Epoca",
-    "description": "EPOCA - Plugin per WordPress di autopubblicazione vecchi post",
-    "url": "https://github.com/salvatorecapolupo/EPOCA"
-  },
-  {
-    "name": "Erconverter",
-    "description": "Convertitore binario / decimale / esadecimale (corso di sistemi e reti)",
-    "url": "https://salvatorecapolupo.github.io/erconverter/"
-  },
-  {
-    "name": "Frattali",
-    "description": "",
-    "url": "https://salvatorecapolupo.github.io/frattali/"
-  },
-  {
-    "name": "Generatore Di Password",
-    "description": "Password solide, one-shot e generate con algoritmo sicuro. Non memorizzate sul server.",
-    "url": "https://salvatorecapolupo.github.io/generatore-di-password/"
-  },
-  {
-    "name": "Gladiatorijson",
-    "description": "",
-    "url": "https://salvatorecapolupo.github.io/gladiatorijson/"
-  },
-  {
-    "name": "Hal9000",
-    "description": "Un omaggio a 2001 Odissea nello spazio di Stanley Kubrick.",
-    "url": "https://salvatorecapolupo.github.io/HAL9000/"
-  },
-  {
-    "name": "Hanoi",
-    "description": "Gioco interattivo delle torri di Hanoi",
-    "url": "https://salvatorecapolupo.github.io/hanoi/"
-  },
-  {
-    "name": "Ilmioprogetto",
-    "description": "La descrizione del progetto... bla bla bla",
-    "url": "https://salvatorecapolupo.github.io/ilmioprogetto/"
-  },
-  {
-    "name": "Inevitabile",
-    "description": "shgdhasjdhgasda",
-    "url": "https://salvatorecapolupo.github.io/inevitabile/"
-  },
-  {
-    "name": "Informatica",
-    "description": "Supporto didattico per TPSIT, sistemi e reti, informatica",
-    "url": "https://salvatorecapolupo.github.io/informatica/"
-  },
-  {
-    "name": "Insegnareinformatica",
-    "description": "",
-    "url": "https://salvatorecapolupo.github.io/insegnareinformatica/"
-  },
-  {
-    "name": "IPv4 World",
-    "description": "Mappa approssimata di tutti gli indirizzi IP (o quasi) geolocalizzati geograficamente e ricercabili. ",
-    "url": "https://salvatorecapolupo.github.io/IPv4world/"
-  },
-  {
-    "name": "Javascript JSON",
-    "description": "",
-    "url": "https://salvatorecapolupo.github.io/json/"
-  },
-  {
-    "name": "Javascript Runner",
-    "description": "",
-    "url": "https://salvatorecapolupo.github.io/jsrunner/"
-  },
-  {
-    "name": "Javascript Bubble Sort",
-    "description": "",
-    "url": "https://salvatorecapolupo.github.io/js_bubble_sort/"
-  },
-  {
-    "name": "Javascript Game",
-    "description": "",
-    "url": "https://salvatorecapolupo.github.io/js_game/"
-  },
-  {
-    "name": "Javascript Masterclass",
-    "description": "50 esempi di codice JS per micro-learning ",
-    "url": "https://github.com/salvatorecapolupo/js_masterclass"
-  },
-  {
-    "name": "Labirinto",
-    "description": "",
-    "url": "https://salvatorecapolupo.github.io/labirinto/"
-  },
-  {
-    "name": "Algoritmo LCG",
-    "description": "Generatore di numeri casuali",
-    "url": "https://salvatorecapolupo.github.io/lcg/"
-  },
-  {
-    "name": "Catene di Markov (alpha)",
-    "description": "",
-    "url": "https://salvatorecapolupo.github.io/markov/"
-  },
-  {
-    "name": "Simulatore Markoviano (alpha)",
-    "description": "",
-    "url": "https://salvatorecapolupo.github.io/markoviano/"
-  },
-  {
-    "name": "Javascript - Masterjs",
-    "description": "Laboratorio avanzato Javascript. ",
-    "url": "https://salvatorecapolupo.github.io/masterjs/"
-  },
-  {
-    "name": "Math Jax",
-    "description": "Formule matematiche in LaTeX in HTML.",
-    "url": "https://salvatorecapolupo.github.io/mathjax/"
-  },
-  {
-    "name": "Math JS (alpha)",
-    "description": "calcolo simbolico (demo)",
-    "url": "https://salvatorecapolupo.github.io/mathjs/"
-  },
-  {
-    "name": "Monty Hall",
-    "description": "Simulatore del gioco di Monty Hall. È meglio cambiare scelta o rimanere sulla stessa?",
-    "url": "https://salvatorecapolupo.github.io/montyhall/"
-  },
-  {
-    "name": "Network Speed Game",
-    "description": "The Network Speed Game - Calcolo della velocità di trasmissione di un file di dimensione casuale su un mezzo trasmissivo a scelta (rete unicast)",
-    "url": "https://salvatorecapolupo.github.io/network-speed-game/"
-  },
-  {
-    "name": "NO",
-    "description": "No-as-a-service (esempio pratico di uso delle stringhe JSON in lettura)",
-    "url": "https://salvatorecapolupo.github.io/no/"
-  },
-  {
-    "name": "Problema delle 8 Regine",
-    "description": "",
-    "url": "https://salvatorecapolupo.github.io/ottoregine/"
-  },
-  {
-    "name": "Parole Italiane",
-    "description": "Liste di parole italiane",
-    "url": "https://github.com/salvatorecapolupo/paroleitaliane"
-  },
-  {
-    "name": "Password",
-    "description": "Password Gamification",
-    "url": "https://salvatorecapolupo.github.io/password/"
-  },
-  {
-    "name": "Potenziamento TPSIT",
-    "description": "",
-    "url": "https://salvatorecapolupo.github.io/potenziamento-tpsit/"
-  },
-  {
-    "name": "Privacy Checker",
-    "description": "Verifica la privacy del tuo dispositivo",
-    "url": "https://salvatorecapolupo.github.io/privacy/"
-  },
-  {
-    "name": "Problemi Di Programmazione",
-    "description": "Archivio",
-    "url": "https://github.com/salvatorecapolupo/problemi_di_programmazione"
-  },
-  {
-    "name": "Prolog (beta)",
-    "description": "",
-    "url": "https://salvatorecapolupo.github.io/prolog/"
-  },
-  {
-    "name": "Puzzle Code",
-    "description": "Un gioco di programmazione per programmatori in erba.",
-    "url": "https://salvatorecapolupo.github.io/puzzlecode/"
-  },
-  {
-    "name": "Quick Sort Visualization",
-    "description": "",
-    "url": "https://salvatorecapolupo.github.io/quick-sort-visualization/"
-  },
-  {
-    "name": "Rete",
-    "description": "",
-    "url": "https://salvatorecapolupo.github.io/rete/"
-  },
-  {
-    "name": "RFC 862",
-    "description": "",
-    "url": "https://salvatorecapolupo.github.io/rfc862/"
-  },
-  {
-    "name": "Routing (cammini minimi)",
-    "description": "Simulatore online di algoritmo di cammini minimi",
-    "url": "https://github.com/salvatorecapolupo/routing1"
-  },
-  {
-    "name": "Crittografia RSA",
-    "description": "Risolutore automatico con spiegazione dei passaggi dell'algoritmo RSA",
-    "url": "https://salvatorecapolupo.github.io/rsa/"
-  },
-  {
-    "name": "Scuola",
-    "description": "Archivio",
-    "url": "https://github.com/salvatorecapolupo/scuola"
-  },
-  {
-    "name": "SEO Link Finder (beta)",
-    "description": "External links finder from a given URL (exaustive search, no duplicate detection, slow); useful for assuring nofollow where necessary. Used for https://www.seoroma.com and other websites I worked on.",
-    "url": "https://github.com/salvatorecapolupo/SEOLinkFinder"
-  },
-  {
-    "name": "Serie Numeriche",
-    "description": "",
-    "url": "https://salvatorecapolupo.github.io/serie-numeriche/"
-  },
-  {
-    "name": "Simple Quote JS",
-    "description": "Print a random quote for your website, changes at every refresh. Pure JS here!",
-    "url": "https://github.com/salvatorecapolupo/SimpleQuoteJS"
-  },
-  {
-    "name": "So",
-    "description": "",
-    "url": "https://salvatorecapolupo.github.io/so/"
-  },
-  {
-    "name": "SQL Game",
-    "description": "Una strategia di gamification per apprendere le basi di SQL. ",
-    "url": "https://salvatorecapolupo.github.io/sql-game/"
-  },
-  {
-    "name": "SQL Mistery",
-    "description": "Un prototipo. ",
-    "url": "https://salvatorecapolupo.github.io/sql-mistery/"
-  },
-  {
-    "name": "Sum Check Protocol",
-    "description": "Questo protocollo viene spesso utilizzato per verificare somme o integrità di dati tra un prover e un verifier. Qui faremo una versione molto semplificata: il client proverà di conoscere dei numeri che sommano a un certo valore senza rivelarli direttamente.",
-    "url": "https://salvatorecapolupo.github.io/sum-check-protocol/"
-  },
-  {
-    "name": "Calcolatore di subnetting (subnet mask)",
-    "description": "",
-    "url": "https://salvatorecapolupo.github.io/surviving-ipv4/"
-  },
-  {
-    "name": "Subnetting e piani di indirizzamento IPv4 (subnet mask)",
-    "description": "",
-    "url": "https://salvatorecapolupo.github.io/sistemi_e_reti/modulo_3.html"
-  },
-  {
-    "name": "Sistemi e reti - Ripasso per l'esame di stato",
-    "description": "",
-    "url": "https://salvatorecapolupo.github.io/sistemi_e_reti/"
-  },
-  {
-    "name": "Tapioco",
-    "description": "",
-    "url": "https://github.com/salvatorecapolupo/tapioco"
-  },
-  {
-    "name": "TCP UDP",
-    "description": "",
-    "url": "https://salvatorecapolupo.github.io/tcpudp/"
-  },
-  {
-    "name": "Test",
-    "description": "",
-    "url": "https://github.com/salvatorecapolupo/test"
-  },
-  {
-    "name": "Theexperiment001",
-    "description": "",
-    "url": "https://github.com/salvatorecapolupo/theexperiment001"
-  },
-  {
-    "name": "Thetree",
-    "description": "",
-    "url": "https://salvatorecapolupo.github.io/thetree/"
-  },
-  {
-    "name": "Ungioco",
-    "description": "Avventura grafica in versione alpha - HTML / JS based",
-    "url": "https://salvatorecapolupo.github.io/ungioco/"
-  },
-  {
-    "name": "Virgola Mobile 32 bit - IEE754",
-    "description": "",
-    "url": "https://salvatorecapolupo.github.io/virgolamobile/"
-  },
-  {
-    "name": "VLSM",
-    "description": "",
-    "url": "https://salvatorecapolupo.github.io/vlsm/"
-  },
-  {
-    "name": "WHOIS",
-    "description": "",
-    "url": "https://salvatorecapolupo.github.io/whois/"
-  },
-  {
-    "name": "Zed Invaders",
-    "description": "ZED Invaders 1.0 beta - questa versione NON è giocabile ed è qui solo a scopo documentaristico. Potete giocare gratis alla versione 2.0 su gamejolt",
-    "url": "https://salvatorecapolupo.github.io/zedinvaders/"
-  },
-  {
-    "name": "ZIUQ",
-    "description": "",
-    "url": "https://salvatorecapolupo.github.io/ziuq/"
-  }
+<script>
+const repositories = [
+  { name:"100", description:"", url:"https://salvatorecapolupo.github.io/100/" },
+  { name:"Allyouneedispython", description:"", url:"https://github.com/salvatorecapolupo/allyouneedispython" },
+  { name:"Birthday Paradox", description:"In 23 persone c'è oltre il 50% di probabilità che due condividano il compleanno.", url:"https://salvatorecapolupo.github.io/birthdayparadox/" },
+  { name:"BitTorrent", description:"Come funziona il protocollo BitTorrent (Sistemi e TPSIT).", url:"https://salvatorecapolupo.github.io/bittorrent/" },
+  { name:"Bogo Sort", description:"", url:"https://salvatorecapolupo.github.io/bogo-sort-visualization/" },
+  { name:"Bubble Sort", description:"", url:"https://salvatorecapolupo.github.io/bubble-sort-visualization/" },
+  { name:"Chatbot", description:"", url:"https://salvatorecapolupo.github.io/chatbot/" },
+  { name:"Classificatore", description:"", url:"https://salvatorecapolupo.github.io/classificatore/" },
+  { name:"Codewall", description:"Completa il codice con le parti mancanti.", url:"https://salvatorecapolupo.github.io/codewall/" },
+  { name:"Colorguess", description:"", url:"https://salvatorecapolupo.github.io/colorguess/" },
+  { name:"Completalo", description:"", url:"https://salvatorecapolupo.github.io/completalo/" },
+  { name:"Convertiamo", description:"Convertitore hex / decimale / binario.", url:"https://salvatorecapolupo.github.io/convertiamo/" },
+  { name:"Crafty (JS Game Engine)", description:"", url:"https://github.com/salvatorecapolupo/Crafty" },
+  { name:"Crittografia (mirror)", description:"Mirror educativo da highschool.spsd.org.", url:"https://salvatorecapolupo.github.io/crittografia/" },
+  { name:"Cryptography", description:"", url:"https://salvatorecapolupo.github.io/cryptography/" },
+  { name:"Cryptography Basics", description:"Risolutore RSA con spiegazione passo-passo. Simulatore hash.", url:"https://salvatorecapolupo.github.io/cryptography-basics/" },
+  { name:"Didattica", description:"Informatica a scuola.", url:"https://salvatorecapolupo.github.io/didattica/" },
+  { name:"Divoogle", description:"", url:"https://salvatorecapolupo.github.io/divoogle/" },
+  { name:"Documenti Scuola Informatica", description:"Linee guida e documenti ufficiali raccolti.", url:"https://github.com/salvatorecapolupo/documenti-scuola-informatica" },
+  { name:"Erconverter", description:"Convertitore bin/dec/hex (Sistemi e Reti).", url:"https://salvatorecapolupo.github.io/erconverter/" },
+  { name:"Frattali", description:"", url:"https://salvatorecapolupo.github.io/frattali/" },
+  { name:"Generatore di password", description:"Algoritmo sicuro, nessun dato inviato al server.", url:"https://salvatorecapolupo.github.io/generatore-di-password/" },
+  { name:"Gladiatori JSON", description:"", url:"https://salvatorecapolupo.github.io/gladiatorijson/" },
+  { name:"HAL 9000", description:"Omaggio a 2001: Odissea nello spazio.", url:"https://salvatorecapolupo.github.io/HAL9000/" },
+  { name:"Hanoi", description:"Gioco interattivo delle torri di Hanoi.", url:"https://salvatorecapolupo.github.io/hanoi/" },
+  { name:"Informatica (supporto didattico)", description:"TPSIT, Sistemi e Reti, Informatica.", url:"https://salvatorecapolupo.github.io/informatica/" },
+  { name:"IPv4 World", description:"Mappa geolocalizzata degli indirizzi IP.", url:"https://salvatorecapolupo.github.io/IPv4world/" },
+  { name:"JavaScript JSON", description:"", url:"https://salvatorecapolupo.github.io/json/" },
+  { name:"JavaScript Runner", description:"", url:"https://salvatorecapolupo.github.io/jsrunner/" },
+  { name:"JavaScript Masterclass", description:"50 esempi JS per micro-learning.", url:"https://github.com/salvatorecapolupo/js_masterclass" },
+  { name:"Masterjs", description:"Laboratorio avanzato JavaScript.", url:"https://salvatorecapolupo.github.io/masterjs/" },
+  { name:"Labirinto", description:"", url:"https://salvatorecapolupo.github.io/labirinto/" },
+  { name:"LCG — Numeri casuali", description:"Generatore LCG.", url:"https://salvatorecapolupo.github.io/lcg/" },
+  { name:"Catene di Markov", description:"", url:"https://salvatorecapolupo.github.io/markov/" },
+  { name:"MathJax", description:"Formule LaTeX in HTML.", url:"https://salvatorecapolupo.github.io/mathjax/" },
+  { name:"Monty Hall", description:"Meglio cambiare scelta o restare?", url:"https://salvatorecapolupo.github.io/montyhall/" },
+  { name:"Network Speed Game", description:"Calcolo velocità trasmissione file su rete unicast.", url:"https://salvatorecapolupo.github.io/network-speed-game/" },
+  { name:"8 Regine", description:"", url:"https://salvatorecapolupo.github.io/ottoregine/" },
+  { name:"Password Gamification", description:"", url:"https://salvatorecapolupo.github.io/password/" },
+  { name:"Potenziamento TPSIT", description:"", url:"https://salvatorecapolupo.github.io/potenziamento-tpsit/" },
+  { name:"Privacy Checker", description:"Verifica la privacy del tuo dispositivo.", url:"https://salvatorecapolupo.github.io/privacy/" },
+  { name:"Quick Sort", description:"", url:"https://salvatorecapolupo.github.io/quick-sort-visualization/" },
+  { name:"RFC 862", description:"", url:"https://salvatorecapolupo.github.io/rfc862/" },
+  { name:"Routing (cammini minimi)", description:"Simulatore di algoritmo cammini minimi.", url:"https://github.com/salvatorecapolupo/routing1" },
+  { name:"RSA", description:"Risolutore automatico con spiegazione dei passi.", url:"https://salvatorecapolupo.github.io/rsa/" },
+  { name:"Serie numeriche", description:"", url:"https://salvatorecapolupo.github.io/serie-numeriche/" },
+  { name:"SQL Game", description:"Gamification per apprendere SQL.", url:"https://salvatorecapolupo.github.io/sql-game/" },
+  { name:"SQL Mistery", description:"Prototipo investigativo SQL.", url:"https://salvatorecapolupo.github.io/sql-mistery/" },
+  { name:"Subnetting IPv4 (calcolatore)", description:"", url:"https://salvatorecapolupo.github.io/surviving-ipv4/" },
+  { name:"Subnetting e piani IPv4", description:"Modulo interattivo Sistemi e Reti.", url:"https://salvatorecapolupo.github.io/sistemi_e_reti/modulo_3.html" },
+  { name:"Sistemi e Reti — Esame di Stato", description:"Ripasso per l'esame.", url:"https://salvatorecapolupo.github.io/sistemi_e_reti/" },
+  { name:"TCP / UDP", description:"", url:"https://salvatorecapolupo.github.io/tcpudp/" },
+  { name:"Turing Machine", description:"", url:"https://salvatorecapolupo.github.io/thetree/" },
+  { name:"Un Gioco", description:"Avventura grafica HTML/JS (alpha).", url:"https://salvatorecapolupo.github.io/ungioco/" },
+  { name:"Virgola mobile 32 bit (IEEE 754)", description:"", url:"https://salvatorecapolupo.github.io/virgolamobile/" },
+  { name:"VLSM", description:"", url:"https://salvatorecapolupo.github.io/vlsm/" },
+  { name:"WHOIS", description:"", url:"https://salvatorecapolupo.github.io/whois/" },
+  { name:"Zed Invaders", description:"ZED Invaders 1.0 beta — solo documentaristico.", url:"https://salvatorecapolupo.github.io/zedinvaders/" },
+  { name:"ZIUQ", description:"", url:"https://salvatorecapolupo.github.io/ziuq/" },
+  { name:"Puzzle Code", description:"Gioco di programmazione per principianti.", url:"https://salvatorecapolupo.github.io/puzzlecode/" }
 ];
 
-  function generateRepoTable(repos) {
-    const tableBody = document.getElementById('repoTable');
-    repos.forEach(repo => {
-      const row = document.createElement('tr');
-      row.innerHTML = `
-        <td><strong>${repo.name}</strong> ${repo.description}</td>
-        <td><a href="${repo.url}" class="repo-link" target="_blank"> ${repo.url} </a></td>
-      `;
-      tableBody.appendChild(row);
-    });
-  }
+function generateRepoTable(repos) {
+  const tbody = document.getElementById('repoTable');
+  repos.forEach(r => {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td><strong>${r.name}</strong></td>
+      <td style="color:var(--muted)">${r.description}</td>
+      <td><a href="${r.url}" class="repo-link" target="_blank">${r.url}</a></td>
+    `;
+    tbody.appendChild(tr);
+  });
+}
 
-  $(document).ready(function () {
-  console.log("Se stai VERAMENTE leggendo questo, sei uno studente di informatica. O un potenziale hacker :-)");   
-    
+$(document).ready(function () {
+  console.log("Se stai VERAMENTE leggendo questo, sei uno studente di informatica. O un potenziale hacker :-)");
   generateRepoTable(repositories);
   $('#repoTableWrapper').DataTable({
     responsive: true,
-    paging: true,        // attivo la paginazione
-    pageLength: 20,       // massimo 10 righe per pagina
+    paging: true,
+    pageLength: 20,
     searching: true,
     ordering: true,
     language: {
-      search: "Cerca",
-      zeroRecords: "Non trovo nulla, mi dispiace. Riprova!",
-      infoEmpty: "Non ci sono dati, a quanto pare... Oppure c'è qualche altro errore"
+      search: "Cerca:",
+      zeroRecords: "Nessun risultato.",
+      info: "_START_–_END_ di _TOTAL_",
+      infoEmpty: "Nessun dato.",
+      paginate: { previous:"←", next:"→" }
     }
   });
 });
 
-</script>
+// --- filtri PDF ---
+const filterBtns = document.querySelectorAll('.filter-btn');
+const pdfItems   = document.querySelectorAll('#lista-dispense li');
+const searchBox  = document.getElementById('search-dispense');
+let activeCat = 'all';
 
- <script>
-const input = document.getElementById("search-dispense");
-const list = document.getElementById("lista-dispense");
-
-if (input && list) {
-
-  const items = list.getElementsByTagName("li");
-
-  input.addEventListener("input", function () {
-
-    const value = this.value.toLowerCase();
-
-    for (let i = 0; i < items.length; i++) {
-      const text = items[i].textContent.toLowerCase();
-      items[i].style.display =
-        text.includes(value) ? "" : "none";
-    }
-
+function applyFilters() {
+  const q = searchBox.value.toLowerCase();
+  pdfItems.forEach(li => {
+    const catMatch = activeCat === 'all' || li.dataset.cat === activeCat;
+    const txtMatch = li.textContent.toLowerCase().includes(q);
+    li.classList.toggle('hidden', !(catMatch && txtMatch));
   });
-
 }
+
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    filterBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    activeCat = btn.dataset.cat;
+    applyFilters();
+  });
+});
+searchBox.addEventListener('input', applyFilters);
 </script>
 
 <script type="application/ld+json">
@@ -847,36 +632,8 @@ if (input && list) {
   "url": "https://salvatorecapolupo.github.io/about-me/",
   "birthDate": "1979",
   "jobTitle": "Insegnante di informatica di ruolo",
-  "worksFor": {
-    "@type": "Organization",
-    "name": "Ministero dell'Istruzione e del Merito (MIM)",
-    "url": "https://www.istruzione.it"
-  },
-  "description": "Ingegnere informatico e dottore di ricerca in ricerca operativa. Insegnante di informatica di ruolo in scuola superiore. Vive a Roma dal 2018. Divulgatore, autore e blogger. Si occupa di tecnologie digitali, privacy, open source e intelligenza artificiale. Autore di saggi di theory fiction tecnologica.",
-  "knowsAbout": [
-    "Informatica", "Ricerca Operativa", "Didattica",
-    "Intelligenza Artificiale", "Privacy", "Open Source",
-    "Tecnologie Digitali", "Filosofia",
-    "Reti", "Database", "Gamification", "Cinema"
-  ],
-  "hasCredential": [
-    {
-      "@type": "EducationalOccupationalCredential",
-      "name": "Laurea in Ingegneria Informatica"
-    },
-    {
-      "@type": "EducationalOccupationalCredential",
-      "name": "Dottorato di Ricerca in Ricerca Operativa"
-    }
-  ],
-  "hasOccupation": {
-    "@type": "Occupation",
-    "name": "Insegnante di informatica",
-    "occupationLocation": {
-      "@type": "City",
-      "name": "Roma"
-    }
-  },
+  "worksFor": { "@type": "Organization", "name": "Ministero dell'Istruzione e del Merito (MIM)", "url": "https://www.istruzione.it" },
+  "description": "Ingegnere informatico e dottore di ricerca in ricerca operativa. Insegnante di informatica di ruolo. Divulgatore, autore e blogger su tecnologie digitali, privacy, open source e AI.",
   "sameAs": [
     "https://github.com/salvatorecapolupo",
     "https://capolooper.wordpress.com/",
@@ -884,62 +641,15 @@ if (input && list) {
     "https://www.amazon.it/stores/Salvatore-Capolupo/author/B00RUC7VR6"
   ],
   "author": [
-    {
-      "@type": "Book",
-      "name": "Tecnofobia",
-      "datePublished": "2021",
-      "publisher": { "@type": "Organization", "name": "El Doctor Sax" },
-      "genre": "Saggistica"
-    },
-    {
-      "@type": "Book",
-      "name": "Tecnocrazia",
-      "datePublished": "2023",
-      "publisher": { "@type": "Organization", "name": "El Doctor Sax" },
-      "genre": "Theory Fiction"
-    },
-    {
-      "@type": "Book",
-      "name": "Replica",
-      "genre": "Theory Fiction",
-      "description": "Saggio in corso di scrittura sul rapporto tra cinema e intelligenza artificiale.",
-      "bookFormat": "https://schema.org/EBook"
-    }
+    { "@type":"Book", "name":"Tecnofobia", "datePublished":"2021", "publisher":{"@type":"Organization","name":"El Doctor Sax"} },
+    { "@type":"Book", "name":"Tecnocrazia", "datePublished":"2023", "publisher":{"@type":"Organization","name":"El Doctor Sax"} },
+    { "@type":"Book", "name":"Replica", "description":"Cinema e intelligenza artificiale.", "bookFormat":"https://schema.org/EBook" }
   ]
 }
 </script>
 
-
-  
+<!--
+⠀⠀⠀⠀⠀⠀⠀⠀... dimmi :-)
+-->
 </body>
 </html>
-
-<!--
-
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀... dimmi :-)⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⡠⢤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡴⠟⠃⠀⠀⠙⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠋⠀⠀⠀⠀⠀⠀⠘⣆⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠾⢛⠒⠀⠀⠀⠀⠀⠀⠀⢸⡆⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣶⣄⡈⠓⢄⠠⡀⠀⠀⠀⣄⣷⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣿⣷⠀⠈⠱⡄⠑⣌⠆⠀⠀⡜⢻⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⡿⠳⡆⠐⢿⣆⠈⢿⠀⠀⡇⠘⡆⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢿⣿⣷⡇⠀⠀⠈⢆⠈⠆⢸⠀⠀⢣⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣿⣿⣿⣧⠀⠀⠈⢂⠀⡇⠀⠀⢨⠓⣄⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⣿⣿⣿⣦⣤⠖⡏⡸⠀⣀⡴⠋⠀⠈⠢⡀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣾⠁⣹⣿⣿⣿⣷⣾⠽⠖⠊⢹⣀⠄⠀⠀⠀⠈⢣⡀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡟⣇⣰⢫⢻⢉⠉⠀⣿⡆⠀⠀⡸⡏⠀⠀⠀⠀⠀⠀⢇
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢨⡇⡇⠈⢸⢸⢸⠀⠀⡇⡇⠀⠀⠁⠻⡄⡠⠂⠀⠀⠀⠘
-⢤⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠛⠓⡇⠀⠸⡆⢸⠀⢠⣿⠀⠀⠀⠀⣰⣿⣵⡆⠀⠀⠀⠀
-⠈⢻⣷⣦⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⡿⣦⣀⡇⠀⢧⡇⠀⠀⢺⡟⠀⠀⠀⢰⠉⣰⠟⠊⣠⠂⠀⡸
-⠀⠀⢻⣿⣿⣷⣦⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⢧⡙⠺⠿⡇⠀⠘⠇⠀⠀⢸⣧⠀⠀⢠⠃⣾⣌⠉⠩⠭⠍⣉⡇
-⠀⠀⠀⠻⣿⣿⣿⣿⣿⣦⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣞⣋⠀⠈⠀⡳⣧⠀⠀⠀⠀⠀⢸⡏⠀⠀⡞⢰⠉⠉⠉⠉⠉⠓⢻⠃
-⠀⠀⠀⠀⠹⣿⣿⣿⣿⣿⣿⣷⡄⠀⠀⢀⣀⠠⠤⣤⣤⠤⠞⠓⢠⠈⡆⠀⢣⣸⣾⠆⠀⠀⠀⠀⠀⢀⣀⡼⠁⡿⠈⣉⣉⣒⡒⠢⡼⠀
-⠀⠀⠀⠀⠀⠘⣿⣿⣿⣿⣿⣿⣿⣎⣽⣶⣤⡶⢋⣤⠃⣠⡦⢀⡼⢦⣾⡤⠚⣟⣁⣀⣀⣀⣀⠀⣀⣈⣀⣠⣾⣅⠀⠑⠂⠤⠌⣩⡇⠀
-⠀⠀⠀⠀⠀⠀⠘⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡁⣺⢁⣞⣉⡴⠟⡀⠀⠀⠀⠁⠸⡅⠀⠈⢷⠈⠏⠙⠀⢹⡛⠀⢉⠀⠀⠀⣀⣀⣼⡇⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠈⠻⣿⣿⣿⣿⣿⣿⣿⣿⣽⣿⡟⢡⠖⣡⡴⠂⣀⣀⣀⣰⣁⣀⣀⣸⠀⠀⠀⠀⠈⠁⠀⠀⠈⠀⣠⠜⠋⣠⠁⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢿⣿⣿⣿⡟⢿⣿⣿⣷⡟⢋⣥⣖⣉⠀⠈⢁⡀⠤⠚⠿⣷⡦⢀⣠⣀⠢⣄⣀⡠⠔⠋⠁⠀⣼⠃⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠻⣿⣿⡄⠈⠻⣿⣿⢿⣛⣩⠤⠒⠉⠁⠀⠀⠀⠀⠀⠉⠒⢤⡀⠉⠁⠀⠀⠀⠀⠀⢀⡿⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⢿⣤⣤⠴⠟⠋⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠑⠤⠀⠀⠀⠀⠀⢩⠇⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-
--->
