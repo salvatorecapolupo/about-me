@@ -641,11 +641,6 @@ function generateRepoTable(repos) {
   repos.forEach(r => {
     const tr = document.createElement('tr');
     tr.innerHTML = `
-      <td><strong>${r.name}</strong></td>
-      <td style="color:var(--muted)">${r.description}</td>
-      <td><a href="${r.url}" class="repo-link" target="_blank">${r.url}</a></td>
-    `;
-    tr.innerHTML = `
       <td><a href="${r.url}" class="repo-link" target="_blank"><strong>${r.name}</strong></a></td>
       <td style="color:var(--muted)">${r.description}</td>
     `;
