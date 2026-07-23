@@ -431,7 +431,7 @@ footer .cc-icons img {
   <div class="table-responsive">
     <table id="repoTableWrapper" class="table table-sm display w-100">
       <thead>
-        <tr><th>Nome</th><th>Descrizione</th><th>Link</th></tr>
+        <tr> <th>Nome</th> <th>Descrizione</th> </tr>
       </thead>
       <tbody id="repoTable"></tbody>
     </table>
@@ -644,6 +644,10 @@ function generateRepoTable(repos) {
       <td><strong>${r.name}</strong></td>
       <td style="color:var(--muted)">${r.description}</td>
       <td><a href="${r.url}" class="repo-link" target="_blank">${r.url}</a></td>
+    `;
+    tr.innerHTML = `
+      <td><a href="${r.url}" class="repo-link" target="_blank"><strong>${r.name}</strong></a></td>
+      <td style="color:var(--muted)">${r.description}</td>
     `;
     tbody.appendChild(tr);
   });
