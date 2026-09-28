@@ -1,136 +1,135 @@
 [
   {
-    "name": "Array e Matrici in Cèè",
+    "name": "[ INFORMATICA, TPSIT ] Array e Matrici in C++",
     "description": "Dispensa su array e matrici in C++, con esempi pratici e principali operazioni.",
     "url": "https://salvatorecapolupo.github.io/about-me/PDF/C++_Array_e_Matrici.pdf"
   },
   {
-    "name": "Fizz Buzz",
+    "name": "[ INFORMATICA ] Fizz Buzz",
     "description": "Esercizio Fizz Buzz in C++, utile per apprendere strutture di controllo e logica di programmazione.",
     "url": "https://salvatorecapolupo.github.io/about-me/PDF/C++_informatica_Fizz_Buzz.pdf"
   },
   {
-    "name": "Aritmetica modulo N",
+    "name": "[ INFORMATICA, SISTEMI, TPSIT ] Aritmetica modulo N",
     "description": "Introduzione all'aritmetica modulare, con definizioni, proprietà ed esempi applicativi.",
     "url": "https://salvatorecapolupo.github.io/about-me/PDF/Dispensa_aritmetica_modulo_N.pdf"
   },
   {
-    "name": "Topologie di rete",
+    "name": "[ SISTEMI ] Topologie delle reti",
     "description": "Panoramica delle principali topologie di rete, con vantaggi, svantaggi e casi d'uso.",
     "url": "https://salvatorecapolupo.github.io/about-me/PDF/Dispensa_topologie_di_rete.pdf"
   },
   {
-    "name": "Intelligenza Artificiale generativa - like a pro",
+    "name": "[ INFORMATICA, SISTEMI, TPSIT ] IA - Intelligenza Artificiale Generativa - like a pro",
     "description": "Guida pratica all'utilizzo dell'intelligenza artificiale generativa per studio, produttività e sviluppo di competenze.",
     "url": "https://salvatorecapolupo.github.io/about-me/PDF/IA_like_a_pro-capolupo.pdf"
   },
   {
-    "name": "Server RADIUS",
+    "name": "[ SISTEMI ] Server RADIUS",
     "description": "Dispensa sul protocollo RADIUS per autenticazione, autorizzazione e accounting nelle reti.",
     "url": "https://salvatorecapolupo.github.io/about-me/PDF/RADIUS.pdf"
   },
   {
-    "name": "RESTful API",
+    "name": "[ TPSIT ] RESTful API",
     "description": "Introduzione ai principi delle RESTful API, ai metodi HTTP e alla progettazione di servizi web.",
     "url": "https://salvatorecapolupo.github.io/about-me/PDF/RESTful_API.pdf"
   },
   {
-    "name": "MFA (Multi-Factory Authentication)",
+    "name": "[ SISTEMI, TPSIT ] MFA (Multi-Factory Authentication)",
     "description": "Guida all'autenticazione multifattore (MFA), ai vantaggi e ai principali metodi di verifica dell'identità.",
     "url": "https://salvatorecapolupo.github.io/about-me/PDF/autenticazione_MFA.pdf"
   },
   {
-    "name": "Business Continuity",
+    "name": "[  TPSIT, GPOI ] Business Continuity",
     "description": "Introduzione alla business continuity e alle strategie per garantire la continuità operativa di un'organizzazione.",
     "url": "https://salvatorecapolupo.github.io/about-me/PDF/business_continuity.pdf"
   },
   {
-    "name": "Firma digitale e firma elettronica",
+    "name": "[ SISTEMI, TPSIT ] Firma digitale e firma elettronica",
     "description": "Confronto tra firma digitale e firma elettronica, con aspetti tecnici, normativi e applicativi.",
     "url": "https://salvatorecapolupo.github.io/about-me/PDF/firma_digitale_o_elettronica.pdf"
   },
   {
-    "name": "Guida JS - Introduzione",
+    "name": "[ TPSIT ] Guida JS - Introduzione",
     "description": "Guida introduttiva a JavaScript con sintassi di base, variabili, funzioni ed esempi pratici.",
     "url": "https://salvatorecapolupo.github.io/about-me/PDF/guida_JS-1.pdf"
   },
   {
-    "name": "Huggingface",
+    "name": "[ INFORMATICA, TPSIT ] IA - Cos'è Hugging Face",
     "description": "Introduzione alla piattaforma Hugging Face e all'utilizzo di modelli di intelligenza artificiale open source.",
     "url": "https://salvatorecapolupo.github.io/about-me/PDF/huggingface-capolupo.pdf"
   },
   {
-    "name": "Assembly - Ragionando sul linguaggio",
+    "name": "[ SISTEMI ] Assembly - Ragionando sul linguaggio",
     "description": "Dispensa dedicata ai concetti fondamentali della programmazione Assembly e al funzionamento dell'architettura del processore.",
     "url": "https://salvatorecapolupo.github.io/about-me/PDF/ragionando-assembly-capolupo.pdf"
   },
   {
-    "name": "Reti Mobile",
+    "name": "[ SISTEMI, TPSIT ] Reti Mobile",
     "description": "Introduzione alle reti mobili, alle tecnologie cellulari e alla loro evoluzione dalle prime alle moderne generazioni.",
     "url": "https://salvatorecapolupo.github.io/about-me/PDF/reti%20mobile.pdf"
   },
   {
-    "name": "Sistemi operativi",
+    "name": "[ INFORMATICA, SISTEMI, TPSIT ] Sistemi operativi",
     "description": "Dispensa sui sistemi operativi, con focus su processi, memoria, file system e gestione delle risorse.",
     "url": "https://salvatorecapolupo.github.io/about-me/PDF/sistemi-operativi-capolupo.pdf"
   },
   {
-    "name": "Sistemi e reti - Traccia 2026 e soluzione proposta (maturità)",
+    "name": "[ SISTEMI ] Sistemi e reti - Traccia 2026 e soluzione proposta (maturità)",
     "description": "Svolgimento completo della seconda prova di Sistemi e Reti 2026, con analisi dei requisiti, progettazione della rete, piano di indirizzamento e risoluzione di tutti i quesiti.",
     "url": "https://salvatorecapolupo.github.io/about-me/PDF/soluzione_sistemi_2026.pdf"
   },
   {
-    "name": "SSH",
+    "name": "[ SISTEMI, TPSIT ] SSH",
     "description": "Guida al protocollo SSH per l'accesso remoto sicuro, l'autenticazione e il trasferimento di file.",
     "url": "https://salvatorecapolupo.github.io/about-me/PDF/ssh.pdf"
   },
   {
-    "name": "Prompt MS DOS - Terminale Windows",
+    "name": "[ INFORMATICA, SISTEMI, TPSIT ] Prompt MS DOS - Terminale Windows",
     "description": "Guida all'utilizzo del terminale di Windows, con i principali comandi e strumenti da riga di comando.",
     "url": "https://salvatorecapolupo.github.io/about-me/PDF/terminale_windows_capolupo.pdf"
   },
   {
-    "name": "Thread java e reti di Petri (cenni)",
+    "name": "[ TPSIT ] Thread java e reti di Petri (cenni)",
     "description": "Dispensa sui thread in Java, con introduzione alla concorrenza, sincronizzazione e programmazione multithread.",
     "url": "https://salvatorecapolupo.github.io/about-me/PDF/thread_java_petri.pdf"
   },
-  {"name": "100", "description": "JavaScript solution to the classic 123456789 = 100 puzzle, displaying every valid expression with a typewriter animation.", "url": "https://salvatorecapolupo.github.io/100/"},
-  {"name": "8086", "description": "Demo funzionante con esempi svolti dell'assembly 8086, studiato al terzo anno di sistemi e reti. ", "url": "https://salvatorecapolupo.github.io/8086/"},
+  {"name": "[ INFORMATICA ] 100", "description": "JavaScript solution to the classic 123456789 = 100 puzzle, displaying every valid expression with a typewriter animation.", "url": "https://salvatorecapolupo.github.io/100/"},
+  {"name": "[ SISTEMI ] 8086", "description": "Demo funzionante con esempi svolti dell'assembly 8086, studiato al terzo anno di sistemi e reti. ", "url": "https://salvatorecapolupo.github.io/8086/"},
   {"name": "about-me", "description": "Questa pagina qui :-)", "url": "https://salvatorecapolupo.github.io/about-me/"},
-  {"name": "AES", "description": "AES (Rijndael) è un algoritmo di cifratura a blocchi a chiave simmetrica adottato come standard negli USA. Opera su matrici “State” di byte 4×4 per blocchi da 128 bit; aumentando la lunghezza del blocco (fino a 256 bit) cresce il numero di colonne, pari ai bit/32.", "url": "https://salvatorecapolupo.github.io/AES/"},
-  {"name": "allyouneedispython", "description": "Automatically publishes new RSS feed articles to a Telegram channel while preventing duplicate posts.", "url": "https://github.com/salvatorecapolupo/allyouneedispython"},
-  {"name": "binary-subnet", "description": "Conversione Binario Decimale: Regole, Tabella e 100 Esercizi con Soluzione", "url": "https://salvatorecapolupo.github.io/binary-subnet/"},
-  {"name": "birthdayparadox", "description": "Il paradosso del compleanno è un risultato controintuitivo della probabilità:     in un gruppo di appena 23 persone, c'è oltre il 50% di probabilità che almeno due persone condividano lo stesso giorno di compleanno.", "url": "https://salvatorecapolupo.github.io/birthdayparadox/"},
-  {"name": "bittorrent", "description": "Come funziona il protocollo bittorrent (per sistemi e TPSIT)", "url": "https://salvatorecapolupo.github.io/bittorrent/"},
-  {"name": "bogo-sort-visualization", "description": "Visualizzazione dell'algoritmo bogo sort o stupid sort.", "url": "https://salvatorecapolupo.github.io/bogo-sort-visualization/"},
-  {"name": "bubble-sort-visualization", "description": "Visualizzazione dell'algoritmo bubble sort.", "url": "https://salvatorecapolupo.github.io/bubble-sort-visualization/"},
-  {"name": "chatbot", "description": "Chatbot rogersiano, versione alpha. ", "url": "https://salvatorecapolupo.github.io/chatbot/"},
-  {"name": "classificatore", "description": "Funzionamento di un classificatore KNN semplificato. Puro JS. ", "url": "https://salvatorecapolupo.github.io/classificatore/"},
-  {"name": "code-challenge-cpp-js", "description": "", "url": "https://salvatorecapolupo.github.io/code-challenge-cpp-js/"},
-  {"name": "code-challenge-java-thread", "description": "", "url": "https://salvatorecapolupo.github.io/code-challenge-java-thread/"},
-  {"name": "codewall", "description": "Mostra un pezzo di codice con parti mancanti, e dovrai completarlo. ", "url": "https://salvatorecapolupo.github.io/codewall/"},
-  {"name": "Collatz", "description": "The Collatz Conjecture, or problem, proposes that starting with any positive integer , repeating the rules—if even, divide by 2 ( ); if odd, triple plus one ( )—will always eventually reach 1. ", "url": "https://salvatorecapolupo.github.io/Collatz/"},
-  {"name": "colorguess", "description": "Indovina il colore esadecimale. ", "url": "https://salvatorecapolupo.github.io/colorguess/"},
-  {"name": "completalo", "description": "Completalo è un quiz interattivo progettato per allenare futuri programmatori a fare uso della logica, dell'intuito, della capacità di inferenza e di deduzione. Metti alla prova la tua conoscenza della sintassi HTML e C++ riempiendo gli spazi vuoti direttamente all'interno di snippet di codice reali.", "url": "https://salvatorecapolupo.github.io/completalo/"},
-  {"name": "convertiamo", "description": "Convertitore hex decimale binario ", "url": "https://salvatorecapolupo.github.io/convertiamo/"},
-  {"name": "Crafty", "description": "JavaScript Game Engine", "url": "https://github.com/salvatorecapolupo/Crafty"},
-  {"name": "crittografia", "description": "Mirror from http://highschool.spsd.org/crypt/index.html - All rights reserved. Repository only. for educational purposes. ", "url": "https://salvatorecapolupo.github.io/crittografia/"},
-  {"name": "cryptography", "description": "Un simulatore online del funzionamento della crittografia simmetrica e asimmetrica.", "url": "https://salvatorecapolupo.github.io/cryptography/"},
-  {"name": "cryptography-basics", "description": "Risolutore automatico con spiegazione dei passaggi dell'algoritmo RSA. Funzione hash spiegata con simulatore. ", "url": "https://salvatorecapolupo.github.io/cryptography-basics/"},
-  {"name": "didattica", "description": "Informatica a scuola - Didattica", "url": "https://salvatorecapolupo.github.io/didattica/"},
-  {"name": "Didattimizzazione", "description": "Un test di pagina ottimizzata per la SEO secondo le linee guida di Google", "url": "https://salvatorecapolupo.github.io/Didattimizzazione/"},
-  {"name": "documenti-scuola-informatica", "description": "Linee guida, documenti ufficiali e quant'altro, raccolto in un singolo repository.", "url": "https://github.com/salvatorecapolupo/documenti-scuola-informatica"},
+  {"name": "[ SISTEMI ] AES", "description": "AES (Rijndael) è un algoritmo di cifratura a blocchi a chiave simmetrica adottato come standard negli USA. Opera su matrici “State” di byte 4×4 per blocchi da 128 bit; aumentando la lunghezza del blocco (fino a 256 bit) cresce il numero di colonne, pari ai bit/32.", "url": "https://salvatorecapolupo.github.io/AES/"},
+  {"name": "[ INFORMATICA] allyouneedispython", "description": "Automatically publishes new RSS feed articles to a Telegram channel while preventing duplicate posts.", "url": "https://github.com/salvatorecapolupo/allyouneedispython"},
+  {"name": "[ INFORMATICA, SISTEMI, TPSIT ] binary-subnet", "description": "Conversione Binario Decimale: Regole, Tabella e 100 Esercizi con Soluzione", "url": "https://salvatorecapolupo.github.io/binary-subnet/"},
+  {"name": "[ INFORMATICA, MATEMATICA ] birthdayparadox", "description": "Il paradosso del compleanno è un risultato controintuitivo della probabilità:     in un gruppo di appena 23 persone, c'è oltre il 50% di probabilità che almeno due persone condividano lo stesso giorno di compleanno.", "url": "https://salvatorecapolupo.github.io/birthdayparadox/"},
+  {"name": "[ SISTEMI, TPSIT ] bittorrent", "description": "Come funziona il protocollo bittorrent (per sistemi e TPSIT)", "url": "https://salvatorecapolupo.github.io/bittorrent/"},
+  {"name": "[ INFORMATICA, TPSIT ] bogo-sort-visualization", "description": "Visualizzazione dell'algoritmo bogo sort o stupid sort.", "url": "https://salvatorecapolupo.github.io/bogo-sort-visualization/"},
+  {"name": "[ INFORMATICA, TPSIT ] bubble-sort-visualization", "description": "Visualizzazione dell'algoritmo bubble sort.", "url": "https://salvatorecapolupo.github.io/bubble-sort-visualization/"},
+  {"name": "[ INFORMATICA ] chatbot", "description": "Chatbot rogersiano, versione alpha. ", "url": "https://salvatorecapolupo.github.io/chatbot/"},
+  {"name": "[ INFORMATICA, TPSIT ] classificatore", "description": "Funzionamento di un classificatore KNN semplificato. Puro JS. ", "url": "https://salvatorecapolupo.github.io/classificatore/"},
+  {"name": "[ INFORMATICA, TPSIT ] code-challenge-cpp-js", "description": "", "url": "https://salvatorecapolupo.github.io/code-challenge-cpp-js/"},
+  {"name": "[ INFORMATICA, TPSIT ] code-challenge-java-thread", "description": "", "url": "https://salvatorecapolupo.github.io/code-challenge-java-thread/"},
+  {"name": "[ INFORMATICA, TPSIT ] codewall", "description": "Mostra un pezzo di codice con parti mancanti, e dovrai completarlo. ", "url": "https://salvatorecapolupo.github.io/codewall/"},
+  {"name": "[ INFORMATICA, TPSIT ] Collatz", "description": "The Collatz Conjecture, or problem, proposes that starting with any positive integer , repeating the rules—if even, divide by 2 ( ); if odd, triple plus one ( )—will always eventually reach 1. ", "url": "https://salvatorecapolupo.github.io/Collatz/"},
+  {"name": "[ INFORMATICA, TPSIT ] colorguess", "description": "Indovina il colore esadecimale. ", "url": "https://salvatorecapolupo.github.io/colorguess/"},
+  {"name": "[ INFORMATICA, TPSIT ] completalo", "description": "Completalo è un quiz interattivo di recupero competenze progettato per allenare futuri programmatori a fare uso della logica, dell'intuito, della capacità di inferenza e di deduzione. Metti alla prova la tua conoscenza della sintassi HTML e C++ riempiendo gli spazi vuoti direttamente all'interno di snippet di codice reali.", "url": "https://salvatorecapolupo.github.io/completalo/"},
+  {"name": "[ SISTEMI, TPSIT ] convertiamo", "description": "Convertitore hex decimale binario ", "url": "https://salvatorecapolupo.github.io/convertiamo/"},
+  {"name": "[ INFORMATICA, TPSIT ] Crafty", "description": "JavaScript Game Engine", "url": "https://github.com/salvatorecapolupo/Crafty"},
+  {"name": "[ SISTEMI, TPSIT ] crittografia", "description": "Mirror from http://highschool.spsd.org/crypt/index.html - All rights reserved. Repository only. for educational purposes. ", "url": "https://salvatorecapolupo.github.io/crittografia/"},
+  {"name": "[ SISTEMI, TPSIT ] cryptography", "description": "Un simulatore online del funzionamento della crittografia simmetrica e asimmetrica.", "url": "https://salvatorecapolupo.github.io/cryptography/"},
+  {"name": "[ SISTEMI, TPSIT ] cryptography-basics", "description": "Risolutore automatico con spiegazione dei passaggi dell'algoritmo RSA. Funzione hash spiegata con simulatore. ", "url": "https://salvatorecapolupo.github.io/cryptography-basics/"},
+  {"name": "[ INFORMATICA, SISTEMI, TPSIT ] didattica", "description": "Informatica a scuola - Didattica", "url": "https://salvatorecapolupo.github.io/didattica/"},
+  {"name": "[ TPSIT ] Didattimizzazione", "description": "Un test di pagina ottimizzata per la SEO, secondo le linee guida di Google", "url": "https://salvatorecapolupo.github.io/Didattimizzazione/"},
+  {"name": "[ INFORMATICA, SISTEMI, TPSIT ] documenti-scuola-informatica", "description": "Linee guida, documenti ufficiali e quant'altro, raccolto in un singolo repository.", "url": "https://github.com/salvatorecapolupo/documenti-scuola-informatica"},
   {"name": "duplicate-radar", "description": "Scansione batch dei post duplicati in WordPress — leggero, sicuro, senza dipendenze esterne. Batch scanning for duplicate WordPress posts — lightweight, secure, no external dependencies.", "url": "https://github.com/salvatorecapolupo/duplicate-radar"},
-  {"name": "emu8086", "description": "Emulator 8086", "url": "https://salvatorecapolupo.github.io/emu8086/"},
+  {"name": "[ SISTEMI ] emu8086", "description": "Emulator 8086", "url": "https://salvatorecapolupo.github.io/emu8086/"},
   {"name": "EPOCA", "description": "EPOCA - Plugin per WordPress di autopubblicazione vecchi post", "url": "https://github.com/salvatorecapolupo/EPOCA"},
-  {"name": "erconverter", "description": "Convertitore binario / decimale / esadecimale (corso di sistemi e reti)", "url": "https://salvatorecapolupo.github.io/erconverter/"},
-  {"name": "frattali", "description": "Foresta di Felci Frattali Animata", "url": "https://salvatorecapolupo.github.io/frattali/"},
-  {"name": "generatore-di-password", "description": "Password solide, one-shot e generate con algoritmo sicuro. Non memorizzate sul server.", "url": "https://salvatorecapolupo.github.io/generatore-di-password/"},
-  {"name": "gladiatorijson", "description": "IA Battle Arena 🤖 in JSON", "url": "https://salvatorecapolupo.github.io/gladiatorijson/"},
-  {"name": "glitch", "description": "Informazioni su GLITCH, lo spettacolo crossmediale di Salvatore Capolupo. ", "url": "https://salvatorecapolupo.github.io/glitch/"},
-  {"name": "grabroom", "description": "A powerful Google Apps Script utility that automatically crawls your entire Google Classroom—including Coursework, Announcements, and Materials—to extract all attachments. It renames and flattens everything into a single, chronologically ordered Google Drive folder.", "url": "https://github.com/salvatorecapolupo/grabroom"},
+  {"name": "[ INFORMATICA, SISTEMI, TPSIT ] erconverter", "description": "Convertitore binario / decimale / esadecimale (corso di sistemi e reti)", "url": "https://salvatorecapolupo.github.io/erconverter/"},
+  {"name": "[ INFORMATICA, SISTEMI, TPSIT ] frattali", "description": "Foresta di Felci Frattali Animata", "url": "https://salvatorecapolupo.github.io/frattali/"},
+  {"name": "[ INFORMATICA, SISTEMI, TPSIT ] generatore-di-password", "description": "Password solide, one-shot e generate con algoritmo sicuro. Non memorizzate sul server.", "url": "https://salvatorecapolupo.github.io/generatore-di-password/"},
+  {"name": "[ TPSIT ] gladiatorijson", "description": "IA Battle Arena 🤖 in JSON", "url": "https://salvatorecapolupo.github.io/gladiatorijson/"},
+  {"name": "[ INFORMATICA, SISTEMI, TPSIT ] grabroom", "description": "A powerful Google Apps Script utility that automatically crawls your entire Google Classroom—including Coursework, Announcements, and Materials—to extract all attachments. It renames and flattens everything into a single, chronologically ordered Google Drive folder.", "url": "https://github.com/salvatorecapolupo/grabroom"},
   {"name": "HAL9000", "description": "Un omaggio a 2001 Odissea nello spazio di Stanley Kubrick.", "url": "https://salvatorecapolupo.github.io/HAL9000/"},
-  {"name": "hanoi", "description": "Gioco interattivo delle torri di Hanoi", "url": "https://salvatorecapolupo.github.io/hanoi/"},
+  {"name": "[ INFORMATICA, SISTEMI, TPSIT ] hanoi", "description": "Gioco interattivo delle torri di Hanoi", "url": "https://salvatorecapolupo.github.io/hanoi/"},
   {"name": "ig_text", "description": "CLI tool to generate Instagram-ready images from plain text files.", "url": "https://github.com/salvatorecapolupo/ig_text"},
   {"name": "ilmioprogetto", "description": "La descrizione del progetto... bla bla bla", "url": "https://salvatorecapolupo.github.io/ilmioprogetto/"},
   {"name": "imovie_helper", "description": "Systematic diagnosis of missing media files in an iMovie project using the terminal and Python.", "url": "https://github.com/salvatorecapolupo/imovie_helper"},
