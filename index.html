@@ -232,7 +232,14 @@ h2.retro::before { content: '> '; color: var(--dim); }
   background: rgba(0,255,65,.05) !important;
   border-color: var(--border) !important;
 }
-a.repo-link { color: var(--dim); font-size: .72rem; word-break: break-all; }
+/**a.repo-link { color: var(--dim); font-size: .72rem; word-break: break-all; }**/
+a.repo-link { color: var(--dim); font-size: .72rem; overflow-wrap: break-word; word-break: normal; }
+#repoTableWrapper th:first-child,
+#repoTableWrapper td:first-child {
+  width: 35%;
+  min-width: 200px;
+}
+  
 a.repo-link:hover { color: var(--green); }
 
 /* ---------- EMULATORI ---------- */
@@ -516,7 +523,8 @@ $(document).ready(function () {
     .then(repos => {
       generateRepoTable(repos);
       $('#repoTableWrapper').DataTable({
-        responsive: true,
+        //responsive: true,
+        autoWidth: false,
         paging: true,
         pageLength: 20,
         searching: true,
