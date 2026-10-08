@@ -1,6 +1,26 @@
 [
   {
-    "name": "[ INFORMATICA, TPSIT ] Array e Matrici in C++",
+    "name": "[ TPSIT ] IEEE 754",
+    "description": "Conversione decimale - binario e viceversa, secondo uno degli algoritmi numerici più famosi al mondo.",
+    "url": "https://salvatorecapolupo.github.io/ieee754"
+  },
+    {
+    "name": "[ Sistemi ] Preferisci internet o un cane? ",
+    "description": "È il classico esempio di Andrew S. Tanenbaum per spiegare il concetto di banda e, più in generale, perché una rete con grande banda può essere superata da un mezzo fisico che trasporta dati. ",
+    "url": "https://salvatorecapolupo.github.io/cane"
+  },
+    {
+    "name": "[ Sistemi, TPSIT ] Bluetooth (BT) ",
+    "description": "(Demo alpha)",
+    "url": "https://salvatorecapolupo.github.io/BT"
+  },
+    {
+    "name": "[ TPSIT ] Von Neumann Machine ",
+    "description": "Emulatore della macchina di Von Neumann (semplificata)",
+    "url": "https://salvatorecapolupo.github.io/about-me/PDF/C++_Array_e_Matrici.pdf"
+  },
+  {
+    "name": "[ INFORMATICA ] Array e Matrici in C++",
     "description": "Dispensa su array e matrici in C++, con esempi pratici e principali operazioni.",
     "url": "https://salvatorecapolupo.github.io/about-me/PDF/C++_Array_e_Matrici.pdf"
   },
