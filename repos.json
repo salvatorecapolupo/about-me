@@ -4,12 +4,17 @@
     "description": "Conversione decimale - binario e viceversa, secondo uno degli algoritmi numerici più famosi al mondo.",
     "url": "https://salvatorecapolupo.github.io/ieee754"
   },
-    {
+  {
+    "name": "[ TPSIT, Informatica ] Corso Java interattivo",
+    "description": "Dalle basi fino ai thread. Include tutti i concetti di programmazione più utili e propone esercizi con esempi mirati e auto-correzione.",
+    "url": "https://salvatorecapolupo.github.io/4java"
+  },
+  {
     "name": "[ Sistemi ] Preferisci internet o un cane? ",
     "description": "È il classico esempio di Andrew S. Tanenbaum per spiegare il concetto di banda e, più in generale, perché una rete con grande banda può essere superata da un mezzo fisico che trasporta dati. ",
     "url": "https://salvatorecapolupo.github.io/cane"
   },
-    {
+  {
     "name": "[ Sistemi, TPSIT ] Bluetooth (BT) ",
     "description": "(Demo alpha)",
     "url": "https://salvatorecapolupo.github.io/BT"
