@@ -1,8 +1,23 @@
 [
   {
-    "name": "[ TPSIT ] Conversione virgola mobile - IEEE 754",
+    "name": "[ TPSIT ] IEEE 754 - Virgola mobile (32)",
     "description": "Conversione decimale - binario e viceversa, secondo uno degli algoritmi numerici più famosi al mondo.",
     "url": "https://salvatorecapolupo.github.io/ieee754"
+  },
+    {
+    "name": "[ TPSIT ] Quiz interattivi (alpha)",
+    "description": "Quiz interattivi da personalizzare.",
+    "url": "https://salvatorecapolupo.github.io/quiz"
+  },
+    {
+    "name": "[ TPSIT ] Macchina di Turing interattiva (alpha)",
+    "description": "Come funziona una macchina di Turing, mediante semplici esempi di codice.",
+    "url": "https://salvatorecapolupo.github.io/turing-machine"
+  },
+    {
+    "name": "[ TPSIT ] Game - Tabella ASCII",
+    "description": "Comprendere la codifica della tabella ASCII originale a 7 bit.",
+    "url": "https://salvatorecapolupo.github.io/ASCII"
   },
   {
     "name": "[ TPSIT, Informatica ] 4java - Corso Java interattivo",
@@ -228,8 +243,7 @@
   {"name": "[ PROGETTI OPEN ] ungioco (alpha)", "description": "Avventura grafica in versione alpha - HTML / JS based", "url": "https://salvatorecapolupo.github.io/ungioco/"},
   {"name": "[ INFORMATICA, SISTEMI, TPSIT ] universal", "description": "Convertitore MiB byte bit e quant'altro", "url": "https://github.com/salvatorecapolupo/universal"},
   {"name": "[ INFORMATICA, TPSIT ] unusable", "description": "unusable è unusable: inutilizzabile. ", "url": "https://salvatorecapolupo.github.io/unusable/"},
-  {"name": "[ SISTEMI ] vigenere", "description": "Cifrare di Vigenere online", "url": "https://salvatorecapolupo.github.io/vigenere/"},
-  {"name": "[ TPSIT ] virgolamobile", "description": "Conversione numeri decimali in binario - virgola mobile (IEEE 754)", "url": "https://salvatorecapolupo.github.io/virgolamobile/"},
+  {"name": "[ SISTEMI ] vigenere", "description": "Cifrare di Vigenere online", "url": "https://salvatorecapolupo.github.io/vigenere/"},  
   {"name": "[ SISTEMI ] vlsm", "description": "VLSM - Network Planner", "url": "https://salvatorecapolupo.github.io/vlsm/"},
   {"name": "[ PROGETTI OPEN ] zedinvaders", "description": "ZED Invaders 1.0 beta - questa versione NON è giocabile ed è qui solo a scopo documentaristico. Potete giocare gratis alla versione 2.0 su gamejolt", "url": "https://salvatorecapolupo.github.io/zedinvaders/"},
   {"name": "[ PROGETTI OPEN ] zenit (alpha)", "description": "Gestione finanziaria da browser (alpha)", "url": "https://salvatorecapolupo.github.io/zenit/"},
